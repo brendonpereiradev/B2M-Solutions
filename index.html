@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM Solutions | Consultoria de Tecnologia Premium</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Puro -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Brand -->
+            <a href="index.html" class="header-brand">
+                <img src="./assets/bm-logo-blackwhite-nobg.png" alt="BM Solutions" class="header-logo">
+            </a>
+
+            <!-- Desktop Nav & Contact -->
+            <div class="header-nav-wrapper">
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="#servicos" class="nav-link">Soluções</a>
+                    <a href="clientes.html" class="nav-link">Clientes</a>
+                </nav>
+                <div class="nav-divider"></div>
+                <a href="#contato" class="btn-contato">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-glow"></div>
+
+            <div class="hero-container">
+                <!-- Esquerda: Conteúdo (60%) -->
+                <div class="hero-content">
+                    <!-- Headline -->
+                    <h1 class="reveal delay-100 hero-title">
+                        <span class="nowrap-desktop">A base de tecnologia para</span> <br />
+                        <span class="text-gradient nowrap-desktop">operações imparáveis</span>
+                    </h1>
+
+                    <p class="reveal delay-200 hero-subtitle">
+                        Centralize a tecnologia da sua empresa em um único parceiro. Sites ultra-rápidos, infraestrutura
+                        de marketing digital avançada, chatbots com inteligência artificial e hospedagem dedicada. Sua
+                        operação, sob
+                        nosso controle técnico.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="reveal delay-300 hero-ctas">
+                        <a href="#contato" class="btn-primary">Fale conosco</a>
+                        <a href="#servicos" class="btn-secondary">Conheça nossas soluções</a>
+                    </div>
+
+                    <!-- Micro-stats -->
+                    <div class="reveal delay-400 hero-stats">
+                        <div>
+                            <p class="stat-value">Sites & Apps</p>
+                            <p class="stat-label">Plataformas sob medida</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div>
+                            <p class="stat-value">Integração</p>
+                            <p class="stat-label">Marketing & Inteligência Artificial</p>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div>
+                            <p class="stat-value">Infraestrutura</p>
+                            <p class="stat-label">Redes Locais & Cloud AWS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direita: Glassmorphism Dashboard Animado (40%) -->
+                <div class="hero-dashboard reveal delay-200">
+                    <!-- Glow Background -->
+                    <div class="glow-sphere glow-sphere--primary"></div>
+                    <div class="glow-sphere glow-sphere--secondary"></div>
+
+                    <!-- Card 1: Main Status -->
+                    <div class="dashboard-card-main glass-panel float-medium">
+                        <div class="dashboard-card-header">
+                            <div class="dashboard-card-info">
+                                <div class="dashboard-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="dashboard-title">Servidor de Aplicações</p>
+                                    <p class="dashboard-status">
+                                        <span class="dashboard-status-dot"></span> Dados Sincronizados
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="dashboard-badge">Infraestrutura</span>
+                        </div>
+                        <!-- Micro Graph Mockup -->
+                        <div class="graph-container">
+                            <div class="graph-bar" style="height: 30%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 45%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 25%; background-color: rgba(79, 70, 229, 0.4);"></div>
+                            <div class="graph-bar" style="height: 60%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 50%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar"
+                                style="height: 90%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
+                            <div class="graph-bar"
+                                style="height: 85%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
+                            <div class="graph-bar"
+                                style="height: 100%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
+                        </div>
+                        <div class="dashboard-card-footer">
+                            <p class="dashboard-card-footer-label">Latência de Resposta (Web/App)</p>
+                            <p class="dashboard-card-footer-value">&lt; 12ms (Alta vel.)</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Chatbot -->
+                    <div class="dashboard-card-chatbot glass-panel float-slow">
+                        <div class="chatbot-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="#22D3A5" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <p class="chatbot-label">Chatbot com IA</p>
+                        </div>
+                        <p class="chatbot-value">24/7</p>
+                        <p class="chatbot-description">Atendimento automatizado</p>
+                    </div>
+
+                    <!-- Card 3: Infra -->
+                    <div class="dashboard-card-infra glass-panel float-fast">
+                        <div class="infra-ring-container">
+                            <svg class="infra-ring-svg">
+                                <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.1)" stroke-width="4"
+                                    fill="none" />
+                                <circle cx="24" cy="24" r="20" stroke="#22D3A5" stroke-width="4" fill="none"
+                                    stroke-dasharray="125" stroke-dashoffset="0"
+                                    style="filter: drop-shadow(0 0 5px rgba(34,211,165,0.8));" />
+                            </svg>
+                            <span class="infra-status-text">ON</span>
+                        </div>
+                        <div>
+                            <p class="infra-title">Infraestrutura</p>
+                            <p class="infra-description">Rede Física &
+                                Cloud<br />em operação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Marquee -->
+        <section class="social-proof">
+            <div class="social-proof-heading reveal">
+                <p>Empresas que confiam nas nossas soluções</p>
+            </div>
+            <div class="marquee-wrapper">
+                <!-- Gradientes laterais -->
+                <div class="marquee-fade--left"></div>
+                <div class="marquee-fade--right"></div>
+
+                <!-- Track 1 -->
+                <div class="marquee-track">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                </div>
+
+                <!-- Track 2: cópia para loop infinito -->
+                <div class="marquee-track" aria-hidden="true">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                    <img src="assets/chrismedical-logo-nobg.png" alt="Chris Medical" class="marquee-logo">
+                    <img src="assets/gas-logo.svg" alt="GAS" class="marquee-logo">
+                    <img src="assets/sonhoempratas-logo.svg" alt="Sonho em Pratas" class="marquee-logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section (Pontos de dor) -->
+        <section class="problem-section" id="problemas">
+            <!-- Heading -->
+            <div class="section-heading reveal">
+                <h2 class="section-title">
+                    Sua tecnologia atual é um <span class="text-gradient">gargalo de crescimento?</span>
+                </h2>
+                <p class="section-subtitle">
+                    Entenda como operações ineficientes drenam o potencial de lucro da sua empresa.
+                </p>
+            </div>
+
+            <!-- Problem Grid -->
+            <div class="problem-grid">
+                <!-- Glow decorativo -->
+                <div class="grid-glow"></div>
+
+                <!-- Card 1 (Marketing Digital/Chatbot) -->
+                <div class="reveal delay-100 problem-card card-glow-red">
+                    <div class="problem-icon problem-icon--red">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>Baixa captação de clientes</h3>
+                    <p>Sem uma presença digital otimizada e campanhas estruturadas, você perde negócios diários para
+                        concorrentes que sabem como atrair e converter leads na internet.</p>
+                </div>
+
+                <!-- Card 2 (AWS Cloud) -->
+                <div class="reveal delay-200 problem-card card-glow-orange">
+                    <div class="problem-icon problem-icon--orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m2 2 20 20"></path>
+                            <path d="M5.78 5.78a7 7 0 0 0 9.77 9.74"></path>
+                            <path d="M7 21h10a5 5 0 0 0 5-5c0-2.31-1.55-4.27-3.66-4.83"></path>
+                            <path d="M22 16.14V16a5 5 0 0 0-5-5c0-4.42-3.58-8-8-8-.35 0-.7.03-1.04.09"></path>
+                        </svg>
+                    </div>
+                    <h3>Quedas em picos de tráfego</h3>
+                    <p>Seus sistemas ficam lentos ou fora do ar exatamente quando você mais investe em marketing ou
+                        lança campanhas, gerando perda direta de faturamento.</p>
+                </div>
+
+                <!-- Card 3 (Criação de Sites) -->
+                <div class="reveal delay-300 problem-card card-glow-yellow">
+                    <div class="problem-icon problem-icon--yellow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#EAB308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                            <polyline points="17 18 23 18 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Presença digital não marcante</h3>
+                    <p>Um site lento, desatualizado ou com design amador destrói a confiança na sua marca e espanta
+                        potenciais clientes logo nos primeiros segundos.</p>
+                </div>
+
+                <!-- Card 4 (Infra/Redes) -->
+                <div class="reveal delay-400 problem-card card-glow-purple">
+                    <div class="problem-icon problem-icon--purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M5 22h14"></path>
+                            <path d="M5 2h14"></path>
+                            <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22">
+                            </path>
+                            <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"></path>
+                        </svg>
+                    </div>
+                    <h3>Infraestrutura com gargalos ocultos</h3>
+                    <p>Sua equipe perde horas de trabalho todas as semanas lidando com internet instável, quedas de rede
+                        locais e sistemas internos lentos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="servicos">
+            <!-- Background -->
+            <div class="services-bg"></div>
+
+            <div class="services-container">
+                <!-- Heading -->
+                <div class="section-heading reveal">
+                    <h2 class="section-title">
+                        Veja as nossas <span class="text-gradient">soluções</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Da automação comercial à infraestrutura física. Tudo centralizado em um único parceiro técnico
+                        para sua empresa escalar sem gargalos.
+                    </p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="services-grid">
+
+                    <!-- Service 1: Marketing Digital -->
+                    <div class="reveal delay-100 service-card">
+                        <div class="service-card-accent service-card-accent--primary"></div>
+                        <div class="service-icon service-icon--primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3>Marketing Digital</h3>
+                        <p>Infraestrutura completa de aquisição de clientes. Campanhas de mídia paga, rastreamento
+                            avançado (GA4, GTM) e estratégias de conversão baseadas em dados precisos.</p>
+                        <div class="service-impact">
+                            "Aumente sua qualificação com <span class="highlight--primary">dados precisos</span>."
+                        </div>
+                    </div>
+
+                    <!-- Service 2: ChatBot -->
+                    <div class="reveal delay-200 service-card">
+                        <div class="service-card-accent service-card-accent--success"></div>
+                        <div class="service-icon service-icon--success">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <path d="M8 10h.01"></path>
+                                <path d="M12 10h.01"></path>
+                                <path d="M16 10h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>Chatbot com IA</h3>
+                        <p>Atendimento 24/7 com inteligência artificial humanizada. Capture e qualifique leads
+                            automaticamente enquanto sua equipe dorme.</p>
+                        <div class="service-impact">
+                            "Capture e qualifique leads <span class="highlight--success">enquanto sua equipe
+                                dorme</span>."
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Criação de Sites -->
+                    <div class="reveal delay-300 service-card">
+                        <div class="service-card-accent service-card-accent--secondary"></div>
+                        <div class="service-icon service-icon--secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Criação de sites</h3>
+                        <p>Sites e landing pages de alta performance com design premium, arquitetura serverless e foco
+                            absoluto em conversão. Otimizados para Core Web Vitals e SEO desde o primeiro deploy.</p>
+                        <div class="service-impact">
+                            "Carregamento instantâneo. Foco absoluto em <span
+                                class="highlight--secondary">conversão</span>."
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Infraestrutura Física -->
+                    <div class="reveal delay-100 service-card">
+                        <div class="service-card-accent service-card-accent--blue"></div>
+                        <div class="service-icon service-icon--blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h3>Infraestrutura física</h3>
+                        <p>Redes locais de alta performance, cabeamento estruturado Cat6/fibra óptica e WiFi corporativo
+                            com cobertura total. Elimine quedas e pontos cegos na sua rede.</p>
+                        <div class="service-impact">
+                            "Sua operação não pode parar. <span class="highlight--blue">E não vai</span>."
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Hospedagem AWS (Card Wide com Terminal) -->
+                    <div class="reveal delay-200 service-card service-card--wide">
+                        <div class="service-card-accent service-card-accent--primary"
+                            style="width: 16rem; height: 16rem;"></div>
+                        <div class="service-card--wide-layout">
+                            <div class="service-card--wide-content">
+                                <div class="service-icon service-icon--primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                                    </svg>
+                                </div>
+                                <h3>Hospedagem na AWS</h3>
+                                <p>Sua aplicação hospedada na nuvem mais robusta do mundo. Auto-scaling em picos de
+                                    tráfego, backups automáticos e monitoramento 24/7 para zero preocupações com quedas
+                                    ou lentidão.</p>
+                            </div>
+                            <div class="terminal-mockup">
+                                <!-- Terminal Mockup da AWS -->
+                                <div class="terminal-titlebar">
+                                    <div class="terminal-dot terminal-dot--red"></div>
+                                    <div class="terminal-dot terminal-dot--yellow"></div>
+                                    <div class="terminal-dot terminal-dot--green"></div>
+                                    <span class="terminal-filename">aws-deploy.log</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <p>[INFO] Deploying to AWS us-east-1...</p>
+                                    <p class="t-success">[OK] EC2 instance i-0a7b... running</p>
+                                    <p class="t-success">[OK] SSL certificate active</p>
+                                    <p class="t-warning">[WARN] Traffic spike +340% detected</p>
+                                    <p class="t-primary">> Auto-scaling: 2 → 4 instances. 0ms downtime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="cta-section">
+            <!-- Gradiente -->
+            <div class="cta-gradient-overlay"></div>
+            <!-- Glow points -->
+            <div class="cta-glow--left"></div>
+            <div class="cta-glow--right"></div>
+
+            <div class="cta-container reveal">
+                <h2 class="cta-title">
+                    Pronto para transformar a sua <br class="md-break" />
+                    empresa?
+                </h2>
+                <p class="cta-text">
+                    A primeira conversa é por nossa conta. Vamos mapear suas vulnerabilidades e desenhar uma via de
+                    crescimento escalável.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contato" class="btn-primary--large">Fale conosco</a>
+                    <a href="clientes.html" class="btn-secondary--large">Conheça nossos clientes</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <!-- Links de navegação em linha -->
+            <nav class="footer-inline-nav">
+                <a href="index.html" class="footer-inline-link">Início</a>
+                <span class="footer-separator">|</span>
+                <a href="#servicos" class="footer-inline-link">Soluções</a>
+                <span class="footer-separator">|</span>
+                <a href="clientes.html" class="footer-inline-link">Clientes</a>
+                <span class="footer-separator">|</span>
+                <a href="contato.html" class="footer-inline-link">Contato</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-inline-link">Termos de Uso</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-inline-link">Política de Privacidade</a>
+            </nav>
+
+            <!-- Logo centralizada -->
+            <div class="footer-brand-center">
+                <a href="index.html" class="footer-brand-link">
+                    <img src="./assets/bm-logo-blackwhite-nobg.png" alt="BM Solutions" class="footer-logo">
+                </a>
+            </div>
+
+            <!-- Copyright e links legais -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 BM Solutions. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/animations.js"></script>
+    <script>
+        // Toggle do menu mobile
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            alert('Menu mobile em desenvolvimento na master.');
+        });
+    </script>
+</body>
+
+</html>
