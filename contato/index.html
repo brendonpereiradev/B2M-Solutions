@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | B2M Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Puro -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <style>
+        .contact-hero {
+            position: relative;
+            padding: 8rem var(--container-padding) 4rem;
+            text-align: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .contact-glow {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        .contact-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.1;
+        }
+
+        .contact-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--color-text-muted);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid de Contato & Trust Options */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Glassmorphism Cards for Methods */
+        .method-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .method-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(139, 92, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .method-card:hover .method-icon {
+            transform: scale(1.1);
+        }
+
+        .method-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .method-text {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .method-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--color-primary);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            cursor: pointer;
+        }
+
+        .method-btn:hover {
+            background: var(--color-primary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .method-btn--whatsapp {
+            background: rgba(37, 211, 102, 0.1);
+            color: #25D366;
+            border-color: rgba(37, 211, 102, 0.2);
+        }
+
+        .method-btn--whatsapp:hover {
+            background: #25D366;
+            color: #fff;
+        }
+
+        /* Trust Badges Bar (UI-UX Guideline) */
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .trust-badge svg {
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Brand -->
+            <a href="../index.html" class="header-brand">
+                <img src="../assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
+            </a>
+
+            <!-- Desktop Nav & Contact -->
+            <div class="header-nav-wrapper">
+                <nav class="header-nav">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="../index.html#problemas" class="nav-link">Soluções</a>
+                    <a href="../clientes/" class="nav-link">Clientes</a>
+                    <a href="../sobre.html" class="nav-link">Sobre Nós</a>
+                </nav>
+                <div class="nav-divider"></div>
+                <a href="../contato/" class="btn-contato">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Hero Section Simplificada -->
+        <section class="contact-hero">
+            <div class="contact-glow"></div>
+
+            <h1 class="contact-title reveal delay-100">
+                Inicie sua <br class="md-break" /> <span class="text-gradient">Transformação</span>
+            </h1>
+
+            <p class="contact-subtitle reveal delay-200">
+                Nenhuma empresa é igual. Nossa equipe técnica está pronta para mapear os gargalos da sua operação atual
+                e guiar você por uma arquitetura digital imparável.
+            </p>
+
+            <!-- Cards de Métodos Diretos de Contato -->
+            <div class="contact-grid">
+
+                <!-- Card WhatsApp -->
+                <div class="method-card reveal delay-300">
+                    <div class="method-icon" style="color: #25D366; background: rgba(37, 211, 102, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="method-title">Contato Expresso</h3>
+                    <p class="method-text">
+                        A forma mais rápida de falar com um especialista de soluções B2B. Resposta média em menos de 10
+                        minutos em horário comercial (09h às 18h).
+                    </p>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="method-btn method-btn--whatsapp">
+                        Abrir WhatsApp Expresso
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Card Reunião/Formulário/Mail -->
+                <div class="method-card reveal delay-400">
+                    <div class="method-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3 class="method-title">Avaliação Diagnóstica</h3>
+                    <p class="method-text">
+                        Prefere um e-mail com horários disponíveis ou apresentar seu caso com calma? Envie uma mensagem
+                        e marcaremos um assessment gratuito com nossa equipe técnica de arquitetura.
+                    </p>
+                    <a href="mailto:contato@b2msolutions.com" class="method-btn">
+                        Enviar um E-mail (Diagnóstico)
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Trust Badges Section -->
+            <div class="trust-badges reveal delay-500">
+                <div class="trust-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Conexão Segura B2B
+                </div>
+                <div class="trust-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Diagnóstico em 24h
+                </div>
+                <div class="trust-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Mapeamento Tecnológico Completo
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <nav class="footer-inline-nav">
+                <a href="../index.html" class="footer-inline-link">Início</a>
+                <span class="footer-separator">|</span>
+                <a href="../index.html#problemas" class="footer-inline-link">Soluções</a>
+                <span class="footer-separator">|</span>
+                <a href="../clientes/" class="footer-inline-link">Clientes</a>
+                <span class="footer-separator">|</span>
+                <a href="../sobre.html" class="footer-inline-link">Sobre Nós</a>
+                <span class="footer-separator">|</span>
+                <a href="../contato/" class="footer-inline-link">Contato</a>
+            </nav>
+
+            <div class="footer-brand-center">
+                <a href="../index.html" class="footer-brand-link">
+                    <img src="../assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/animations.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            alert('Menu mobile em desenvolvimento.');
+        });
+    </script>
+</body>
+
+</html>

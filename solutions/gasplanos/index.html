@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes | BM Solutions</title>
+    <title>Case G.A.S Planos | B2M Solutions</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,22 @@
         rel="stylesheet">
 
     <!-- CSS Puro -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <style>
+        .case-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .case-back-link:hover {
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,19 +38,20 @@
     <header class="site-header">
         <div class="header-container">
             <!-- Brand -->
-            <a href="index.html" class="header-brand">
-                <img src="./assets/bm-logo-blackwhite-nobg.png" alt="BM Solutions" class="header-logo">
+            <a href="../../index.html" class="header-brand">
+                <img src="../../assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
             </a>
 
             <!-- Desktop Nav & Contact -->
             <div class="header-nav-wrapper">
                 <nav class="header-nav">
-                    <a href="index.html" class="nav-link">Início</a>
-                    <a href="index.html#solucoes" class="nav-link">Soluções</a>
-                    <a href="clientes.html" class="nav-link">Clientes</a>
+                    <a href="../../index.html" class="nav-link">Início</a>
+                    <a href="../../index.html#problemas" class="nav-link">Soluções</a>
+                    <a href="../../clientes/" class="nav-link">Clientes</a>
+                    <a href="../../sobre.html" class="nav-link">Sobre Nós</a>
                 </nav>
                 <div class="nav-divider"></div>
-                <a href="#contato" class="btn-contato">Contato</a>
+                <a href="../../contato/" class="btn-contato">Contato</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -51,74 +67,23 @@
     </header>
 
     <main class="main-content">
-        <!-- Portfolio Header Section -->
-        <section class="cases-header">
-            <div class="cases-intro reveal">
-                <h1>
-                    Nossos projetos.<br class="md-break" /> <span class="text-gradient">Seus resultados.</span>
-                </h1>
-                <p>
-                    Conheça os nossos projetos e resultados através de uma documentação detalhada.
-                </p>
+        <section class="cases-panels-section" style="padding-top: 3rem;">
+            <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding);">
+                <a href="../../clientes/" class="case-back-link reveal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Voltar para Clientes
+                </a>
             </div>
 
-            <!-- Tabs de Clientes com Logo -->
-            <div class="client-tabs reveal delay-100" id="client-tabs">
-                <button class="client-tab client-tab--active" data-client="chrismedical"
-                    aria-label="Visualizar projeto Chris Medical">
-                    <img src="./assets/chrismedical-logo-nobg.png" alt="ChrisMedical Logo" class="client-tab-logo">
-                </button>
-                <button class="client-tab" data-client="gas" aria-label="Visualizar projeto G.A.S Planos">
-                    <img src="./assets/gas-logo.svg" alt="G.A.S Planos Logo" class="client-tab-logo">
-                </button>
-                <button class="client-tab" data-client="sonhoempratas" aria-label="Visualizar projeto Sonho em Pratas">
-                    <img src="./assets/sonhoempratas-logo.svg" alt="Sonho em Pratas Logo" class="client-tab-logo">
-                </button>
-            </div>
-        </section>
-
-        <!-- Paineis de Projetos -->
-        <section class="cases-panels-section" id="cases-panels">
-
-            <!-- Painel: ChrisMedical -->
-            <article class="case-panel case-panel--active" data-client="chrismedical">
-                <div class="case-panel-inner case-panel-inner--primary">
-                    <div class="case-panel-image">
-                        <div class="case-panel-image-gradient primary-gradient"></div>
-                        <div class="case-panel-image-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                fill="none" stroke="#4F6EF7" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="case-panel-content">
-                        <div class="case-panel-tags">
-                            <span class="case-tag case-tag--primary">Saúde</span>
-                        </div>
-                        <h2>ChrisMedical</h2>
-                        <p>Detalhes do projeto em breve. Aguardando especificações do cliente.</p>
-                        <div class="case-metrics">
-                            <div>
-                                <p class="case-metric-value">—</p>
-                                <p class="case-metric-label">Em breve</p>
-                            </div>
-                            <div>
-                                <p class="case-metric-value">—</p>
-                                <p class="case-metric-label">Em breve</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Painel: G.A.S Planos — Card Storytelling Progressivo -->
-            <article class="case-panel" data-client="gas">
+            <article class="case-panel case-panel--active" style="display: block; opacity: 1;">
                 <div class="cs-card">
 
                     <!-- ═══════════ HEADER SPLIT: Info + Carrossel ═══════════ -->
-                    <div class="cs-card-header">
+                    <div class="cs-card-header reveal delay-100">
 
                         <!-- Coluna Esquerda: Informações -->
                         <div class="cs-card-info">
@@ -129,7 +94,7 @@
                                 <span class="cs-cat-sep">•</span>
                                 <span>HOSPEDAGEM NA AWS</span>
                             </div>
-                            <h2 class="cs-card-title">G.A.S Planos</h2>
+                            <h1 class="cs-card-title">G.A.S Planos</h1>
                             <p class="cs-card-desc">Landing page de alta conversão com infraestrutura de Marketing
                                 Digital para captação de leads qualificados no segmento de planos de saúde.</p>
 
@@ -168,7 +133,6 @@
                             </div>
                             <!-- Barra Dedicada de Tecnologia (Opção A reposicionada) -->
                             <div class="cs-card-tech-bar">
-                                <!-- Título removido conforme pedido -->
                                 <div class="cs-tech-bar-list">
                                     <span class="cs-tech-bar-item">HTML</span>
                                     <span class="cs-tech-bar-item">CSS</span>
@@ -189,23 +153,23 @@
                             <div class="cs-carousel" id="gas-carousel">
                                 <div class="cs-carousel-track">
                                     <div class="cs-carousel-slide cs-carousel-slide--active">
-                                        <img src="./assets/gas-showcase-1.png"
+                                        <img src="../../assets/img/solutions/gasplanos/gas-showcase-1.png"
                                             alt="G.A.S Planos — Hero Section Principal" loading="lazy">
                                     </div>
                                     <div class="cs-carousel-slide">
-                                        <img src="./assets/gas-showcase-2.png"
+                                        <img src="../../assets/img/solutions/gasplanos/gas-showcase-2.png"
                                             alt="G.A.S Planos — Vantagens Exclusivas e Benefícios" loading="lazy">
                                     </div>
                                     <div class="cs-carousel-slide">
-                                        <img src="./assets/gas-showcase-3.png"
+                                        <img src="../../assets/img/solutions/gasplanos/gas-showcase-3.png"
                                             alt="G.A.S Planos — Tabela de Preços e Cobertura" loading="lazy">
                                     </div>
                                     <div class="cs-carousel-slide">
-                                        <img src="./assets/gas-showcase-4.png"
+                                        <img src="../../assets/img/solutions/gasplanos/gas-showcase-4.png"
                                             alt="G.A.S Planos — Rede Própria e Grade de Hospitais" loading="lazy">
                                     </div>
                                     <div class="cs-carousel-slide">
-                                        <img src="./assets/gas-showcase-5.png"
+                                        <img src="../../assets/img/solutions/gasplanos/gas-showcase-5.png"
                                             alt="G.A.S Planos — Diferenciais Competitivos e Contato" loading="lazy">
                                     </div>
                                 </div>
@@ -237,7 +201,7 @@
                 </div>
 
                 <!-- ═══════════ TIMELINE HORIZONTAL ═══════════ -->
-                <div class="cs-card-timeline">
+                <div class="cs-card-timeline reveal delay-200">
                     <div class="cs-timeline-step">
                         <div class="cs-timeline-icon cs-timeline-icon--problem">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -287,7 +251,7 @@
                 </div>
 
                 <!-- ═══════════ DEEP DIVE: ARQUITETURA AWS ═══════════ -->
-                <div class="cs-architecture-section reveal delay-200">
+                <div class="cs-architecture-section reveal delay-300">
                     <div class="cs-arch-header">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -301,51 +265,12 @@
 
                     <div class="cs-arch-diagram-wrapper">
                         <div class="cs-arch-glow"></div>
-                        <img src="./assets/gasplanos-arquitetura.svg" alt="Diagrama de Arquitetura AWS G.A.S Planos"
+                        <img src="../../assets/img/solutions/gasplanos/gasplanos-arquitetura.svg" alt="Diagrama de Arquitetura AWS G.A.S Planos"
                             class="cs-arch-image">
                     </div>
                 </div>
 
-                </div>
             </article>
-
-            <!-- Painel: Sonho em Pratas -->
-            <article class="case-panel" data-client="sonhoempratas">
-                <div class="case-panel-inner case-panel-inner--secondary">
-                    <div class="case-panel-image">
-                        <div class="case-panel-image-gradient"
-                            style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.6), rgba(79, 110, 247, 0.4));">
-                        </div>
-                        <div class="case-panel-image-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="case-panel-content">
-                        <div class="case-panel-tags">
-                            <span class="case-tag case-tag--secondary">E-commerce</span>
-                        </div>
-                        <h2>Sonho em Pratas</h2>
-                        <p>Detalhes do projeto em breve. Aguardando especificações do cliente.</p>
-                        <div class="case-metrics">
-                            <div>
-                                <p class="case-metric-value">—</p>
-                                <p class="case-metric-label">Em breve</p>
-                            </div>
-                            <div>
-                                <p class="case-metric-value">—</p>
-                                <p class="case-metric-label">Em breve</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
         </section>
 
         <!-- CTA Section -->
@@ -362,7 +287,7 @@
                     seu cenário.
                 </p>
                 <div class="cta-center">
-                    <a href="index.html#contato" class="btn-primary--large">Fale conosco</a>
+                    <a href="../../contato/" class="btn-primary--large">Fale conosco</a>
                 </div>
             </div>
         </section>
@@ -372,42 +297,33 @@
     <footer class="site-footer">
         <div class="footer-bg"></div>
         <div class="footer-container">
-            <!-- Links de navegação em linha -->
             <nav class="footer-inline-nav">
-                <a href="index.html" class="footer-inline-link">Início</a>
+                <a href="../../index.html" class="footer-inline-link">Início</a>
                 <span class="footer-separator">|</span>
-                <a href="index.html#servicos" class="footer-inline-link">Soluções</a>
+                <a href="../../index.html#problemas" class="footer-inline-link">Soluções</a>
                 <span class="footer-separator">|</span>
-                <a href="clientes.html" class="footer-inline-link">Clientes</a>
+                <a href="../../clientes/" class="footer-inline-link">Clientes</a>
+                    <a href="../../sobre.html" class="nav-link">Sobre Nós</a>
                 <span class="footer-separator">|</span>
-                <a href="contato.html" class="footer-inline-link">Contato</a>
-                <span class="footer-separator">|</span>
-                <a href="#" class="footer-inline-link">Termos de Uso</a>
-                <span class="footer-separator">|</span>
-                <a href="#" class="footer-inline-link">Política de Privacidade</a>
+                <a href="../../contato/" class="footer-inline-link">Contato</a>
             </nav>
 
-            <!-- Logo centralizada -->
             <div class="footer-brand-center">
-                <a href="index.html" class="footer-brand-link">
-                    <img src="./assets/bm-logo-blackwhite-nobg.png" alt="BM Solutions" class="footer-logo">
+                <a href="../../index.html" class="footer-brand-link">
+                    <img src="../../assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
                 </a>
             </div>
 
-            <!-- Copyright e links legais -->
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    &copy; 2026 BM Solutions. Todos os direitos reservados.
+                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="./js/animations.js"></script>
-    <script src="./js/clientes.js"></script>
+    <script src="../../assets/js/animations.js"></script>
     <script>
-        // Toggle do menu mobile
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
             alert('Menu mobile em desenvolvimento.');
         });
@@ -415,7 +331,7 @@
         // Lógica do Carrossel G.A.S Planos
         document.addEventListener('DOMContentLoaded', () => {
             const track = document.querySelector('.cs-carousel-track');
-            const slides = Array.from(track.children);
+            const slides = track ? Array.from(track.children) : [];
             const dots = document.querySelectorAll('.cs-carousel-dot');
 
             if (!track || slides.length === 0) return;
@@ -423,17 +339,14 @@
             let currentIndex = 0;
             const slideCount = slides.length;
             let autoPlayInterval;
-            let userInteracted = false; // Flag para desativar autoplay
+            let userInteracted = false;
 
             const updateCarousel = (index) => {
-                // Remove active classes
                 slides.forEach(slide => slide.classList.remove('cs-carousel-slide--active'));
                 dots.forEach(dot => dot.classList.remove('cs-carousel-dot--active'));
 
-                // Atualizar posição do track (Eixo X)
                 track.style.transform = `translateX(-${index * 100}%)`;
 
-                // Setar novos ativos
                 slides[index].classList.add('cs-carousel-slide--active');
                 if (dots[index]) dots[index].classList.add('cs-carousel-dot--active');
             };
@@ -443,10 +356,9 @@
                 updateCarousel(currentIndex);
             };
 
-            // Iniciar Autoplay (8 segundos)
             const startAutoPlay = () => {
-                if (userInteracted) return; // Se usuário já interagiu, não inicia mais
-                clearInterval(autoPlayInterval); // Garante que não teremos múltiplos intervalos
+                if (userInteracted) return;
+                clearInterval(autoPlayInterval);
                 autoPlayInterval = setInterval(nextSlide, 8000);
             };
 
@@ -454,39 +366,38 @@
                 clearInterval(autoPlayInterval);
             };
 
-            // Event Listeners pros Dots
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
-                    userInteracted = true; // Registra interação
+                    userInteracted = true;
                     currentIndex = index;
                     updateCarousel(currentIndex);
-                    stopAutoPlay(); // Para o autoplay definitivamente
+                    stopAutoPlay();
                 });
             });
 
-            // Controles Laterais (Setas)
             const btnPrev = document.querySelector('.cs-carousel-nav--prev');
             const btnNext = document.querySelector('.cs-carousel-nav--next');
 
             if (btnPrev && btnNext) {
                 btnPrev.addEventListener('click', () => {
-                    userInteracted = true; // Registra interação
+                    userInteracted = true;
                     currentIndex = (currentIndex - 1 + slideCount) % slideCount;
                     updateCarousel(currentIndex);
-                    stopAutoPlay(); // Para o autoplay definitivamente
+                    stopAutoPlay();
                 });
 
                 btnNext.addEventListener('click', () => {
-                    userInteracted = true; // Registra interação
+                    userInteracted = true;
                     nextSlide();
-                    stopAutoPlay(); // Para o autoplay definitivamente
+                    stopAutoPlay();
                 });
             }
 
-            // Pausar passando o mouse
             const carouselContainer = document.querySelector('.cs-carousel');
-            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-            carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            }
 
             startAutoPlay();
         });

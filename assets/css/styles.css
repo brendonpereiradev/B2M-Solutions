@@ -1,5 +1,5 @@
 /* =========================================
-   BM Solutions — CSS Puro
+   B2M Solutions — CSS Puro
    Migrado de Tailwind CSS v4
    ========================================= */
 
@@ -1892,14 +1892,12 @@ h6 {
 .case-panel {
     display: none;
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .case-panel--active {
     display: block;
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Layout interno do painel (imagem + conteúdo) */

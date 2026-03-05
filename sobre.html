@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | B2M Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Puro -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <style>
+        .about-hero {
+            position: relative;
+            padding: 8rem var(--container-padding) 4rem;
+            text-align: center;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .about-glow {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        .about-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.1;
+        }
+
+        .about-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--color-text-muted);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pillars Grid (Glassmorphism Cards) */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(139, 92, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .pillar-text {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Brand -->
+            <a href="./index.html" class="header-brand">
+                <img src="./assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
+            </a>
+
+            <!-- Desktop Nav & Contact -->
+            <div class="header-nav-wrapper">
+                <nav class="header-nav">
+                    <a href="./index.html" class="nav-link">Início</a>
+                    <a href="./index.html#problemas" class="nav-link">Soluções</a>
+                    <a href="./clientes/" class="nav-link">Clientes</a>
+                    <a href="./sobre.html" class="nav-link">Sobre Nós</a>
+                </nav>
+                <div class="nav-divider"></div>
+                <a href="./contato/" class="btn-contato">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Hero Section Simplificada -->
+        <section class="about-hero">
+            <div class="about-glow"></div>
+
+            <h1 class="about-title reveal delay-100">
+                Quem é a <br class="md-break" /> <span class="text-gradient">B2M Solutions</span>
+            </h1>
+
+            <p class="about-subtitle reveal delay-200">
+                Ser o parceiro tecnológico absoluto das operações. [Placeholder: Insira aqui a história da empresa, a
+                visão de futuro ou uma breve descrição de como a B2M nasceu focada em transformar e otimizar
+                ecossistemas digitais de ponta a ponta].
+            </p>
+
+            <!-- Pilares em Grid (Glassmorphism) -->
+            <div class="pillars-grid">
+
+                <!-- Pilar 1 -->
+                <div class="pillar-card reveal delay-300">
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Inovação e Inteligência</h3>
+                    <p class="pillar-text">
+                        [Placeholder: Texto focado em como aplicamos inovação técnica com IA e marketing ativo no
+                        backend dos nossos clientes]. Empegamos as arquiteturas mais modernas.
+                    </p>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="pillar-card reveal delay-400">
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Confiança Estrutural</h3>
+                    <p class="pillar-text">
+                        [Placeholder: Construir a ideia de parceria longo-prazo e robustez técnica para não deixar
+                        servidores caírem e nem processos pararem sob nossa gestão.]
+                    </p>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="pillar-card reveal delay-500">
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Qualidade Técnica</h3>
+                    <p class="pillar-text">
+                        [Placeholder: Detalhar que todos os códigos, sites e implantações de marketing têm alto nível
+                        performático (A+ Vitals, SEO impecável, Cloud otimizada).]
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cases-cta-section" style="margin-top: 2rem;">
+            <div class="cta-gradient-overlay"></div>
+            <div class="cta-glow--left"></div>
+
+            <div class="cta-container reveal">
+                <h2 class="cta-title">
+                    O próximo caso de sucesso pode ser a <span class="text-gradient">sua empresa</span>.
+                </h2>
+                <p class="cta-text">
+                    Agende uma reunião com a nossa equipe. Sem compromisso, foco 100% em avaliar
+                    seu cenário.
+                </p>
+                <div class="cta-center">
+                    <a href="./contato/" class="btn-primary--large">Fale conosco</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <nav class="footer-inline-nav">
+                <a href="./index.html" class="footer-inline-link">Início</a>
+                <span class="footer-separator">|</span>
+                <a href="./index.html#problemas" class="footer-inline-link">Soluções</a>
+                <span class="footer-separator">|</span>
+                <a href="./clientes/" class="footer-inline-link">Clientes</a>
+                <span class="footer-separator">|</span>
+                <a href="./sobre.html" class="footer-inline-link">Sobre Nós</a>
+                <span class="footer-separator">|</span>
+                <a href="./contato/" class="footer-inline-link">Contato</a>
+            </nav>
+
+            <div class="footer-brand-center">
+                <a href="./index.html" class="footer-brand-link">
+                    <img src="./assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/animations.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            alert('Menu mobile em desenvolvimento.');
+        });
+    </script>
+</body>
+
+</html>

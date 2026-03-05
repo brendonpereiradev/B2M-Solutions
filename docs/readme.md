@@ -1,4 +1,4 @@
-# BM Solutions
+# B2M Solutions
 
 > **Consultoria de Tecnologia Premium**
 > A base de tecnologia para operações imparáveis. Centralizamos a tecnologia da sua empresa em um único parceiro técnico.
@@ -7,7 +7,7 @@
 
 ## 🚀 Sobre o Projeto
 
-Este repositório contém o site institucional da **BM Solutions**, uma empresa focada em oferecer soluções completas de tecnologia, indo do planejamento estratégico à execução da infraestrutura.
+Este repositório contém o site institucional da **B2M Solutions**, uma empresa focada em oferecer soluções completas de tecnologia, indo do planejamento estratégico à execução da infraestrutura.
 
 O projeto foi desenvolvido focando em **alta performance**, **design premium (Glassmorphism + Dark Mode)** e **acessibilidade**, garantindo a melhor experiência de conversão para o usuário final.
 
@@ -15,7 +15,7 @@ O projeto foi desenvolvido focando em **alta performance**, **design premium (Gl
 
 ## 🛠️ Soluções Oferecidas
 
-A BM Solutions atua nas seguintes frentes tecnológicas e estratégicas:
+A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
 - **Marketing Digital:** Captação de leads, integração GA4 + GTM, mídia paga com foco em retorno sobre investimento.
 - **Chatbot com IA:** Atendimento 24/7 automatizado e humanizado para captura e qualificação de clientes.
@@ -41,7 +41,7 @@ A BM Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 - `/js/`: Scripts locais do projeto (ex: `animations.js`) utilizados para animar elementos visuais na página, comportamento do menu, etc.
 - `/docs/`: Documentação interna, arquivos `markdown` gerados, planos de ação e estudo de caso de clientes (como GAS Planos).
 - `index.html`: Página inicial com as principais chamadas para as frentes do negócio e soluções.
-- `clientes.html`: Vitrine das empresas e soluções de sucesso (Cases de uso) que validam a autoridade da BM Solutions.
+- `clientes.html`: Vitrine das empresas e soluções de sucesso (Cases de uso) que validam a autoridade da B2M Solutions.
 
 ---
 
@@ -53,4 +53,4 @@ Caso o desenvolvimento envolva uma interface HTML pura com JS e CSS, para testar
 2. O servidor deve rodar no padrão em `http://127.0.0.1:5500`.
 
 ---
-*Documentação gerada para orientar a manutenção e evolução da página oficial da BM Solutions.*
+*Documentação gerada para orientar a manutenção e evolução da página oficial da B2M Solutions.*
