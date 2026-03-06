@@ -143,7 +143,31 @@ h6 {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    background-image: linear-gradient(90deg,
+            var(--color-primary),
+            var(--color-secondary),
+            #A855F7,
+            /* Lighter purple/pink in the middle for the shimmer */
+            var(--color-primary));
+    background-size: 300% auto;
+    animation: flowGradient 6s linear infinite;
+}
+
+@keyframes flowGradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-gradient {
+        animation: none;
+        background-size: auto;
+    }
 }
 
 .md-break {
@@ -163,6 +187,9 @@ h6 {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Bugfix Webkit: prevents blur/filter pops at the end of opacity transitions */
+    will-change: opacity, transform;
+    isolation: isolate;
 }
 
 .reveal.active {
@@ -412,11 +439,17 @@ h6 {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
     letter-spacing: -0.03em;
+}
+
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: 3rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -569,13 +602,21 @@ h6 {
 /* Hero Stats */
 .hero-stats {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.5rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(30, 37, 64, 0.5);
     width: 100%;
-    max-width: fit-content;
     margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+    .hero-stats {
+        flex-direction: row;
+        align-items: center;
+        max-width: fit-content;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -607,9 +648,16 @@ h6 {
 }
 
 .stat-divider {
-    width: 1px;
-    height: 3rem;
+    width: 100%;
+    height: 1px;
     background-color: var(--color-border);
+}
+
+@media (min-width: 640px) {
+    .stat-divider {
+        width: 1px;
+        height: 3rem;
+    }
 }
 
 /* ===========================================
@@ -634,6 +682,10 @@ h6 {
     filter: blur(60px);
     opacity: 0.4;
     z-index: 0;
+    /* Bugfix: Força o navegador a manter o elemento na renderização da GPU mesmo após transições de opacidade */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .glow-sphere--primary {
@@ -658,6 +710,8 @@ h6 {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Bugfix Webkit: mantem a mistura de cores uniforme ao fim do stroke/blur */
+    backface-visibility: hidden;
 }
 
 .float-slow {
