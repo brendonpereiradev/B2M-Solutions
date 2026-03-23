@@ -1,0 +1,5 @@
+# IDE Settings
+.cursor/
+
+# Infrastructure / Cloud configs
+cloudfront/
