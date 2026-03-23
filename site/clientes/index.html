@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | B2M Solutions</title>
+    <meta name="description" content="Soluções e projetos da B2M Solutions: infraestrutura, marketing digital e presença digital com foco em performance e conversão.">
+    <link rel="canonical" href="https://b2msolutions.com/clientes/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Puro -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <style>
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: var(--container-max);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 var(--container-padding);
+        }
+
+        .sol-showcase-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sol-showcase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .sol-showcase-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.1);
+        }
+
+        .sol-showcase-card:hover::before {
+            opacity: 1;
+        }
+
+        .sol-showcase-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sol-card-logo-wrapper {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sol-card-logo {
+            max-height: 60px;
+            max-width: 200px;
+            opacity: 0.8;
+            transition: all 0.3s;
+            filter: grayscale(0.5);
+        }
+
+        .sol-showcase-card:hover .sol-card-logo {
+            opacity: 1;
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+
+        .sol-card-info-text {
+            text-align: center;
+        }
+
+        .sol-card-category {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-secondary);
+            /* Purple color */
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .sol-card-title {
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .sol-card-description {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sol-card-action {
+            margin-top: 1rem;
+            color: var(--color-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .sol-showcase-card:hover .sol-card-action {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Brand -->
+            <a href="/" class="header-brand">
+                <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
+            </a>
+
+            <!-- Desktop Nav & Contact -->
+            <div class="header-nav-wrapper">
+                <nav class="header-nav">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="/#problemas" class="nav-link">Soluções</a>
+                    <a href="/clientes/" class="nav-link">Clientes</a>
+                    <a href="/sobre/" class="nav-link">Sobre Nós</a>
+                </nav>
+                <div class="nav-divider"></div>
+                <a href="/contato/" class="btn-contato">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line class="line-1" x1="4" x2="20" y1="12" y2="12" />
+                    <line class="line-2" x1="4" x2="20" y1="6" y2="6" />
+                    <line class="line-3" x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay (Offcanvas) -->
+        <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="mobile-menu-logo">
+                    <button class="mobile-menu-close" aria-label="Fechar menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                
+                <nav class="mobile-menu-nav">
+                    <a href="/" class="mobile-nav-link">Início</a>
+                    <a href="/#problemas" class="mobile-nav-link">Soluções</a>
+                    <a href="/clientes/" class="mobile-nav-link">Clientes</a>
+                    <a href="/sobre/" class="mobile-nav-link">Sobre nós</a>
+                </nav>
+
+                <div class="mobile-menu-footer">
+                    <a href="/contato/" class="btn-primary mobile-menu-cta">Fale conosco</a>
+                    
+                    <div class="mobile-contact-info">
+                        <p class="mobile-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            contato@b2msolutions.com
+                        </p>
+                        <p class="mobile-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Seg - Sex, 09h às 18h
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Portfolio Header Section -->
+        <section class="solutions-header" style="padding-bottom: 2rem;">
+            <div class="solutions-intro reveal">
+                <h1>
+                    Nossos projetos.<br class="md-break" /> <span class="text-gradient">Seus resultados.</span>
+                </h1>
+                <p>
+                    Conheça os nossos projetos e resultados através de uma documentação detalhada.
+                </p>
+            </div>
+        </section>
+
+        <!-- Vitrine de Projetos (Grid) -->
+        <section class="solutions-grid">
+            <!-- Chris Medical -->
+            <a href="/solutions/chrismedical/" class="sol-showcase-card reveal delay-100">
+                <div class="sol-card-logo-wrapper">
+                    <img src="/assets/logos/chrismedical-logo-nobg.png" alt="ChrisMedical Logo" class="sol-card-logo">
+                </div>
+                <div class="sol-card-info-text">
+                    <span class="sol-card-category">Marketing Digital</span>
+                    <h3 class="sol-card-title">Chris Medical</h3>
+                    <p class="sol-card-description">Otimização de fluxo de captação B2B e mídia paga.</p>
+                </div>
+                <div class="sol-card-action">
+                    Veja a solução completa
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- G.A.S Planos -->
+            <a href="/solutions/gasplanos/" class="sol-showcase-card reveal delay-200">
+                <div class="sol-card-logo-wrapper">
+                    <img src="/assets/logos/gas-logo.svg" alt="G.A.S Planos Logo" class="sol-card-logo">
+                </div>
+                <div class="sol-card-info-text">
+                    <span class="sol-card-category">Infra & Digital</span>
+                    <h3 class="sol-card-title">G.A.S Planos</h3>
+                    <p class="sol-card-description">Ecossistema web completo com frontend e campanhas ativas.</p>
+                </div>
+                <div class="sol-card-action">
+                    Veja a solução completa
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </a>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="solutions-cta-section" style="margin-top: 4rem;">
+            <div class="cta-gradient-overlay"></div>
+            <div class="cta-glow--left"></div>
+
+            <div class="cta-container reveal">
+                <h2 class="cta-title">
+                    A próxima solução de sucesso pode ser a <span class="text-gradient">sua empresa</span>.
+                </h2>
+                <p class="cta-text">
+                    Agende uma reunião com a nossa equipe. Sem compromisso, foco 100% em avaliar
+                    seu cenário.
+                </p>
+                <div class="cta-center"
+                    style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <a href="/contato/" class="btn-primary--large">Fale conosco</a>
+                    <a href="/sobre/" class="btn-secondary--large">Sobre nós</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-bg"></div>
+        <div class="footer-container">
+            <nav class="footer-inline-nav">
+                <a href="/" class="footer-inline-link">Início</a>
+                <span class="footer-separator">|</span>
+                <a href="/#problemas" class="footer-inline-link">Soluções</a>
+                <span class="footer-separator">|</span>
+                <a href="/clientes/" class="footer-inline-link">Clientes</a>
+                <span class="footer-separator">|</span>
+                <a href="/sobre/" class="footer-inline-link">Sobre Nós</a>
+                <span class="footer-separator">|</span>
+                <a href="/contato/" class="footer-inline-link">Contato</a>
+                <span class="footer-separator">|</span>
+                <a href="/termos-de-uso/" class="footer-inline-link" rel="nofollow">Termos de Uso</a>
+                <span class="footer-separator">|</span>
+                <a href="/politica-de-privacidade/" class="footer-inline-link" rel="nofollow">Política de
+                    Privacidade</a>
+            </nav>
+
+            <div class="footer-brand-center">
+                <a href="/" class="footer-brand-link">
+                    <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/animations.js"></script>
+</body>
+
+</html>
