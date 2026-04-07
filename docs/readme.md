@@ -36,7 +36,7 @@ A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
 ## 📁 Estrutura do Projeto
 
-- `/assets/`: Contém todas as imagens, ícones SVG, logotipos de clientes (GAS Planos, Chris Medical, etc) utilizados nas páginas.
+- `/assets/`: Contém todas as imagens, ícones SVG, logotipos de clientes (GAS Planos, ChrisMedical, etc) utilizados nas páginas.
 - `/css/`: Diretório unificado de estilos com o arquivo `styles.css`.
 - `/js/`: Scripts locais do projeto (ex: `animations.js`) utilizados para animar elementos visuais na página, comportamento do menu, etc.
 - `/docs/`: Documentação interna, arquivos `markdown` gerados, planos de ação e estudos de soluções de clientes (como GAS Planos).

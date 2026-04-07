@@ -230,13 +230,13 @@ Seções:
 
 - Header de introducao (titulo e texto)
 - Grid de vitrines de solução:
-  - Chris Medical
+  - ChrisMedical
   - G.A.S Planos
 - Cards com estilos inline locais (na propria pagina) para:
   - hover premium
   - logo grayscale -> color
   - CTA interno revelado no hover
-- CTA final padrao do site
+- CTA final padrao do site com glow bilateral (`cta-glow--left` + `cta-glow--right`)
 
 ## 7.3 Sobre (`site/sobre/index.html`)
 
@@ -248,7 +248,7 @@ Seções:
 
 - Estrutura baseada na `problem-section`
 - Bloco central com card de canais de contato
-- Uso de estilos inline em elementos especificos para espacamento e grid local
+- CTA final padrao com `cta-section`, glows laterais (`cta-glow--left` e `cta-glow--right`) e botoes `btn-primary--large`/`btn-secondary--large`
 
 ## 7.5 Solução: G.A.S Planos (`site/solutions/gasplanos/index.html`)
 
@@ -257,13 +257,13 @@ Seções:
   - coluna visual com carrossel de screenshots
 - Timeline horizontal de problema -> solucao -> resultado
 - Botao para modal de arquitetura AWS
-- CTA final padrao
+- CTA final padrao com `cta-section` e glow bilateral (`cta-glow--left` + `cta-glow--right`)
 
-## 7.6 Solução: Chris Medical (`site/solutions/chrismedical/index.html`)
+## 7.6 Solução: ChrisMedical (`site/solutions/chrismedical/index.html`)
 
 - Estrutura semelhante ao GAS, mas showcase estatico (logo)
 - Timeline horizontal com narrativa da solução
-- CTA final padrao
+- CTA final padrao com `cta-section` e glow bilateral (`cta-glow--left` + `cta-glow--right`)
 
 ## 7.7 Paginas legais
 
@@ -369,7 +369,7 @@ Pontos-chave:
   - **Mobile:** ocupa grande area da viewport com scroll interno quando necessario
   - **Desktop:** modal mais amplo com destaque no diagrama
 
-#### Solução Chris Medical (`site/solutions/chrismedical/index.html`)
+#### Solução ChrisMedical (`site/solutions/chrismedical/index.html`)
 
 - **Estrutura**
   - **Mobile:** bloco de info + showcase estatico empilhado
@@ -426,12 +426,13 @@ Pontos a evoluir:
 - Header e footer praticamente uniformes no site inteiro
 - Tokens de cor e tipografia respeitados na maioria dos componentes
 - linguagem visual dark + glow + bordas translucidas aplicada de forma coerente
+- CTAs finais padronizados nas paginas principais (home, clientes, sobre, soluções e contato) com botoes grandes compartilhados e glow bilateral
 
 ### 10.2 Excecoes locais relevantes
 
 - `clientes/index.html` contem bloco `<style>` especifico para cards de vitrine
 - `solutions/*/index.html` contem blocos `<style>` e scripts inline para comportamento proprio
-- paginas legais e contato usam diversos estilos inline para texto/espacamento
+- paginas legais usam diversos estilos inline para texto/espacamento
 
 Essas excecoes nao quebram o visual, mas fragmentam o design system em multiplos pontos de manutencao.
 

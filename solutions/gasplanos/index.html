@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solução G.A.S Planos | B2M Solutions</title>
-    <meta name="description" content="Solução G.A.S Planos: landing page de alta conversão com infraestrutura de marketing digital e hospedagem na AWS.">
+    <title>G.A.S Planos | B2M Solutions</title>
+    <meta name="description" content="G.A.S Planos: landing para captação em planos de saúde, com front na AWS (S3, CloudFront), GA4/GTM e campanhas ativas.">
     <link rel="canonical" href="https://b2msolutions.com/solutions/gasplanos/">
+    <meta property="og:title" content="G.A.S Planos | B2M Solutions">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVnskPMA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
         rel="stylesheet">
 
     <!-- CSS Puro -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
     <style>
         .solution-back-link {
             display: inline-flex;
@@ -32,6 +35,11 @@
             color: #fff;
         }
     </style>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-chrome-192x192.png?v=4">
 </head>
 
 <body>
@@ -41,7 +49,7 @@
         <div class="header-container">
             <!-- Brand -->
             <a href="/" class="header-brand">
-                <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" decoding="async" fetchpriority="high">
             </a>
 
             <!-- Desktop Nav & Contact -->
@@ -57,35 +65,67 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle">
+            <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
+                    <line class="line-1" x1="4" x2="20" y1="12" y2="12" />
+                    <line class="line-2" x1="4" x2="20" y1="6" y2="6" />
+                    <line class="line-3" x1="4" x2="20" y1="18" y2="18" />
                 </svg>
             </button>
+        </div>
+
+        <!-- Mobile Menu Overlay (Offcanvas) -->
+        <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" decoding="async" loading="lazy">
+                    <button class="mobile-menu-close" aria-label="Fechar menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+
+                <nav class="mobile-menu-nav">
+                    <a href="/" class="mobile-nav-link">Início</a>
+                    <a href="/#problemas" class="mobile-nav-link">Soluções</a>
+                    <a href="/clientes/" class="mobile-nav-link">Clientes</a>
+                    <a href="/sobre/" class="mobile-nav-link">Sobre nós</a>
+                </nav>
+
+                <div class="mobile-menu-footer">
+                    <a href="/contato/" class="btn-primary mobile-menu-cta">Fale conosco</a>
+
+                    <div class="mobile-contact-info">
+                        <p class="mobile-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            contato@b2msolutions.com
+                        </p>
+                        <p class="mobile-contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Seg - Sex, 09h às 18h
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="main-content">
         <section class="solutions-panels-section" style="padding-top: 3rem;">
-            <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding);">
-                <a href="/clientes/" class="solution-back-link reveal">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                    Voltar para Clientes
-                </a>
-            </div>
-
-            <article class="solution-panel solution-panel--active" style="display: block; opacity: 1;">
-                <div class="sol-card">
+            <div class="solution-reading-container">
+                <article class="solution-panel solution-panel--active" style="display: block; opacity: 1;">
+                    <div class="sol-card">
 
                     <!-- ═══════════ HEADER SPLIT: Info + Carrossel ═══════════ -->
-                    <div class="sol-card-header reveal delay-100">
+                    <div class="sol-card-header sol-card-header--centered reveal delay-100">
+                        <a href="/clientes/" class="solution-back-link reveal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                            Voltar para Clientes
+                        </a>
 
                         <!-- Coluna Esquerda: Informações -->
                         <div class="sol-card-info">
@@ -97,8 +137,8 @@
                                 <span>HOSPEDAGEM NA AWS</span>
                             </div>
                             <h1 class="sol-card-title">G.A.S Planos</h1>
-                            <p class="sol-card-desc">Landing page de alta conversão com infraestrutura de Marketing
-                                Digital para captação de leads qualificados no segmento de planos de saúde.</p>
+                            <p class="sol-card-desc">Landing para captação no segmento de planos de saúde: página rápida,
+                                GA4/GTM e Ads no mesmo plano de medição, com site servido pela AWS (S3 + CloudFront).</p>
 
                             <!-- Metadados -->
                             <div class="sol-card-meta">
@@ -120,8 +160,9 @@
                                     </svg>
                                     <span>2026</span>
                                 </div>
+                            </div>
 
-                                <!-- CTA Inline -->
+                            <div class="sol-hero-actions">
                                 <a href="https://gasplanos.com.br" target="_blank" rel="noopener noreferrer"
                                     class="sol-button-neon">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -142,6 +183,7 @@
                                     Ver Arquitetura
                                 </button>
                             </div>
+
                             <!-- Barra Dedicada de Tecnologia (Opção A reposicionada) -->
                             <div class="sol-card-tech-bar">
                                 <div class="sol-tech-bar-list">
@@ -165,23 +207,28 @@
                                 <div class="sol-carousel-track">
                                     <div class="sol-carousel-slide sol-carousel-slide--active">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-1.png"
-                                            alt="G.A.S Planos — Hero Section Principal" loading="lazy">
+                                            alt="G.A.S Planos — Hero Section Principal" width="1912" height="956"
+                                            decoding="async" fetchpriority="high" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-2.png"
-                                            alt="G.A.S Planos — Vantagens Exclusivas e Benefícios" loading="lazy">
+                                            alt="G.A.S Planos — Vantagens Exclusivas e Benefícios" width="1912"
+                                            height="956" decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-3.png"
-                                            alt="G.A.S Planos — Tabela de Preços e Cobertura" loading="lazy">
+                                            alt="G.A.S Planos — Tabela de Preços e Cobertura" width="1912" height="956"
+                                            decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-4.png"
-                                            alt="G.A.S Planos — Rede Própria e Grade de Hospitais" loading="lazy">
+                                            alt="G.A.S Planos — Rede Própria e Grade de Hospitais" width="1912"
+                                            height="956" decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-5.png"
-                                            alt="G.A.S Planos — Diferenciais Competitivos e Contato" loading="lazy">
+                                            alt="G.A.S Planos — Diferenciais Competitivos e Contato" width="1912"
+                                            height="956" decoding="async" loading="lazy">
                                     </div>
                                 </div>
                                 <!-- Indicadores (dots) -->
@@ -211,73 +258,75 @@
                     </div>
                 </div>
 
-                <!-- ═══════════ TIMELINE HORIZONTAL ═══════════ -->
-                <div class="sol-card-timeline reveal delay-200">
-                    <div class="sol-timeline-step">
-                        <div class="sol-timeline-icon sol-timeline-icon--problem">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                </path>
-                                <line x1="12" y1="9" x2="12" y2="13"></line>
-                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                            </svg>
+                    <!-- ═══════════ TIMELINE HORIZONTAL ═══════════ -->
+                    <div class="sol-card-timeline reveal delay-200">
+                        <div class="sol-timeline-step">
+                            <div class="sol-timeline-icon sol-timeline-icon--problem">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                    </path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </div>
+                            <h4 class="sol-timeline-label">O PROBLEMA</h4>
+                            <p class="sol-timeline-text">Sem presença digital, a empresa perdia clientes para
+                                concorrentes com landing pages otimizadas no Google.</p>
                         </div>
-                        <h4 class="sol-timeline-label">O PROBLEMA</h4>
-                        <p class="sol-timeline-text">Sem presença digital, a empresa perdia clientes para
-                            concorrentes com landing pages otimizadas no Google.</p>
+
+                        <!-- Conector -->
+                        <div class="sol-timeline-connector"></div>
+
+                        <div class="sol-timeline-step">
+                            <div class="sol-timeline-icon sol-timeline-icon--execution">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <h4 class="sol-timeline-label">A SOLUÇÃO</h4>
+                            <p class="sol-timeline-text">Landing page responsiva + mídia paga com rastreamento
+                                avançado via GA4, GTM e Microsoft Clarity.</p>
+                        </div>
+
+                        <!-- Conector -->
+                        <div class="sol-timeline-connector"></div>
+
+                        <div class="sol-timeline-step">
+                            <div class="sol-timeline-icon sol-timeline-icon--result">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <h4 class="sol-timeline-label">O RESULTADO</h4>
+                            <p class="sol-timeline-text">Leads qualificados via WhatsApp, engajamento acima da
+                                média do setor e presença digital consolidada.</p>
+                        </div>
                     </div>
 
-                    <!-- Conector -->
-                    <div class="sol-timeline-connector"></div>
+                    <!-- Seção de arquitetura removida — conteúdo agora exibido via Modal -->
 
-                    <div class="sol-timeline-step">
-                        <div class="sol-timeline-icon sol-timeline-icon--execution">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <h4 class="sol-timeline-label">A SOLUÇÃO</h4>
-                        <p class="sol-timeline-text">Landing page responsiva + mídia paga com rastreamento
-                            avançado via GA4, GTM e Microsoft Clarity.</p>
-                    </div>
-
-                    <!-- Conector -->
-                    <div class="sol-timeline-connector"></div>
-
-                    <div class="sol-timeline-step">
-                        <div class="sol-timeline-icon sol-timeline-icon--result">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                        </div>
-                        <h4 class="sol-timeline-label">O RESULTADO</h4>
-                        <p class="sol-timeline-text">Leads qualificados via WhatsApp, engajamento acima da
-                            média do setor e presença digital consolidada.</p>
-                    </div>
-                </div>
-
-                <!-- Seção de arquitetura removida — conteúdo agora exibido via Modal -->
-
-            </article>
+                </article>
+            </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="solutions-cta-section">
+        <section class="cta-section">
             <div class="cta-gradient-overlay"></div>
             <div class="cta-glow--left"></div>
+            <div class="cta-glow--right"></div>
 
             <div class="cta-container reveal">
                 <h2 class="cta-title">
-                    A próxima solução de sucesso pode ser a <span class="text-gradient">sua empresa</span>.
+                    Quer o mesmo tipo de <span class="text-gradient">detalhe</span> no seu projeto?
                 </h2>
                 <p class="cta-text">
-                    Agende uma reunião com a nossa equipe. Sem compromisso, foco 100% em avaliar
-                    seu cenário.
+                    Marque uma conversa: sem compromisso, com tempo para entender stack, gargalo e o que colocar em
+                    produção primeiro.
                 </p>
                 <div class="cta-center">
                     <a href="/contato/" class="btn-primary--large">Fale conosco</a>
@@ -317,9 +366,9 @@
 
             <!-- Diagrama -->
             <div class="arch-modal-diagram">
-                <div class="sol-arch-glow"></div>
                 <img src="/assets/img/solutions/gasplanos/gasplanos-arquitetura.svg"
-                    alt="Diagrama de Arquitetura AWS G.A.S Planos" class="sol-arch-image">
+                    alt="Diagrama de Arquitetura AWS G.A.S Planos" class="sol-arch-image" width="601" height="401"
+                    decoding="async" loading="lazy">
             </div>
         </div>
     </div>
@@ -347,7 +396,7 @@
 
             <div class="footer-brand-center">
                 <a href="/" class="footer-brand-link">
-                    <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" decoding="async" loading="lazy">
                 </a>
             </div>
 
@@ -359,12 +408,8 @@
         </div>
     </footer>
 
-    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js" defer></script>
     <script>
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
-            alert('Menu mobile em desenvolvimento.');
-        });
-
         // ── Modal de Arquitetura AWS ──
         (() => {
             const overlay = document.getElementById('arch-modal-overlay');

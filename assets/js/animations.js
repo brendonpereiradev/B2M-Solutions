@@ -1,6 +1,4 @@
-// src/animations.js
-// Animações de reveal usando Intersection Observer
-// Ignora elementos dentro de painéis de clientes ocultos para evitar slide-up ao trocar abas
+// Animações de reveal (Intersection Observer) e menu mobile off-canvas.
 document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
 
@@ -90,3 +88,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+

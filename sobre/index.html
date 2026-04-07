@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nós | B2M Solutions</title>
     <meta name="description"
-        content="Conheça a B2M Solutions: consultoria de tecnologia premium que conecta sites ultra-rápidos, infraestrutura em AWS e rastreabilidade avançada com GA4/GTM.">
+        content="Consultoria técnica: site, nuvem AWS e medição com GA4/GTM no mesmo time. Priorizamos o que está em produção e medimos o que importa para o negócio.">
     <link rel="canonical" href="https://b2msolutions.com/sobre/">
 
     <meta property="og:title" content="Sobre nós | B2M Solutions">
     <meta property="og:description"
-        content="Consultoria de tecnologia premium focada em performance, confiabilidade e conversão para operações que não podem parar.">
+        content="Site, AWS e GA4/GTM no mesmo time. Priorizamos produção estável antes de feature nova — com critérios claros de deploy e medição.">
     <meta property="og:url" content="https://b2msolutions.com/sobre/">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVnskPMA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
         rel="stylesheet">
 
     <!-- CSS Puro -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-chrome-192x192.png?v=4">
 </head>
 
 <body class="about-page">
@@ -31,7 +38,7 @@
         <div class="header-container">
             <!-- Brand -->
             <a href="/" class="header-brand">
-                <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="header-logo">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" decoding="async" fetchpriority="high">
             </a>
 
             <!-- Desktop Nav & Contact -->
@@ -61,7 +68,7 @@
         <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
             <div class="mobile-menu-content">
                 <div class="mobile-menu-header">
-                    <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="mobile-menu-logo">
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" decoding="async" loading="lazy">
                     <button class="mobile-menu-close" aria-label="Fechar menu">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -112,35 +119,44 @@
 
             <div class="about-hero-container">
                 <div class="about-hero-content">
-                    <h1 class="reveal delay-100 about-hero-title">
+                    <p class="about-hero-eyebrow about-hero-anim about-hero-anim--0">Quem somos</p>
+
+                    <h1 class="about-hero-title about-hero-anim about-hero-anim--150">
                         Sobre a <span class="text-gradient">B2M Solutions</span>
                     </h1>
 
-                        <p class="reveal delay-200 about-hero-manifesto">
-                            A B2M Solutions é uma empresa especializada em soluções tecnológicas que impulsionam a eficiência e a
-                            inovação nos negócios.
-                        </p>
+                    <p class="about-hero-manifesto about-hero-anim about-hero-anim--300">
+                        Somos uma consultoria técnica: site, nuvem e rastreio (GA4/GTM) no mesmo time. Priorizamos o que já
+                        está em produção antes de puxar feature nova — e, em marketing, medimos o que o negócio precisa
+                        decidir, não só o que é fácil de contar.
+                    </p>
 
-                        <p class="reveal delay-200 about-hero-manifesto">
-                            Nossa equipe de especialistas combina conhecimento técnico avançado com uma compreensão profunda das
-                            necessidades do mercado.
-                        </p>
+                    <p class="about-hero-manifesto about-hero-anim about-hero-anim--450">
+                        Aceitamos projeto quando dá para definir dono do deploy, o que é “pronto” e o que conta como
+                        sucesso. Do diagnóstico ao go-live, padrões claros e evolução contínua — não desaparecemos depois
+                        do primeiro deploy.
+                    </p>
 
-                        <p class="reveal delay-200 about-hero-manifesto">
-                            Estamos comprometidos em oferecer soluções de alta qualidade que geram resultados reais e mensuráveis
-                            para nossos clientes.
-                        </p>
+                    <a href="#metodologia" class="about-hero-scroll-indicator about-hero-anim about-hero-anim--550"
+                        aria-label="Ir para a seção Metodologia">
+                        <span class="about-hero-scroll-text">Conheça nossa história</span>
+                        <svg class="about-hero-scroll-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="problem-section work-section" aria-labelledby="metodologia-title">
+        <section id="metodologia" class="problem-section work-section" aria-labelledby="metodologia-title">
             <div class="section-heading section-heading--narrow">
                 <h2 id="metodologia-title" class="section-title reveal">Metodologia para operação <span
                         class="text-gradient">contínua</span></h2>
                 <p class="section-subtitle reveal delay-100">
-                    Trabalhamos em ciclos curtos e integrados para transformar diagnóstico técnico em execução confiável,
-                    com foco em performance, rastreabilidade e escala.
+                    Ciclos curtos: diagnóstico vira plano único, depois deploy e monitoramento — com foco em performance,
+                    rastreio e escala sem regressão silenciosa.
                 </p>
             </div>
 
@@ -187,8 +203,8 @@
             <div class="section-heading section-heading--narrow">
                 <h2 id="fundadores-title" class="section-title reveal">Fundadores</h2>
                 <p class="section-subtitle reveal delay-100">
-                    A liderança da B2M combina visão de negócio com profundidade técnica para conduzir projetos críticos de
-                    ponta a ponta.
+                    Da infraestrutura ao pixel: conduzimos projeto crítico de ponta a ponta, com decisão técnica explícita
+                    em cada etapa.
                 </p>
             </div>
 
@@ -199,8 +215,8 @@
                         <h3 class="founder-name">Brendon</h3>
                         <p class="founder-focus">Co-fundador • Infraestrutura e Performance</p>
                         <p class="founder-bio">
-                            Lidera decisões de arquitetura, disponibilidade e confiabilidade para operações que exigem alta
-                            estabilidade, escalabilidade e resposta rápida em produção.
+                            Define arquitetura, disponibilidade e o que monitorar em produção — para carga subir sem
+                            surpresa na madrugada.
                         </p>
                     </div>
                 </article>
@@ -211,8 +227,8 @@
                         <h3 class="founder-name">Matheus</h3>
                         <p class="founder-focus">Co-fundador • Sites, Conversão e Tracking</p>
                         <p class="founder-bio">
-                            Conecta experiência digital, performance e rastreabilidade para transformar visitas em receita com
-                            dados confiáveis para decisões de crescimento.
+                            Liga experiência, performance e eventos no GA4/GTM — para você ver onde o funil vaza e o que
+                            mudar no site com dados, não com achismo.
                         </p>
                     </div>
                 </article>
@@ -261,7 +277,7 @@
 
             <div class="footer-brand-center">
                 <a href="/" class="footer-brand-link">
-                    <img src="/assets/logos/b2m-logo-dark-nobg.png" alt="B2M Solutions" class="footer-logo">
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" decoding="async" loading="lazy">
                 </a>
             </div>
 
@@ -273,7 +289,7 @@
         </div>
     </footer>
 
-    <script src="/assets/js/animations.js"></script>
+    <script src="/assets/js/animations.js" defer></script>
 
     <script type="application/ld+json">
         {
