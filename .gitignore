@@ -1,10 +1,4 @@
 .cursor/
-cloudfront/
-lighthouse-mobile-report.html
-lighthouse-desktop-report.html
-node_modules/
-package.json
-package-lock.json
-purgecss.config.cjs
-scripts/
 .firecrawl/
+cloudfront/
+

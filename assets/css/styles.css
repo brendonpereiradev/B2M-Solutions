@@ -258,16 +258,21 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-width: 0;
+    gap: 0.5rem;
 }
 
 .header-brand {
     display: flex;
     align-items: center;
+    min-width: 0;
+    flex-shrink: 1;
 }
 
 .header-logo {
     height: 3rem;
     width: auto;
+    max-width: min(11.5rem, calc(100vw - 5rem));
     transition: filter 0.3s ease;
     filter: drop-shadow(0 0 15px rgba(79, 110, 247, 0.3));
 }
@@ -396,6 +401,7 @@ h4 {
     justify-content: center;
     min-width: 44px;
     min-height: 44px;
+    flex-shrink: 0;
     margin-right: -0.5rem;
     color: var(--color-text-muted);
     transition: color 0.3s ease;

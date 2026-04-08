@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     const body = document.body;
 
-    // Verificar se os elementos existem antes de adicionar event listeners
-    if (!mobileMenuToggle || !mobileMenuOverlay || !mobileMenuCloseBtn) {
-        return; // Sai do script se os elementos não estiverem na página
+    // Toggle + overlay são obrigatórios; botão fechar pode estar oculto (CSS) mas ainda no DOM
+    if (!mobileMenuToggle || !mobileMenuOverlay) {
+        return;
     }
 
     // Função para abrir o menu
@@ -65,8 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Fechar ao clicar no botão "X" do header
-    mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    // Fechar ao clicar no botão "X" (quando visível)
+    if (mobileMenuCloseBtn) {
+        mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+    }
 
     // Fechar ao clicar em um link nav
     mobileNavLinks.forEach(link => {
