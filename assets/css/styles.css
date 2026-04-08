@@ -165,6 +165,11 @@ h4 {
     }
 }
 
+/* Herança de color em .section-title não deve cobrir o gradiente (contato, legais, 404) */
+.section-title .text-gradient {
+    color: transparent;
+}
+
 .md-break {
     display: none;
 }
@@ -413,7 +418,8 @@ h4 {
     padding-top: 5rem;
 }
 
-.about-page .main-content {
+.about-page .main-content,
+.contact-page .main-content {
     padding-top: 0;
 }
 
@@ -1212,9 +1218,16 @@ h4 {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    min-height: calc(100vh - 5rem);
+    /* Header é fixed: não ocupa fluxo; 100vh evita “vazar” o footer na 1ª tela (desktop). */
+    min-height: 100vh;
+    min-height: 100dvh;
     padding-top: 5.5rem;
     padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -1251,6 +1264,7 @@ h4 {
 .contact-intro-inner {
     position: relative;
     z-index: 1;
+    width: 100%;
     max-width: var(--container-narrow);
     margin: 0 auto;
 }
@@ -1309,7 +1323,29 @@ h4 {
     display: block;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.92);
-    margin-bottom: 0.2em;
+    margin-bottom: 0;
+    line-height: 1.25;
+}
+
+.contact-meta-email {
+    display: inline-block;
+    margin-top: 0;
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.contact-meta-email:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.contact-meta-email:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.28);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .contact-meta-icon {
@@ -1356,14 +1392,22 @@ h4 {
     width: 100%;
     max-width: none;
     margin: 0;
-    /* 5rem = altura do header fixo; +1.75rem respiro até o eyebrow */
-    padding: calc(5rem + 1.75rem) var(--container-padding) 4.5rem;
+    /* Header é fixed; 100vh preenche a 1ª tela e empurra as seções para baixo do fold */
+    padding: 5.5rem var(--container-padding) 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    min-height: auto;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
     isolation: isolate;
+}
+
+@media (min-width: 768px) {
+    .about-hero {
+        padding-top: 6.5rem;
+        padding-bottom: 5rem;
+    }
 }
 
 .about-hero::after {
@@ -1419,19 +1463,10 @@ h4 {
     opacity: 0.55;
 }
 
-.about-hero-eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: rgba(139, 92, 246, 0.95);
-}
-
-
 .about-hero-container {
     position: relative;
     z-index: 2;
+    width: 100%;
     max-width: var(--container-narrow);
     margin: 0 auto;
 }
@@ -1489,20 +1524,12 @@ h4 {
     animation: aboutHeroIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.about-hero-anim--0 {
-    animation-delay: 0ms;
-}
-
 .about-hero-anim--150 {
     animation-delay: 150ms;
 }
 
 .about-hero-anim--300 {
     animation-delay: 300ms;
-}
-
-.about-hero-anim--450 {
-    animation-delay: 450ms;
 }
 
 .about-hero-anim--550 {
@@ -1520,7 +1547,8 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0;
     margin-top: 2.25rem;
     text-align: center;
     text-decoration: none;
@@ -1538,16 +1566,6 @@ h4 {
 .about-hero-scroll-indicator:focus-visible {
     outline: 2px solid rgba(139, 92, 246, 0.75);
     outline-offset: 3px;
-}
-
-.about-hero-scroll-text {
-    font-size: 0.85rem;
-    color: rgba(240, 244, 255, 0.6);
-    letter-spacing: 0.02em;
-}
-
-.about-hero-scroll-indicator:hover .about-hero-scroll-text {
-    color: rgba(240, 244, 255, 0.88);
 }
 
 .about-hero-scroll-indicator:hover .about-hero-scroll-icon {
@@ -1604,8 +1622,8 @@ h4 {
 }
 
 .about-page .founders-section {
-    padding-top: 2.5rem;
-    padding-bottom: 4rem;
+    padding-top: clamp(3.5rem, 6vw, 5rem);
+    padding-bottom: clamp(4.5rem, 9vw, 7.5rem);
 }
 
 .founders-grid {
@@ -1687,9 +1705,10 @@ h4 {
     padding-top: 3rem;
 }
 
+/* Espaço entre Metodologia e Fundadores (ritmo responsivo) */
 .about-page #metodologia {
     scroll-margin-top: 6rem;
-    padding-bottom: 3rem;
+    padding-bottom: clamp(3.5rem, 6vw, 5rem);
 }
 
 .work-steps-grid {
@@ -2361,7 +2380,10 @@ h4 {
     min-height: auto;
     align-items: flex-start;
     justify-content: center;
-    padding: 4.75rem 0;
+    padding-top: clamp(5rem, 10vw, 8rem);
+    padding-bottom: clamp(4rem, 6vw, 5.5rem);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .about-page .cta-gradient-overlay {
