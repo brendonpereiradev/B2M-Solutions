@@ -251,6 +251,9 @@ h4 {
 }
 
 .header-container {
+    position: relative;
+    /* Acima do overlay aberto (z-index 10000) para o ícone hambúrguer permanecer visível e clicável */
+    z-index: 10001;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);

@@ -12,17 +12,18 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(10, 10, 10, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 9999;
-    /* Evita que a camada invisível capture cliques no header (ícone hambúrguer) */
+    /* Blur só quando aberto — com opacity 0 ainda compõe camada e pode tapar o header em WebKit */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Abaixo da barra (.header-container z-index: 2) quando fechado; acima ao abrir */
+    z-index: 1;
     pointer-events: none;
-    
+
     /* Configuração inicial oculta */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    
+    transition: opacity 0.4s ease, visibility 0.4s ease, backdrop-filter 0.4s ease;
+
     /* Facilitar alinhamento no lado direito */
     display: flex;
     justify-content: flex-end;
@@ -30,6 +31,9 @@
 
 /* Quando aberto: o overlay exibe e desfaz os translateX do content */
 .mobile-menu-overlay.open {
+    z-index: 10000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -187,8 +191,10 @@ body.no-scroll {
 * Hambúrguer Icon Toggle (Para transformar em "X" quando clicado)
 */
 .mobile-menu-toggle {
+    position: relative;
     transition: color 0.3s ease;
-    z-index: 10000; /* Assegura que ele ficará acima caso cruze posições (depende da estrutura atual) */
+    /* Empilha acima do overlay fechado (irmão com z-index: 1) via .header-container */
+    z-index: 1;
 }
 
 /* Transições das linhas isoladas do toggle SVGs da button "mobile-menu-toggle" nas class line-1/2/3 */
