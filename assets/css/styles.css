@@ -870,33 +870,24 @@ h4 {
 
 .graph-bar {
     width: 100%;
-    cursor: pointer;
     border-radius: 2px 2px 0 0;
-    transition: background-color 0.3s ease;
-}
-
-.graph-bar:hover {
-    background-color: rgba(79, 110, 247, 0.8) !important;
 }
 
 .dashboard-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
 }
 
-.dashboard-card-footer-label {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-}
-
-.dashboard-card-footer-value {
-    font-size: 0.75rem;
-    font-family: monospace;
-    color: #ffffff;
+.dashboard-card-footer-text {
+    margin: 0;
+    font-size: 0.6875rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Card Chatbot */
@@ -914,11 +905,6 @@ h4 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: border-color 0.3s ease;
-}
-
-.dashboard-card-chatbot:hover {
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .chatbot-header {
@@ -938,18 +924,23 @@ h4 {
 }
 
 .chatbot-value {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-family: var(--font-display);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
 }
 
 .chatbot-description {
     font-size: 11px;
     color: var(--color-text-muted);
     margin-top: 0.25rem;
-    white-space: nowrap;
+    line-height: 1.35;
+    max-width: 13rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Card Infraestrutura */
@@ -983,18 +974,29 @@ h4 {
     transform: rotate(-90deg);
 }
 
-.infra-status-text {
+.infra-status-badge {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: monospace;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    gap: 0.125rem;
+    pointer-events: none;
+}
+
+.infra-status-check {
+    color: #5eead4;
+}
+
+.infra-status-label {
+    font-family: var(--font-display);
+    font-size: 0.5625rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    color: #22d3a5;
+    text-transform: uppercase;
 }
 
 .infra-title {

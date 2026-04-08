@@ -147,7 +147,7 @@
                     <div class="glow-sphere glow-sphere--primary"></div>
                     <div class="glow-sphere glow-sphere--secondary"></div>
 
-                    <!-- Card 1: Main Status -->
+                    <!-- Card 1: Criação de sites -->
                     <div class="dashboard-card-main glass-panel float-medium">
                         <div class="dashboard-card-header">
                             <div class="dashboard-card-info">
@@ -155,70 +155,83 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                         fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
-                                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="dashboard-title">Servidor de Aplicações</p>
+                                    <p class="dashboard-title">Criação de sites</p>
                                     <p class="dashboard-status">
-                                        <span class="dashboard-status-dot"></span> Dados Sincronizados
+                                        <span class="dashboard-status-dot"></span> Em produção
                                     </p>
                                 </div>
                             </div>
-                            <span class="dashboard-badge">Infraestrutura</span>
+                            <span class="dashboard-badge">Principal</span>
                         </div>
-                        <!-- Micro Graph Mockup -->
+                        <!-- Micro Graph Mockup (evolução / desempenho) -->
                         <div class="graph-container">
-                            <div class="graph-bar" style="height: 30%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar" style="height: 45%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar" style="height: 25%; background-color: rgba(79, 70, 229, 0.4);"></div>
-                            <div class="graph-bar" style="height: 60%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 35%; background-color: rgba(79, 70, 229, 0.2);"></div>
                             <div class="graph-bar" style="height: 50%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 28%; background-color: rgba(79, 70, 229, 0.35);"></div>
+                            <div class="graph-bar" style="height: 62%; background-color: rgba(79, 70, 229, 0.2);"></div>
+                            <div class="graph-bar" style="height: 48%; background-color: rgba(79, 70, 229, 0.2);"></div>
                             <div class="graph-bar"
-                                style="height: 90%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
+                                style="height: 88%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
                             <div class="graph-bar"
-                                style="height: 85%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
+                                style="height: 92%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
                             <div class="graph-bar"
                                 style="height: 100%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
                         </div>
                         <div class="dashboard-card-footer">
-                            <p class="dashboard-card-footer-label">Latência de Resposta (Web/App)</p>
-                            <p class="dashboard-card-footer-value">&lt; 12ms (Alta vel.)</p>
+                            <p class="dashboard-card-footer-text">Crescimento em alta, com ritmo sustentável.</p>
                         </div>
                     </div>
 
-                    <!-- Card 2: Chatbot -->
+                    <!-- Card 2: Marketing digital -->
                     <div class="dashboard-card-chatbot glass-panel float-slow">
                         <div class="chatbot-header">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                                 fill="none" stroke="#22D3A5" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
                             </svg>
-                            <p class="chatbot-label">Chatbot com IA</p>
+                            <p class="chatbot-label">Marketing digital</p>
                         </div>
-                        <p class="chatbot-value">24/7</p>
-                        <p class="chatbot-description">Atendimento automatizado</p>
+                        <p class="chatbot-value">GA4+GTM</p>
+                        <p class="chatbot-description">Mídia e medição no mesmo plano</p>
                     </div>
 
-                    <!-- Card 3: Infra -->
+                    <!-- Card 3: AWS -->
                     <div class="dashboard-card-infra glass-panel float-fast">
                         <div class="infra-ring-container">
-                            <svg class="infra-ring-svg">
-                                <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.1)" stroke-width="4"
+                            <svg class="infra-ring-svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="infra-ring-gradient-aws" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#5EEAD4" />
+                                        <stop offset="50%" stop-color="#22D3A5" />
+                                        <stop offset="100%" stop-color="#14B8A6" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.12)" stroke-width="4"
                                     fill="none" />
-                                <circle cx="24" cy="24" r="20" stroke="#22D3A5" stroke-width="4" fill="none"
-                                    stroke-dasharray="125" stroke-dashoffset="0"
-                                    style="filter: drop-shadow(0 0 5px rgba(34,211,165,0.8));" />
+                                <circle cx="24" cy="24" r="20"
+                                    stroke="url(#infra-ring-gradient-aws)" stroke-width="4" fill="none"
+                                    stroke-linecap="round" stroke-dasharray="125.6" stroke-dashoffset="0" />
                             </svg>
-                            <span class="infra-status-text">ON</span>
+                            <div class="infra-status-badge">
+                                <svg class="infra-status-check" xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                                <span class="infra-status-label">OK</span>
+                            </div>
                         </div>
                         <div>
-                            <p class="infra-title">Infraestrutura</p>
-                            <p class="infra-description">Rede Física &
-                                Cloud<br />em operação</p>
+                            <p class="infra-title">Hospedagem na AWS</p>
+                            <p class="infra-description">Auto scaling, backup e monitoramento em operação</p>
                         </div>
                     </div>
                 </div>
