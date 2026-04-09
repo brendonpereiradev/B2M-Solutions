@@ -245,8 +245,6 @@ h4 {
     z-index: 50;
     background-color: rgba(22, 27, 46, 0.96);
     border-bottom: 1px solid var(--color-border);
-    /* iPhone com notch / Dynamic Island — evita logo e menu sob a área do sistema */
-    padding-top: env(safe-area-inset-top, 0px);
 }
 
 /* Barra centrada e limitada; logo+nav em linha no desktop. */
@@ -531,15 +529,6 @@ h4 {
     display: grid;
     gap: 3rem;
     align-items: center;
-}
-
-/* Com .main-content padding-top 5rem, o primeiro texto alinha ao ~6.875rem do topo (como Sobre/Contato) */
-@media (max-width: 767px) {
-    .hero-container {
-        padding-top: 1.875rem;
-        padding-bottom: 3rem;
-        gap: 2rem;
-    }
 }
 
 @media (min-width: 1024px) {
@@ -1260,32 +1249,12 @@ h4 {
     padding-bottom: clamp(3rem, 10vw, 5rem);
 }
 
-@media (max-width: 767px) {
-    /* .main-content já compensa o header (5rem); total ~6.875rem como about/contact */
-    .problem-section.legal-page-section {
-        padding-top: 1.875rem;
-        padding-bottom: 2.5rem;
-    }
-
-    .problem-section--notfound {
-        padding-top: 1.875rem;
-        padding-bottom: 3rem;
-    }
-
-    /* Secções de conteúdo padrão — menos “respiro” duplicado em ecrãs pequenos */
-    .problem-section:not(.legal-page-section):not(.problem-section--notfound) {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
-
 .legal-text-container {
     max-width: 50rem;
     margin: 0 auto;
     color: var(--color-text-muted);
     line-height: 1.8;
     font-size: 1rem;
-    overflow-wrap: anywhere;
 }
 
 .legal-text-container h2 {
@@ -1340,7 +1309,7 @@ h4 {
     width: 100%;
 }
 
-/* Mobile: mesmo respiro sob o header fixo que .about-hero (padronização entre páginas) */
+/* Mobile: header fixo ~5rem — alinhar respiro ao hero Sobre (evita título sob o header) */
 @media (max-width: 767px) {
     .contact-intro {
         padding-top: 6.875rem;
@@ -2585,7 +2554,7 @@ h4 {
 .site-footer {
     background-color: rgba(16, 20, 31, 0.3);
     padding-top: 3rem;
-    padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -2708,13 +2677,6 @@ h4 {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
     border-bottom: 1px solid rgba(30, 37, 64, 0.5);
-}
-
-@media (max-width: 767px) {
-    .solutions-header {
-        padding-top: 1.875rem;
-        padding-bottom: 2.5rem;
-    }
 }
 
 .clients-hero {
