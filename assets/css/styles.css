@@ -1314,6 +1314,20 @@ h4 {
     .contact-intro {
         padding-top: 6.875rem;
     }
+
+    .contact-intro .section-heading {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-intro .section-title {
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-wrap: balance;
+    }
 }
 
 @media (min-width: 768px) {
