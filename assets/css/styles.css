@@ -1309,6 +1309,13 @@ h4 {
     width: 100%;
 }
 
+/* Mobile: mesmo respiro sob o header fixo que .about-hero (padronização entre páginas) */
+@media (max-width: 767px) {
+    .contact-intro {
+        padding-top: 6.875rem;
+    }
+}
+
 @media (min-width: 768px) {
     .contact-intro {
         padding-top: 6.5rem;
