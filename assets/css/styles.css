@@ -85,6 +85,17 @@ ul {
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
     --radius-full: 9999px;
+    /* Page hero — espaçamento e título (mobile / tablet); alinhado ao header fixo ~5rem */
+    --page-hero-padding-top-mobile: 6.875rem;
+    --page-hero-padding-top-md: 6.5rem;
+    --page-hero-padding-bottom-mobile: 4rem;
+    --page-hero-padding-bottom-md: 5rem;
+    --page-hero-title-size-mobile: 2.25rem;
+    --page-hero-title-size-md: 3rem;
+    /* Case study (solutions) — base do clamp do título do projeto */
+    --case-hero-title-size-min: 2rem;
+    --case-hero-title-size-fluid: 3.5vw;
+    --case-hero-title-size-max: 3.5rem;
 }
 
 /* ===========================================
@@ -553,7 +564,7 @@ h4 {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 2.25rem;
+    font-size: var(--page-hero-title-size-mobile);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
@@ -1199,7 +1210,7 @@ h4 {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: 1.875rem;
+    font-size: var(--page-hero-title-size-mobile);
     font-weight: 700;
     color: #ffffff;
     letter-spacing: -0.02em;
@@ -1208,7 +1219,7 @@ h4 {
 
 @media (min-width: 768px) {
     .section-title {
-        font-size: 3rem;
+        font-size: var(--page-hero-title-size-md);
     }
 }
 
@@ -1239,14 +1250,27 @@ h4 {
 }
 
 .problem-section--notfound {
-    padding-top: 8.75rem;
+    padding-top: var(--page-hero-padding-top-mobile);
     padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .problem-section--notfound {
+        padding-top: 8.75rem;
+    }
 }
 
 /* Termos / política — respiro sob header fixo (mobile e desktop) */
 .problem-section.legal-page-section {
-    padding-top: clamp(5.5rem, 14vw, 9.375rem);
+    padding-top: var(--page-hero-padding-top-mobile);
     padding-bottom: clamp(3rem, 10vw, 5rem);
+}
+
+@media (min-width: 768px) {
+    .problem-section.legal-page-section {
+        padding-top: clamp(var(--page-hero-padding-top-md), 14vw, 9.375rem);
+        padding-bottom: clamp(3rem, 10vw, 5rem);
+    }
 }
 
 .legal-text-container {
@@ -1300,8 +1324,8 @@ h4 {
     /* Header é fixed: não ocupa fluxo; 100vh evita “vazar” o footer na 1ª tela (desktop). */
     min-height: 100vh;
     min-height: 100dvh;
-    padding-top: 5.5rem;
-    padding-bottom: 4rem;
+    padding-top: var(--page-hero-padding-top-mobile);
+    padding-bottom: var(--page-hero-padding-bottom-mobile);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1309,17 +1333,10 @@ h4 {
     width: 100%;
 }
 
-/* Mobile: mesmo respiro sob o header fixo que .about-hero (padronização entre páginas) */
-@media (max-width: 767px) {
-    .contact-intro {
-        padding-top: 6.875rem;
-    }
-}
-
 @media (min-width: 768px) {
     .contact-intro {
-        padding-top: 6.5rem;
-        padding-bottom: 5rem;
+        padding-top: var(--page-hero-padding-top-md);
+        padding-bottom: var(--page-hero-padding-bottom-md);
     }
 }
 
@@ -1479,7 +1496,7 @@ h4 {
     max-width: none;
     margin: 0;
     /* Header é fixed; 100vh preenche a 1ª tela e empurra as seções para baixo do fold */
-    padding: 5.5rem var(--container-padding) 4rem;
+    padding: var(--page-hero-padding-top-mobile) var(--container-padding) var(--page-hero-padding-bottom-mobile);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1489,17 +1506,10 @@ h4 {
     isolation: isolate;
 }
 
-/* Mobile: header fixo ~5rem — precisa de respiro extra até ao título (evita “colado” ao header) */
-@media (max-width: 767px) {
-    .about-hero {
-        padding-top: 6.875rem;
-    }
-}
-
 @media (min-width: 768px) {
     .about-hero {
-        padding-top: 6.5rem;
-        padding-bottom: 5rem;
+        padding-top: var(--page-hero-padding-top-md);
+        padding-bottom: var(--page-hero-padding-bottom-md);
     }
 }
 
@@ -1576,7 +1586,7 @@ h4 {
 
 .about-hero-title {
     font-family: var(--font-display);
-    font-size: 2.6rem;
+    font-size: var(--page-hero-title-size-mobile);
     font-weight: 800;
     color: #ffffff;
     line-height: 1.05;
@@ -1586,15 +1596,9 @@ h4 {
     width: 100%;
 }
 
-@media (min-width: 640px) {
-    .about-hero-title {
-        font-size: 3.3rem;
-    }
-}
-
 @media (min-width: 768px) {
     .about-hero-title {
-        font-size: 4.15rem;
+        font-size: var(--page-hero-title-size-md);
     }
 }
 
@@ -2719,7 +2723,7 @@ h4 {
 
 .solutions-intro h1 {
     font-family: var(--font-display);
-    font-size: 2.25rem;
+    font-size: var(--page-hero-title-size-mobile);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 1.5rem;
@@ -2728,7 +2732,7 @@ h4 {
 
 @media (min-width: 768px) {
     .solutions-intro h1 {
-        font-size: 3.75rem;
+        font-size: var(--page-hero-title-size-md);
     }
 }
 
@@ -3086,7 +3090,11 @@ h4 {
 /* Título do projeto */
 .sol-card-title {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: clamp(
+        var(--case-hero-title-size-min),
+        var(--case-hero-title-size-fluid),
+        var(--case-hero-title-size-max)
+    );
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
