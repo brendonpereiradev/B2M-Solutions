@@ -3,8 +3,6 @@
    Migrado de Tailwind CSS v4
    ========================================= */
 
-@import "./components/mobile-menu.css";
-
 /* ===========================================
    1. RESET & BASE
    =========================================== */
@@ -250,10 +248,12 @@ h4 {
     will-change: transform;
 }
 
+body.nav-open {
+    overflow: hidden;
+}
+
 .header-container {
     position: relative;
-    /* Acima do overlay aberto (z-index 10000) para o ícone hambúrguer permanecer visível e clicável */
-    z-index: 10001;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
@@ -290,8 +290,47 @@ h4 {
     }
 }
 
+/* Botão hambúrguer — visível só abaixo de 768px */
+.mobile-menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    margin-left: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full, 9999px);
+    background: rgba(22, 27, 46, 0.9);
+    color: #ffffff;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+    border-color: rgba(139, 92, 246, 0.45);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+}
+
+.mobile-menu-toggle__bar {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+/* Nav wrapper: em desktop, fluxo horizontal; em mobile, drawer (ver @media abaixo) */
 .header-nav-wrapper {
-    display: none;
     align-items: center;
     margin-left: auto;
 }
@@ -299,6 +338,102 @@ h4 {
 @media (min-width: 768px) {
     .header-nav-wrapper {
         display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: fixed;
+        top: 5rem;
+        right: 0;
+        bottom: 0;
+        width: min(18rem, 86vw);
+        margin-left: 0;
+        padding: 1.25rem 1.5rem;
+        background: rgba(22, 27, 46, 0.98);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-left: 1px solid var(--color-border);
+        z-index: 60;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.nav-open .header-nav-wrapper {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .nav-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0.75rem 0;
+    }
+
+    .mobile-nav-backdrop {
+        display: block;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 55;
+        background: rgba(0, 0, 0, 0.55);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s;
+        pointer-events: none;
+    }
+
+    body.nav-open .mobile-nav-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-nav-wrapper {
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        transform: none;
+        visibility: visible;
+        overflow: visible;
+        z-index: auto;
+    }
+
+    .header-nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .nav-divider {
+        width: 1px;
+        height: 1.25rem;
+        margin: 0 1.5rem;
+    }
+
+    .mobile-nav-backdrop {
+        display: none !important;
     }
 }
 
@@ -396,28 +531,6 @@ h4 {
     border-color: transparent;
     box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
     transform: translateY(-2px);
-}
-
-.mobile-menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
-    margin-right: -0.5rem;
-    color: var(--color-text-muted);
-    transition: color 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-    color: #ffffff;
-}
-
-@media (min-width: 768px) {
-    .mobile-menu-toggle {
-        display: none;
-    }
 }
 
 /* ===========================================
