@@ -1482,6 +1482,13 @@ h4 {
     isolation: isolate;
 }
 
+/* Mobile: header fixo ~5rem — precisa de respiro extra até ao título (evita “colado” ao header) */
+@media (max-width: 767px) {
+    .about-hero {
+        padding-top: 6.875rem;
+    }
+}
+
 @media (min-width: 768px) {
     .about-hero {
         padding-top: 6.5rem;
