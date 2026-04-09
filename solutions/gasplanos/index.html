@@ -207,27 +207,28 @@
                                     <div class="sol-carousel-slide sol-carousel-slide--active">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-1.png"
                                             alt="G.A.S Planos — Hero Section Principal" width="1912" height="956"
+                                            tabindex="0"
                                             decoding="async" fetchpriority="high" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-2.png"
                                             alt="G.A.S Planos — Vantagens Exclusivas e Benefícios" width="1912"
-                                            height="956" decoding="async" loading="lazy">
+                                            height="956" tabindex="0" decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-3.png"
                                             alt="G.A.S Planos — Tabela de Preços e Cobertura" width="1912" height="956"
-                                            decoding="async" loading="lazy">
+                                            tabindex="0" decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-4.png"
                                             alt="G.A.S Planos — Rede Própria e Grade de Hospitais" width="1912"
-                                            height="956" decoding="async" loading="lazy">
+                                            height="956" tabindex="0" decoding="async" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
                                         <img src="/assets/img/solutions/gasplanos/gas-showcase-5.png"
                                             alt="G.A.S Planos — Diferenciais Competitivos e Contato" width="1912"
-                                            height="956" decoding="async" loading="lazy">
+                                            height="956" tabindex="0" decoding="async" loading="lazy">
                                     </div>
                                 </div>
                                 <!-- Indicadores (dots) -->
@@ -367,7 +368,26 @@
             <div class="arch-modal-diagram">
                 <img src="/assets/img/solutions/gasplanos/gasplanos-arquitetura.svg"
                     alt="Diagrama de Arquitetura AWS G.A.S Planos" class="sol-arch-image" width="601" height="401"
-                    decoding="async" loading="lazy">
+                    tabindex="0" decoding="async" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ LIGHTBOX: SCREENSHOTS DO CARROSSEL ═══════════ -->
+    <div class="showcase-lightbox-overlay" id="showcase-lightbox-overlay" role="dialog" aria-modal="true"
+        aria-label="Imagem do projeto ampliada" aria-hidden="true" hidden>
+        <div class="showcase-lightbox-inner">
+            <button type="button" class="showcase-lightbox-close" id="showcase-lightbox-close"
+                aria-label="Fechar imagem ampliada">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="showcase-lightbox-scroll">
+                <img id="showcase-lightbox-img" src="/assets/img/solutions/gasplanos/gas-showcase-1.png"
+                    alt="G.A.S Planos — Hero Section Principal" width="1912" height="956" decoding="async">
             </div>
         </div>
     </div>
@@ -410,112 +430,226 @@
     <script src="/assets/js/animations.js" defer></script>
     <script src="/assets/js/mobile-menu.js" defer></script>
     <script>
-        // ── Modal de Arquitetura AWS ──
-        (() => {
-            const overlay = document.getElementById('arch-modal-overlay');
-            const btnOpen = document.getElementById('btn-open-arch-modal');
-            const btnClose = document.getElementById('arch-modal-close');
-            if (!overlay || !btnOpen || !btnClose) return;
+        document.addEventListener('DOMContentLoaded', () => {
+            const archOverlay = document.getElementById('arch-modal-overlay');
+            const btnOpenArch = document.getElementById('btn-open-arch-modal');
+            const btnCloseArch = document.getElementById('arch-modal-close');
 
-            const openModal = () => {
-                overlay.classList.add('active');
+            const lbOverlay = document.getElementById('showcase-lightbox-overlay');
+            const lbImg = document.getElementById('showcase-lightbox-img');
+            const btnCloseLb = document.getElementById('showcase-lightbox-close');
+
+            let lastFocusBeforeLightbox = null;
+            /** Quando true, o lightbox espelha o slide ativo do carrossel; quando false, mostra só o diagrama AWS. */
+            let lightboxSyncFromCarousel = true;
+
+            const closeShowcaseLightbox = (options = {}) => {
+                const skipFocusRestore = Boolean(options.skipFocusRestore);
+                if (!lbOverlay || !lbOverlay.classList.contains('active')) return;
+                lbOverlay.classList.remove('active');
+                lbOverlay.setAttribute('aria-hidden', 'true');
+                lbOverlay.setAttribute('hidden', '');
+                lightboxSyncFromCarousel = true;
+                const archStillOpen = archOverlay && archOverlay.classList.contains('active');
+                document.body.style.overflow = archStillOpen ? 'hidden' : '';
+                if (!skipFocusRestore) {
+                    const el = lastFocusBeforeLightbox;
+                    if (el && typeof el.focus === 'function') {
+                        el.focus();
+                    }
+                }
+                lastFocusBeforeLightbox = null;
+            };
+
+            const closeArchModal = () => {
+                if (!archOverlay || !archOverlay.classList.contains('active')) return;
+                if (lbOverlay && lbOverlay.classList.contains('active')) {
+                    closeShowcaseLightbox({ skipFocusRestore: true });
+                }
+                archOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                if (btnOpenArch && typeof btnOpenArch.focus === 'function') {
+                    btnOpenArch.focus();
+                }
+            };
+
+            const openArchModal = () => {
+                if (lbOverlay && lbOverlay.classList.contains('active')) {
+                    lbOverlay.classList.remove('active');
+                    lbOverlay.setAttribute('aria-hidden', 'true');
+                    lbOverlay.setAttribute('hidden', '');
+                    lightboxSyncFromCarousel = true;
+                    lastFocusBeforeLightbox = null;
+                }
+                if (!archOverlay) return;
+                archOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             };
 
-            const closeModal = () => {
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
+            const syncShowcaseLightboxFromActiveSlide = () => {
+                if (!lightboxSyncFromCarousel || !lbOverlay || !lbImg || !lbOverlay.classList.contains('active')) {
+                    return;
+                }
+                const activeSlideImg = document.querySelector('.sol-carousel-slide--active img');
+                if (!activeSlideImg) return;
+                lbImg.src = activeSlideImg.currentSrc || activeSlideImg.src;
+                lbImg.alt = activeSlideImg.alt || '';
             };
 
-            // Abrir pelo botão
-            btnOpen.addEventListener('click', openModal);
+            const openShowcaseLightbox = (triggerElement) => {
+                lightboxSyncFromCarousel = true;
+                closeArchModal();
+                lastFocusBeforeLightbox = triggerElement && typeof triggerElement.focus === 'function'
+                    ? triggerElement
+                    : document.activeElement;
+                if (!lbOverlay) return;
+                lbOverlay.removeAttribute('hidden');
+                lbOverlay.setAttribute('aria-hidden', 'false');
+                lbOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                syncShowcaseLightboxFromActiveSlide();
+                if (btnCloseLb) btnCloseLb.focus();
+            };
 
-            // Fechar pelo X
-            btnClose.addEventListener('click', closeModal);
+            const openArchDiagramLightbox = (archImg) => {
+                lightboxSyncFromCarousel = false;
+                lastFocusBeforeLightbox = archImg;
+                if (!lbOverlay || !lbImg) return;
+                lbImg.src = archImg.currentSrc || archImg.src;
+                lbImg.alt = archImg.alt || '';
+                lbOverlay.removeAttribute('hidden');
+                lbOverlay.setAttribute('aria-hidden', 'false');
+                lbOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (btnCloseLb) btnCloseLb.focus();
+            };
 
-            // Fechar clicando no backdrop (fora do conteúdo)
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) closeModal();
-            });
+            if (btnOpenArch && archOverlay && btnCloseArch) {
+                btnOpenArch.addEventListener('click', openArchModal);
+                btnCloseArch.addEventListener('click', closeArchModal);
+                archOverlay.addEventListener('click', (e) => {
+                    if (e.target === archOverlay) closeArchModal();
+                });
+            }
 
-            // Fechar com a tecla Escape
+            if (lbOverlay && btnCloseLb) {
+                btnCloseLb.addEventListener('click', () => closeShowcaseLightbox());
+                lbOverlay.addEventListener('click', (e) => {
+                    if (e.target === lbOverlay) closeShowcaseLightbox();
+                });
+            }
+
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+                if (e.key !== 'Escape') return;
+                if (lbOverlay && lbOverlay.classList.contains('active')) {
+                    e.preventDefault();
+                    closeShowcaseLightbox();
+                    return;
+                }
+                if (archOverlay && archOverlay.classList.contains('active')) {
+                    closeArchModal();
+                }
             });
-        })();
 
-        // Lógica do Carrossel G.A.S Planos
-        document.addEventListener('DOMContentLoaded', () => {
-            const track = document.querySelector('.sol-carousel-track');
+            const archDiagramImg = document.querySelector('#arch-modal-overlay .sol-arch-image');
+            if (archDiagramImg) {
+                archDiagramImg.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openArchDiagramLightbox(archDiagramImg);
+                });
+                archDiagramImg.addEventListener('keydown', (ev) => {
+                    if (ev.key === 'Enter' || ev.key === ' ') {
+                        ev.preventDefault();
+                        openArchDiagramLightbox(archDiagramImg);
+                    }
+                });
+            }
+
+            const track = document.querySelector('#gas-carousel .sol-carousel-track');
             const slides = track ? Array.from(track.children) : [];
-            const dots = document.querySelectorAll('.sol-carousel-dot');
+            const dots = document.querySelectorAll('#gas-carousel .sol-carousel-dot');
 
-            if (!track || slides.length === 0) return;
+            if (track && slides.length > 0) {
+                let currentIndex = 0;
+                const slideCount = slides.length;
+                let autoPlayInterval;
+                let userInteracted = false;
 
-            let currentIndex = 0;
-            const slideCount = slides.length;
-            let autoPlayInterval;
-            let userInteracted = false;
+                const updateCarousel = (index) => {
+                    slides.forEach((slide) => slide.classList.remove('sol-carousel-slide--active'));
+                    dots.forEach((dot) => dot.classList.remove('sol-carousel-dot--active'));
 
-            const updateCarousel = (index) => {
-                slides.forEach(slide => slide.classList.remove('sol-carousel-slide--active'));
-                dots.forEach(dot => dot.classList.remove('sol-carousel-dot--active'));
+                    track.style.transform = `translateX(-${index * 100}%)`;
 
-                track.style.transform = `translateX(-${index * 100}%)`;
+                    slides[index].classList.add('sol-carousel-slide--active');
+                    if (dots[index]) dots[index].classList.add('sol-carousel-dot--active');
+                    syncShowcaseLightboxFromActiveSlide();
+                };
 
-                slides[index].classList.add('sol-carousel-slide--active');
-                if (dots[index]) dots[index].classList.add('sol-carousel-dot--active');
-            };
-
-            const nextSlide = () => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateCarousel(currentIndex);
-            };
-
-            const startAutoPlay = () => {
-                if (userInteracted) return;
-                clearInterval(autoPlayInterval);
-                autoPlayInterval = setInterval(nextSlide, 8000);
-            };
-
-            const stopAutoPlay = () => {
-                clearInterval(autoPlayInterval);
-            };
-
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    userInteracted = true;
-                    currentIndex = index;
+                const nextSlide = () => {
+                    currentIndex = (currentIndex + 1) % slideCount;
                     updateCarousel(currentIndex);
-                    stopAutoPlay();
-                });
-            });
+                };
 
-            const btnPrev = document.querySelector('.sol-carousel-nav--prev');
-            const btnNext = document.querySelector('.sol-carousel-nav--next');
+                const startAutoPlay = () => {
+                    if (userInteracted) return;
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(nextSlide, 8000);
+                };
 
-            if (btnPrev && btnNext) {
-                btnPrev.addEventListener('click', () => {
-                    userInteracted = true;
-                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                    updateCarousel(currentIndex);
-                    stopAutoPlay();
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                slides.forEach((slide) => {
+                    const img = slide.querySelector('img');
+                    if (!img) return;
+                    img.addEventListener('click', () => {
+                        openShowcaseLightbox(img);
+                    });
+                    img.addEventListener('keydown', (ev) => {
+                        if (ev.key === 'Enter' || ev.key === ' ') {
+                            ev.preventDefault();
+                            openShowcaseLightbox(img);
+                        }
+                    });
                 });
 
-                btnNext.addEventListener('click', () => {
-                    userInteracted = true;
-                    nextSlide();
-                    stopAutoPlay();
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        userInteracted = true;
+                        currentIndex = index;
+                        updateCarousel(currentIndex);
+                        stopAutoPlay();
+                    });
                 });
+
+                const btnPrev = document.querySelector('#gas-carousel .sol-carousel-nav--prev');
+                const btnNext = document.querySelector('#gas-carousel .sol-carousel-nav--next');
+
+                if (btnPrev && btnNext) {
+                    btnPrev.addEventListener('click', () => {
+                        userInteracted = true;
+                        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                        updateCarousel(currentIndex);
+                        stopAutoPlay();
+                    });
+
+                    btnNext.addEventListener('click', () => {
+                        userInteracted = true;
+                        nextSlide();
+                        stopAutoPlay();
+                    });
+                }
+
+                const carouselContainer = document.getElementById('gas-carousel');
+                if (carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                    carouselContainer.addEventListener('mouseleave', startAutoPlay);
+                }
+
+                startAutoPlay();
             }
-
-            const carouselContainer = document.querySelector('.sol-carousel');
-            if (carouselContainer) {
-                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-                carouselContainer.addEventListener('mouseleave', startAutoPlay);
-            }
-
-            startAutoPlay();
         });
     </script>
 </body>

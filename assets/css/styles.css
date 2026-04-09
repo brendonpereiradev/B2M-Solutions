@@ -1312,6 +1312,14 @@ h4 {
 /* ===========================================
    CONTACT PAGE
    =========================================== */
+/* Hero a largura total (glow + fundo alinhados ao viewport); conteúdo continua limitado em .contact-intro-inner */
+.problem-section.contact-intro {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .contact-intro {
     position: relative;
     overflow: hidden;
@@ -1319,7 +1327,8 @@ h4 {
     /* Header é fixed: não ocupa fluxo; 100vh evita “vazar” o footer na 1ª tela (desktop). */
     min-height: 100vh;
     min-height: 100dvh;
-    padding-top: 5.5rem;
+    /* Respiro extra abaixo do header para o título não ficar “colado” ao topo visual */
+    padding-top: 7rem;
     padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
@@ -1331,7 +1340,7 @@ h4 {
 /* Mobile: header fixo ~5rem — alinhar respiro ao hero Sobre (evita título sob o header) */
 @media (max-width: 767px) {
     .contact-intro {
-        padding-top: 6.875rem;
+        padding-top: 8.25rem;
     }
 
     .contact-intro .section-heading {
@@ -1351,8 +1360,8 @@ h4 {
 
 @media (min-width: 768px) {
     .contact-intro {
-        padding-top: 6.5rem;
-        padding-bottom: 5rem;
+        padding-top: 8rem;
+        padding-bottom: 5.5rem;
     }
 }
 
@@ -1386,6 +1395,23 @@ h4 {
     width: 100%;
     max-width: var(--container-narrow);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* Empurra o título + painel para baixo no ecrã (equilíbrio com o cartão grande) */
+    padding-top: clamp(1rem, 3.5vh, 2.75rem);
+}
+
+.contact-intro .section-heading {
+    text-align: center;
+    margin-top: 0;
+}
+
+.contact-intro .section-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
 }
 
 .contact-panel {
@@ -2884,29 +2910,18 @@ h4 {
     opacity: 1;
 }
 
-/* Clientes — reveal mais marcado: entrada com profundidade + desfoque que “foca” o card */
+/* Mesma cadência que .reveal no resto do site; funde entrada com as transições de hover do card */
 .sol-showcase-card.reveal {
-    opacity: 0;
-    transform: translate3d(0, 36px, 0) scale(0.965);
-    filter: blur(6px);
     transition:
-        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
-        filter 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
         border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sol-showcase-card.reveal:not(.active) {
-    will-change: opacity, transform, filter;
-}
-
-.sol-showcase-card.reveal.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
-    will-change: auto;
+    will-change: opacity, transform;
 }
 
 .sol-showcase-card>* {
@@ -3710,10 +3725,95 @@ h4 {
     border-radius: var(--radius-lg);
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
     transition: transform 0.5s ease;
+    cursor: zoom-in;
 }
 
 .arch-modal-diagram:hover .sol-arch-image {
     transform: scale(1.02);
+}
+
+/* ===========================================
+   LIGHTBOX: SCREENSHOTS DO CARROSSEL (G.A.S Planos)
+   z-index acima do modal de arquitetura (9999)
+   =========================================== */
+.showcase-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.showcase-lightbox-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.showcase-lightbox-inner {
+    position: relative;
+    width: 100%;
+    max-width: min(96vw, 1920px);
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-lightbox-scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    background-color: rgba(5, 8, 18, 0.5);
+}
+
+.showcase-lightbox-scroll img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.showcase-lightbox-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    background-color: rgba(15, 23, 42, 0.85);
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    z-index: 3;
+}
+
+.showcase-lightbox-close:hover {
+    background-color: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.45);
+    color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.sol-carousel-slide img {
+    cursor: zoom-in;
 }
 
 /* ===========================================
@@ -3787,6 +3887,11 @@ h4 {
         -webkit-backdrop-filter: blur(10px);
     }
 
+    .showcase-lightbox-overlay {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
     .marquee-track {
         animation-duration: 40s;
         will-change: auto;
@@ -3797,10 +3902,6 @@ h4 {
         -webkit-backdrop-filter: blur(6px);
     }
 
-    .sol-showcase-card.reveal:not(.active),
-    .sol-showcase-card.reveal.active {
-        filter: none;
-    }
 }
 
 /* Menos movimento: acessibilidade e menos trabalho por frame */
@@ -3835,11 +3936,6 @@ h4 {
         transform: none;
         transition: none;
         will-change: auto;
-    }
-
-    .sol-showcase-card.reveal,
-    .sol-showcase-card.reveal.active {
-        filter: none;
     }
 
     .delay-100,
