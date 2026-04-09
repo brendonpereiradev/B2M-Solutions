@@ -37,9 +37,15 @@
                 <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" decoding="async" fetchpriority="high">
             </a>
 
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Abrir menu">
+                <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+                <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+                <span class="mobile-menu-toggle__bar" aria-hidden="true"></span>
+            </button>
+
             <!-- Desktop Nav & Contact -->
-            <div class="header-nav-wrapper">
-                <nav class="header-nav">
+            <div class="header-nav-wrapper" id="site-navigation">
+                <nav class="header-nav" aria-label="Principal">
                     <a href="/" class="nav-link">Início</a>
                     <a href="/#problemas" class="nav-link">Soluções</a>
                     <a href="/clientes/" class="nav-link">Clientes</a>
@@ -48,51 +54,8 @@
                 <div class="nav-divider"></div>
                 <a href="/contato/" class="btn-contato">Contato</a>
             </div>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line class="line-1" x1="4" x2="20" y1="12" y2="12" />
-                    <line class="line-2" x1="4" x2="20" y1="6" y2="6" />
-                    <line class="line-3" x1="4" x2="20" y1="18" y2="18" />
-                </svg>
-            </button>
         </div>
-
-        <!-- Mobile Menu Overlay (Offcanvas) -->
-        <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-header">
-                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" decoding="async" loading="lazy">
-                    <button class="mobile-menu-close" aria-label="Fechar menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
-                
-                <nav class="mobile-menu-nav">
-                    <a href="/" class="mobile-nav-link">Início</a>
-                    <a href="/#problemas" class="mobile-nav-link">Soluções</a>
-                    <a href="/clientes/" class="mobile-nav-link">Clientes</a>
-                    <a href="/sobre/" class="mobile-nav-link">Sobre nós</a>
-                </nav>
-
-                <div class="mobile-menu-footer">
-                    <a href="/contato/" class="btn-primary mobile-menu-cta">Fale conosco</a>
-                    
-                    <div class="mobile-contact-info">
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            comercial@b2msolutions.com.br
-                        </p>
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            Seg - Sex, 09h às 18h
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
     </header>
 
     <main class="main-content">
@@ -212,6 +175,7 @@
     </footer>
 
     <script src="/assets/js/animations.js" defer></script>
+    <script src="/assets/js/mobile-menu.js" defer></script>
 </body>
 
 </html>
