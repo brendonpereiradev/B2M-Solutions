@@ -211,12 +211,28 @@ h4 {
     transition-delay: 200ms;
 }
 
+.delay-120 {
+    transition-delay: 120ms;
+}
+
+.delay-280 {
+    transition-delay: 280ms;
+}
+
 .delay-300 {
     transition-delay: 300ms;
 }
 
 .delay-400 {
     transition-delay: 400ms;
+}
+
+.delay-150 {
+    transition-delay: 150ms;
+}
+
+.delay-350 {
+    transition-delay: 350ms;
 }
 
 /* Hero dashboard: animar só o deslocamento — fade de opacidade no contentor
@@ -243,7 +259,10 @@ h4 {
     top: 0;
     width: 100%;
     z-index: 50;
-    background-color: rgba(22, 27, 46, 0.96);
+    /* Fundo semi-transparente + blur: o texto que sobe por baixo fica desfocado ao passar pelo header */
+    background-color: rgba(22, 27, 46, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -2695,9 +2714,17 @@ h4 {
 
 .clients-hero {
     position: relative;
-    /* Glow (::before) e blur saem da caixa; sem isto a página ganha scroll horizontal. */
-    overflow-x: hidden;
     isolation: isolate;
+}
+
+/* Corta o glow que sai da caixa; overflow fica neste wrapper para a secção não usar overflow-x,
+   o que (com hidden) força overflow-y: auto e uma scrollbar vertical indesejada. */
+.clients-hero-glow-clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .clients-hero-glow {
@@ -2843,14 +2870,43 @@ h4 {
 }
 
 .sol-showcase-card:hover {
-    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(139, 92, 246, 0.3);
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.1);
 }
 
+/* Lift só após o reveal (evita conflito de transform com .reveal) */
+.sol-showcase-card.reveal.active:hover {
+    transform: translate3d(0, -8px, 0) scale(1);
+}
+
 .sol-showcase-card:hover::before {
     opacity: 1;
+}
+
+/* Clientes — reveal mais marcado: entrada com profundidade + desfoque que “foca” o card */
+.sol-showcase-card.reveal {
+    opacity: 0;
+    transform: translate3d(0, 36px, 0) scale(0.965);
+    filter: blur(6px);
+    transition:
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sol-showcase-card.reveal:not(.active) {
+    will-change: opacity, transform, filter;
+}
+
+.sol-showcase-card.reveal.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+    will-change: auto;
 }
 
 .sol-showcase-card>* {
@@ -3691,6 +3747,11 @@ h4 {
         -webkit-backdrop-filter: blur(6px);
     }
 
+    .site-header {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
     .about-hero-glow::before,
     .about-hero-glow::after {
         filter: blur(48px);
@@ -3735,12 +3796,23 @@ h4 {
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
     }
+
+    .sol-showcase-card.reveal:not(.active),
+    .sol-showcase-card.reveal.active {
+        filter: none;
+    }
 }
 
 /* Menos movimento: acessibilidade e menos trabalho por frame */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    .site-header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: rgba(22, 27, 46, 0.96);
     }
 
     .marquee-track {
@@ -3765,9 +3837,18 @@ h4 {
         will-change: auto;
     }
 
+    .sol-showcase-card.reveal,
+    .sol-showcase-card.reveal.active {
+        filter: none;
+    }
+
     .delay-100,
+    .delay-120,
+    .delay-150,
     .delay-200,
+    .delay-280,
     .delay-300,
+    .delay-350,
     .delay-400 {
         transition-delay: 0ms;
     }
