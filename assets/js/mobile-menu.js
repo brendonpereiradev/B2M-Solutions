@@ -1,55 +1,67 @@
 /**
- * Menu mobile: drawer + backdrop. Requer markup do plano (botão, #site-navigation, .mobile-nav-backdrop).
+ * Menu mobile: overlay off-canvas (comportamento alinhado ao 3.0.0).
+ * Requer: .mobile-menu-toggle, #mobileMenu, .mobile-menu-close, .mobile-nav-link
  */
 (function () {
     'use strict';
 
     function init() {
         var toggle = document.querySelector('.mobile-menu-toggle');
-        var backdrop = document.querySelector('.mobile-nav-backdrop');
-        var panel = document.getElementById('site-navigation');
-        if (!toggle || !backdrop || !panel) {
+        var overlay = document.getElementById('mobileMenu');
+        var closeBtn = document.querySelector('.mobile-menu-close');
+        var navLinks = document.querySelectorAll('.mobile-nav-link');
+        var body = document.body;
+
+        if (!toggle || !overlay || !closeBtn) {
             return;
         }
 
-        function setOpen(open) {
-            document.body.classList.toggle('nav-open', open);
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-            backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
-            if (open) {
-                var firstLink = panel.querySelector('a');
-                if (firstLink) {
-                    firstLink.focus();
-                }
-            } else {
-                toggle.focus();
-            }
+        function openMenu() {
+            toggle.classList.add('active');
+            overlay.classList.add('open');
+            body.classList.add('no-scroll');
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.setAttribute('aria-label', 'Fechar menu');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeMenu() {
+            toggle.classList.remove('active');
+            overlay.classList.remove('open');
+            body.classList.remove('no-scroll');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menu');
+            overlay.setAttribute('aria-hidden', 'true');
         }
 
         function isOpen() {
-            return document.body.classList.contains('nav-open');
+            return overlay.classList.contains('open');
         }
 
         toggle.addEventListener('click', function () {
-            setOpen(!isOpen());
+            if (isOpen()) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
 
-        backdrop.addEventListener('click', function () {
-            if (isOpen()) {
-                setOpen(false);
+        closeBtn.addEventListener('click', closeMenu);
+
+        var i;
+        for (i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', closeMenu);
+        }
+
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) {
+                closeMenu();
             }
         });
 
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && isOpen()) {
-                setOpen(false);
-            }
-        });
-
-        panel.addEventListener('click', function (e) {
-            if (e.target && e.target.closest && e.target.closest('a')) {
-                setOpen(false);
+                closeMenu();
             }
         });
     }
