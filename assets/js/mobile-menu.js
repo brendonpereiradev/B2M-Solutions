@@ -11,15 +11,30 @@
         var closeBtn = document.querySelector('.mobile-menu-close');
         var navLinks = document.querySelectorAll('.mobile-nav-link');
         var body = document.body;
+        var htmlEl = document.documentElement;
 
         if (!toggle || !overlay || !closeBtn) {
             return;
         }
 
+        /**
+         * Evita overscroll da página por trás do overlay (ex.: iOS) sem usar
+         * position:fixed nem scrollTo — o scroll do documento não é alterado.
+         */
+        function preventBackgroundTouchMove(e) {
+            var panel = overlay.querySelector('.mobile-menu-content');
+            if (panel && panel.contains(e.target)) {
+                return;
+            }
+            e.preventDefault();
+        }
+
         function openMenu() {
+            htmlEl.classList.add('no-scroll');
             toggle.classList.add('active');
             overlay.classList.add('open');
             body.classList.add('no-scroll');
+            document.addEventListener('touchmove', preventBackgroundTouchMove, { passive: false });
             toggle.setAttribute('aria-expanded', 'true');
             toggle.setAttribute('aria-label', 'Fechar menu');
             overlay.setAttribute('aria-hidden', 'false');
@@ -28,7 +43,9 @@
         function closeMenu() {
             toggle.classList.remove('active');
             overlay.classList.remove('open');
+            htmlEl.classList.remove('no-scroll');
             body.classList.remove('no-scroll');
+            document.removeEventListener('touchmove', preventBackgroundTouchMove, { passive: false });
             toggle.setAttribute('aria-expanded', 'false');
             toggle.setAttribute('aria-label', 'Abrir menu');
             overlay.setAttribute('aria-hidden', 'true');

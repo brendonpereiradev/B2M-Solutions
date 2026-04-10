@@ -1324,23 +1324,21 @@ h4 {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    /* Header é fixed: não ocupa fluxo; 100vh evita “vazar” o footer na 1ª tela (desktop). */
-    min-height: 100vh;
-    min-height: 100dvh;
-    /* Respiro extra abaixo do header para o título não ficar “colado” ao topo visual */
-    padding-top: 7rem;
-    padding-bottom: 4rem;
+    min-height: auto;
+    /* Respiro sob header fixo; conteúdo alinhado ao topo para caber na 1ª dobra sem scroll */
+    padding-top: max(5.75rem, env(safe-area-inset-top, 0px));
+    padding-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 }
 
-/* Mobile: header fixo ~5rem — alinhar respiro ao hero Sobre (evita título sob o header) */
+/* Mobile: header fixo — manter folga mínima sob o navbar */
 @media (max-width: 767px) {
     .contact-intro {
-        padding-top: 8.25rem;
+        padding-top: max(6rem, env(safe-area-inset-top, 0px));
     }
 
     .contact-intro .section-heading {
@@ -1360,8 +1358,8 @@ h4 {
 
 @media (min-width: 768px) {
     .contact-intro {
-        padding-top: 8rem;
-        padding-bottom: 5.5rem;
+        padding-top: max(6rem, env(safe-area-inset-top, 0px));
+        padding-bottom: 3rem;
     }
 }
 
@@ -1398,13 +1396,13 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    /* Empurra o título + painel para baixo no ecrã (equilíbrio com o cartão grande) */
-    padding-top: clamp(1rem, 3.5vh, 2.75rem);
+    padding-top: 0;
 }
 
 .contact-intro .section-heading {
     text-align: center;
     margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
 .contact-intro .section-title {
@@ -1414,11 +1412,21 @@ h4 {
     text-wrap: balance;
 }
 
+.contact-intro .section-heading .section-subtitle {
+    margin-top: 0;
+    text-align: left;
+    align-self: stretch;
+}
+
 .contact-panel {
     margin-top: 2.5rem;
     padding: 2rem 1.5rem;
     border-radius: var(--radius-2xl);
     box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.55);
+}
+
+.contact-intro .contact-panel {
+    margin-top: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -1433,7 +1441,7 @@ h4 {
     font-weight: 700;
     color: #ffffff;
     letter-spacing: -0.02em;
-    margin: 0 0 0.35rem;
+    margin: 0 0 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -1537,8 +1545,8 @@ h4 {
     width: 100%;
     max-width: none;
     margin: 0;
-    /* Header é fixed; 100vh preenche a 1ª tela e empurra as seções para baixo do fold */
-    padding: 5.5rem var(--container-padding) 4rem;
+    /* Altura mínima da viewport + eixo principal centralizado (bloco no meio vertical) */
+    padding: max(5.75rem, env(safe-area-inset-top, 0px)) var(--container-padding) 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1548,17 +1556,17 @@ h4 {
     isolation: isolate;
 }
 
-/* Mobile: header fixo ~5rem — precisa de respiro extra até ao título (evita “colado” ao header) */
+/* Mobile: header fixo — folga sob o navbar */
 @media (max-width: 767px) {
     .about-hero {
-        padding-top: 6.875rem;
+        padding-top: max(6rem, env(safe-area-inset-top, 0px));
     }
 }
 
 @media (min-width: 768px) {
     .about-hero {
-        padding-top: 6.5rem;
-        padding-bottom: 5rem;
+        padding-top: max(6rem, env(safe-area-inset-top, 0px));
+        padding-bottom: 3rem;
     }
 }
 
@@ -1588,7 +1596,7 @@ h4 {
     content: "";
     position: absolute;
     top: -35%;
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%);
     width: min(92vw, 60rem);
     height: min(92vw, 60rem);
@@ -1627,7 +1635,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
     width: 100%;
     max-width: 62ch;
     margin: 0 auto;
@@ -1660,8 +1668,8 @@ h4 {
 .about-hero-manifesto {
     font-size: 1.12rem;
     color: rgba(240, 244, 255, 0.78);
-    line-height: 1.75;
-    max-width: 600px;
+    line-height: 1.65;
+    max-width: 100%;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -1701,7 +1709,7 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 0;
-    margin-top: 2.25rem;
+    margin-top: 1.5rem;
     text-align: center;
     text-decoration: none;
     color: inherit;
@@ -1754,7 +1762,7 @@ h4 {
 
 @media (min-width: 768px) {
     .about-hero-manifesto {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 }
 
@@ -1764,7 +1772,7 @@ h4 {
     }
 
     .about-page .about-hero-content {
-        max-width: 68ch;
+        max-width: 70ch;
     }
 }
 
@@ -1969,8 +1977,7 @@ h4 {
 
 .founder-focus {
     font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     color: var(--color-secondary);
 }
 

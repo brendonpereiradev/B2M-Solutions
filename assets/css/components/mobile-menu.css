@@ -34,10 +34,21 @@
 }
 
 /*
-* Prevenir rolagem no Body quando abrir
+* Bloquear scroll da página com o menu aberto. Sem position:fixed nem
+* scrollTo — o viewport permanece na mesma posição ao abrir e ao fechar.
+* touchmove (fora do painel) reforça o bloqueio em iOS/Safari.
 */
+html.no-scroll,
 body.no-scroll {
     overflow: hidden;
+}
+
+html.no-scroll {
+    height: 100%;
+}
+
+body.no-scroll {
+    overscroll-behavior: none;
 }
 
 /*
@@ -64,6 +75,7 @@ body.no-scroll {
 /* Estado de inserção suave cubic p/ slide */
 .mobile-menu-overlay.open .mobile-menu-content {
     transform: translateX(0);
+    touch-action: manipulation;
 }
 
 /*
