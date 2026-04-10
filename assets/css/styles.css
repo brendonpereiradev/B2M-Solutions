@@ -2169,8 +2169,9 @@ h4 {
     --service-accent-rgb: 139, 92, 246;
 }
 
-.service-card:has(.service-card-accent--blue) {
-    --service-accent-rgb: 59, 130, 246;
+/* Laranja AWS (Hospedagem na AWS — alinhado a --color-orange / #F97316) */
+.service-card:has(.service-card-accent--orange) {
+    --service-accent-rgb: 249, 115, 22;
 }
 
 /* Focus Mode: hover dimming (same behavior as problem cards) */
@@ -2243,12 +2244,12 @@ h4 {
     background-color: rgba(139, 92, 246, 0.1);
 }
 
-.service-card-accent--blue {
-    background-color: rgba(59, 130, 246, 0.05);
+.service-card-accent--orange {
+    background-color: rgba(249, 115, 22, 0.05);
 }
 
-.service-card:hover .service-card-accent--blue {
-    background-color: rgba(59, 130, 246, 0.1);
+.service-card:hover .service-card-accent--orange {
+    background-color: rgba(249, 115, 22, 0.1);
 }
 
 .service-icon {
@@ -2280,8 +2281,8 @@ h4 {
     color: var(--color-secondary);
 }
 
-.service-icon--blue {
-    color: var(--color-blue);
+.service-icon--orange {
+    color: var(--color-orange);
 }
 
 .service-impact {
@@ -2314,16 +2315,24 @@ h4 {
     font-weight: 700;
 }
 
-.service-impact .highlight--blue {
-    color: var(--color-blue);
+.service-impact .highlight--orange {
+    color: var(--color-orange);
     font-weight: 700;
+}
+
+.service-card:hover .service-impact .highlight--orange {
+    color: var(--color-orange);
 }
 
 /* Card wide (AWS) */
 
 @media (min-width: 1024px) {
+    /* Linha completa, largura = 2 colunas + 1 gap — centrado na grelha de 3 */
     .service-card--wide {
-        grid-column: span 2;
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: calc((100% - 2 * 1.5rem) / 3 * 2 + 1.5rem);
+        margin-inline: auto;
     }
 }
 
@@ -2342,6 +2351,8 @@ h4 {
 
 .service-card--wide-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -2375,6 +2386,10 @@ h4 {
 
 .service-card:hover .terminal-mockup {
     border-color: rgba(139, 92, 246, 0.3);
+}
+
+.service-card--wide:hover .terminal-mockup {
+    border-color: rgba(249, 115, 22, 0.35);
 }
 
 .terminal-titlebar {
@@ -2436,6 +2451,10 @@ h4 {
 .terminal-body .t-primary {
     color: var(--color-primary);
     margin-top: 0.5rem;
+}
+
+.service-card--wide .terminal-body .t-primary {
+    color: var(--color-orange);
 }
 
 /* Chat bubble animations (seção de serviços) */

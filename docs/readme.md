@@ -20,7 +20,6 @@ A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 - **Marketing Digital:** Captação de leads, integração GA4 + GTM, mídia paga com foco em retorno sobre investimento.
 - **Chatbot com IA:** Atendimento 24/7 automatizado e humanizado para captura e qualificação de clientes.
 - **Criação de Sites e Apps:** Desenvolvimento web e mobile focados em Core Web Vitals, performance (SEO) e alta confiabilidade.
-- **Infraestrutura Física:** Estruturação avançada de rede local, WiFi corporativo de alta performance e cabeamento estruturado.
 - **Hospedagem AWS (Cloud):** Servidores na nuvem auto-escaláveis sob demanda com zero downtime.
 
 ---
