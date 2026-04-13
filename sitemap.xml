@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://b2msolutions.com/</loc>
+    <loc>https://b2msolutions.com.br/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/sobre/</loc>
+    <loc>https://b2msolutions.com.br/sobre/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/clientes/</loc>
+    <loc>https://b2msolutions.com.br/clientes/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/contato/</loc>
+    <loc>https://b2msolutions.com.br/contato/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/solutions/chrismedical/</loc>
+    <loc>https://b2msolutions.com.br/solutions/chrismedical/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/solutions/gasplanos/</loc>
+    <loc>https://b2msolutions.com.br/solutions/gasplanos/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/termos-de-uso/</loc>
+    <loc>https://b2msolutions.com.br/termos-de-uso/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://b2msolutions.com/politica-de-privacidade/</loc>
+    <loc>https://b2msolutions.com.br/politica-de-privacidade/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
