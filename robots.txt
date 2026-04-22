@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://b2msolutions.com/sitemap.xml
+Sitemap: https://b2msolutions.com.br/sitemap.xml
 
