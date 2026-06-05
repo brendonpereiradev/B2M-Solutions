@@ -1556,10 +1556,12 @@ h4 {
     isolation: isolate;
 }
 
-/* Mobile: header fixo — folga sob o navbar */
+/* Mobile: header fixo — folga sob o navbar; linha de scroll compacta no fluxo */
 @media (max-width: 767px) {
     .about-hero {
         padding-top: max(6rem, env(safe-area-inset-top, 0px));
+        padding-bottom: max(3rem, env(safe-area-inset-bottom, 0px));
+        gap: 0;
     }
 }
 
@@ -1712,6 +1714,15 @@ h4 {
     z-index: 2;
 }
 
+@media (max-width: 767px) {
+    .about-hero-scroll-wrap {
+        position: static;
+        bottom: auto;
+        margin-top: 1.75rem;
+        flex-shrink: 0;
+    }
+}
+
 .about-hero-scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -1735,6 +1746,16 @@ h4 {
             rgba(255, 255, 255, 0) 0%,
             rgba(255, 255, 255, 0.16) 40%,
             rgba(139, 92, 246, 0.42) 100%);
+}
+
+@media (max-width: 767px) {
+    .about-hero-scroll-line {
+        height: 5rem;
+    }
+
+    .about-hero-scroll-indicator {
+        gap: 0.5rem;
+    }
 }
 
 .about-hero-scroll-pulse {
