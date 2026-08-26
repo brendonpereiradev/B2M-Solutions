@@ -5,7 +5,7 @@
 
 ---
 
-## 🚀 Sobre o Projeto
+## Sobre o Projeto
 
 Este repositório contém o site institucional da **B2M Solutions**, uma empresa focada em oferecer soluções completas de tecnologia, indo do planejamento estratégico à execução da infraestrutura.
 
@@ -13,7 +13,7 @@ O projeto foi desenvolvido focando em **alta performance**, **design premium (Gl
 
 ---
 
-## 🛠️ Soluções Oferecidas
+## Soluções Oferecidas
 
 A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
@@ -24,7 +24,7 @@ A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
 ---
 
-## 🎨 Aspectos Técnicos e Design
+## Aspectos Técnicos e Design
 
 - **Tecnologias Utilizadas:** HTML5 semântico, CSS3 (Vanilla Puro para máxima customização) e JavaScript Moderno.
 - **Design System:** Estética clean, Dark Mode refinado com elementos de *Glassmorphism* para criar profundidade e um visual premium.
@@ -33,7 +33,7 @@ A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 - `/assets/`: Contém todas as imagens, ícones SVG, logotipos de clientes (GAS Planos, ChrisMedical, etc) utilizados nas páginas.
 - `/css/`: Diretório unificado de estilos com o arquivo `styles.css`.
@@ -44,7 +44,7 @@ A B2M Solutions atua nas seguintes frentes tecnológicas e estratégicas:
 
 ---
 
-## 👨‍💻 Execução Local
+## Execução Local
 
 Caso o desenvolvimento envolva uma interface HTML pura com JS e CSS, para testar a aplicação no seu navegador:
 
