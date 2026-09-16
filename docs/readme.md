@@ -35,7 +35,7 @@ O site é multipágina e reúne cases de clientes, apresentação da empresa, ca
 
 ---
 
-## Tecnologias utilizadas
+## Stack
 
 O site foi desenvolvido sem frameworks front-end, utilizando recursos nativos da web:
 
