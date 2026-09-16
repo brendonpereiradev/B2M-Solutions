@@ -1,7 +1,7 @@
 <h1 align="center">B2M Solutions</h1>
 
 <p align="center">
-  Site institucional da consultoria de tecnologia premium — criação de sites, marketing digital, chatbot com IA e hospedagem AWS.
+  Site institucional da B2M Solutions, cobrindo desenvolvimento web, marketing digital, chatbots e infraestrutura AWS.
 </p>
 
 <p align="center">
@@ -12,42 +12,41 @@
 
 ## Sobre o projeto
 
-**B2M Solutions** é o site institucional de uma consultoria de tecnologia premium focada em centralizar as quatro camadas vitais de operações digitais em um único parceiro técnico: criação de sites de alta performance, marketing digital com rastreamento fim a fim, chatbots inteligentes com IA e hospedagem escalável na nuvem AWS.
+O repositório contém o código do site institucional da B2M Solutions. A empresa oferece serviços de desenvolvimento web, marketing digital com rastreamento de conversão, chatbots com inteligência artificial e hospedagem na AWS.
 
-O projeto é um site multipágina desenvolvido com foco em **alta performance**, **design premium (Glassmorphism + Dark Mode)** e **acessibilidade**, incluindo cases de sucesso, página institucional, contato e páginas legais. A estrutura foi projetada para funcionar como vitrine técnica e funil de conversão, guiando o visitante desde a proposta de valor até o contato direto com a equipe.
+O site é multipágina e reúne cases de clientes, apresentação da empresa, canais de contato e termos legais. A interface utiliza tema escuro com elementos translúcidos (glassmorphism), código semântico e padrões de acessibilidade.
 
 ---
 
 ## Funcionalidades
 
-| Feature | Descrição |
+| Recurso | Descrição |
 |---|---|
-| **Hero interativo com dashboard Glassmorphism** | 3 cards flutuantes animados com simulação visual de métricas para cada serviço (Sites, Marketing, AWS), glow spheres e gradiente animado no título |
-| **Social proof em marquee infinito** | Carrossel contínuo com logos dos clientes (ChrisMedical, G.A.S Planos) e fading edges laterais |
-| **Seção de diagnóstico com glow cards** | Grid de 4 problemas comuns com ícones SVG e iluminação temática (vermelho, laranja, amarelo, roxo) |
-| **Terminal mockup interativo (AWS)** | Simulação de console de deploy com barra macOS e log de auto-scaling (2 a 4 instâncias, 0ms downtime) |
-| **Case studies com carrossel e lightbox** | Screenshots navegáveis com autoplay (8s), dots, setas e visualização em tela cheia acessível com foco gerenciado |
-| **Modal de arquitetura AWS** | Diagrama SVG interativo da topologia de serviços (S3, CloudFront, Route 53, ACM) |
-| **Menu mobile offcanvas premium** | Drawer lateral com overlay Glassmorphism, stagger animations, bloqueio de scroll iOS e acessibilidade ARIA completa |
-| **Página de contato Glassmorphism** | Painel centralizado com e-mail institucional clicável, horário de atendimento e botões de ação |
-| **Páginas legais** | Política de Privacidade e Termos de Uso em páginas dedicadas com tipografia fluida |
-| **Página 404 personalizada** | Erro customizado com design Glassmorphism e botão de retorno para a home |
+| Hero interativo | Três cartões animados com métricas simuladas para os serviços principais e efeitos visuais no título |
+| Carrossel de clientes | Faixa contínua com logotipos dos clientes (ChrisMedical e G.A.S Planos) |
+| Diagnóstico visual | Grade com quatro desafios comuns de clientes e ícones temáticos em SVG |
+| Mockup de terminal AWS | Simulação de console de deploy com registro de escalabilidade automática |
+| Galeria de projetos | Carrossel de capturas com rotação automática, navegação por setas e ampliação em tela cheia com controle de foco |
+| Diagrama de arquitetura | Modal com esquema visual em SVG da infraestrutura na AWS (S3, CloudFront, Route 53 e ACM) |
+| Menu móvel lateral | Gaveta de navegação com transição suave, bloqueio de rolagem no iOS e atributos ARIA |
+| Página de contato | Informações de atendimento, e-mail institucional clicável e botões de redirecionamento |
+| Páginas institucionais e legais | Seções sobre a empresa, política de privacidade e termos de uso |
+| Página 404 | Página de erro personalizada com link para retornar à página inicial |
 
 ---
 
-## Stack
+## Tecnologias utilizadas
 
-O projeto é construído com uma stack leve e de alta performance, sem dependência de frameworks:
+O site foi desenvolvido sem frameworks front-end, utilizando recursos nativos da web:
 
-- **HTML5 semântico**: Estrutura com landmarks (`header`, `nav`, `main`, `section`, `footer`), Schema.org JSON-LD (`Organization`, `ContactPage`), Open Graph e meta tags otimizadas
-- **CSS3 vanilla**: Migrado de Tailwind para CSS puro de alta performance. Variáveis nativas (Custom Properties), Glassmorphism (`backdrop-filter`), tipografia fluida com `clamp()`, CSS Grid e Flexbox, responsivo do mobile ao ultrawide (4K+)
-- **JavaScript ES6+**: Intersection Observer para animações de scroll, carrossel com autoplay, lightbox acessível com foco gerenciado, menu drawer offcanvas com bloqueio de scroll iOS — zero dependência de frameworks externos
-- **Google Tag Manager + GA4**: Rastreamento de conversões e analytics
-- **Microsoft Clarity**: Mapas de calor e gravação de sessões
-- **AWS Cloud (S3 + CloudFront + Route 53 + ACM)**: Hospedagem serverless com CDN global, HTTPS forçado e compressão Gzip/Brotli
-- **CloudFront Functions**: Redirecionamentos 301 e rewrites na borda para URLs canônicas sem `.html`
-- **Assets otimizados**: Favicons automatizados via Node.js (Sharp + to-ico), imagens com `loading="lazy"`, `fetchpriority="high"` e dimensões explícitas para zero CLS
-- **Web Fonts**: Space Grotesk (títulos) e Inter (corpo) via Google Fonts com `preconnect` e `preload` de `.woff2`
+- HTML5: marcação semântica com tags estruturais (`header`, `nav`, `main`, `section`, `footer`), metadados Open Graph e marcação JSON-LD via Schema.org (`Organization`, `ContactPage`).
+- CSS3: variáveis CSS, layouts com Flexbox e Grid, efeitos com `backdrop-filter`, tipografia fluida com `clamp()` e regras para diferentes resoluções de tela.
+- JavaScript ES6+: scripts nativos para animações com Intersection Observer, carrossel, lightbox com controle de foco e menu móvel com trava de rolagem no iOS.
+- AWS (S3, CloudFront, Route 53, ACM): distribuição de conteúdo estático via CDN com HTTPS e compressão Gzip/Brotli.
+- CloudFront Functions: reescrita de URLs e redirecionamentos 301 para remover a extensão `.html`.
+- Google Tag Manager e GA4: coleta de métricas de acesso e conversão.
+- Microsoft Clarity: gravação de sessões e mapas de calor.
+- Otimização de recursos: fontes Space Grotesk e Inter carregadas via Google Fonts com `preload` em `.woff2`, favicons gerados via Node.js (Sharp e to-ico) e imagens com carregamento sob demanda (`loading="lazy"`).
 
 ---
 
@@ -57,47 +56,47 @@ O projeto é construído com uma stack leve e de alta performance, sem dependên
 B2M Solutions/
 ├── assets/
 │   ├── css/
-│   │   ├── styles.css                   # CSS principal (tokens, glassmorphism, layouts, animações)
+│   │   ├── styles.css                   # CSS principal (variáveis, layout e animações)
 │   │   ├── styles.min.css               # CSS minificado para produção
 │   │   └── components/
-│   │       └── mobile-menu.css          # Estilos isolados do menu drawer mobile
+│   │       └── mobile-menu.css          # Estilos do menu móvel
 │   ├── js/
-│   │   ├── animations.js               # Intersection Observer para animações de reveal no scroll
-│   │   └── mobile-menu.js              # Lógica do menu drawer offcanvas com bloqueio de scroll
+│   │   ├── animations.js               # Animações de entrada no scroll via Intersection Observer
+│   │   └── mobile-menu.js              # Controle do menu móvel com bloqueio de rolagem
 │   ├── logos/
-│   │   ├── b2m-logo-dark-nobg-*.png    # Logo B2M em múltiplas resoluções (400w, 800w, full)
-│   │   ├── chrismedical-logo-nobg-*.png # Logo cliente ChrisMedical
-│   │   └── gas-logo.svg               # Logo cliente G.A.S Planos (vetor SVG)
+│   │   ├── b2m-logo-dark-nobg-*.png    # Logotipo da B2M em diferentes resoluções
+│   │   ├── chrismedical-logo-nobg-*.png # Logotipo do cliente ChrisMedical
+│   │   └── gas-logo.svg               # Logotipo do cliente G.A.S Planos
 │   └── img/
-│       ├── favicons/                   # Suite completa de favicons (ICO, PNG, Apple Touch, Android)
-│       ├── sobre/                      # Fotos dos fundadores (Brendon Souza, Matheus Izaias)
-│       └── solutions/gasplanos/        # Screenshots do case e diagrama de arquitetura AWS (SVG)
+│       ├── favicons/                   # Favicons em formatos ICO e PNG
+│       ├── sobre/                      # Fotos dos fundadores
+│       └── solutions/gasplanos/        # Capturas de tela e diagrama da arquitetura AWS
 ├── clientes/
-│   └── index.html                      # Vitrine de clientes e cases de sucesso
+│   └── index.html                      # Lista de clientes e cases
 ├── contato/
-│   └── index.html                      # Canais de contato com painel Glassmorphism
+│   └── index.html                      # Informações e canais de contato
 ├── sobre/
-│   └── index.html                      # Empresa, metodologia e fundadores
+│   └── index.html                      # Apresentação da empresa e fundadores
 ├── solutions/
 │   ├── chrismedical/
-│   │   └── index.html                  # Case de estudo: Marketing Digital e Funil B2B
+│   │   └── index.html                  # Estudo de caso: ChrisMedical
 │   └── gasplanos/
-│       └── index.html                  # Case de estudo: Site, AWS Cloud, Carrossel e Modal
+│       └── index.html                  # Estudo de caso: G.A.S Planos
 ├── politica-de-privacidade/
-│   └── index.html                      # Página legal de Política de Privacidade
+│   └── index.html                      # Política de privacidade
 ├── termos-de-uso/
-│   └── index.html                      # Página legal de Termos de Uso
+│   └── index.html                      # Termos de uso
 ├── cloudfront/
-│   ├── function-viewer-request.js      # CloudFront Function para 301, trailing slash e rewrites S3
-│   └── README.md                       # Documentação da Edge Function
+│   ├── function-viewer-request.js      # Função de borda para redirecionamentos e rotas no S3
+│   └── README.md                       # Documentação da função CloudFront
 ├── scripts/
-│   └── generate-favicons.mjs           # Automação de favicons via Sharp + to-ico
+│   └── generate-favicons.mjs           # Script para geração de favicons com Sharp e to-ico
 ├── docs/
 │   └── readme.md                       # Este arquivo
-├── index.html                          # Página principal (landing page institucional)
-├── 404.html                            # Página de erro 404 personalizada
-├── robots.txt                          # Diretivas de indexação e link do sitemap
-├── sitemap.xml                         # Mapa do site com 8 URLs canônicas
+├── index.html                          # Página inicial
+├── 404.html                            # Página de erro 404
+├── robots.txt                          # Regras de indexação para motores de busca
+├── sitemap.xml                         # Mapa do site com as rotas canônicas
 └── .gitignore
 ```
 
@@ -105,38 +104,37 @@ B2M Solutions/
 
 ## Páginas do site
 
-1. **Início** (`index.html`): Hero com dashboard Glassmorphism interativo, social proof marquee, diagnóstico com glow cards, soluções com terminal mockup AWS e CTA final
-2. **Sobre Nós** (`sobre/`): Manifesto institucional, metodologia em 4 etapas (Diagnóstico, Planejamento, Implementação, Evolução contínua) e apresentação dos fundadores
-3. **Clientes** (`clientes/`): Vitrine em cards responsivos com logos, categorias e links para os cases
-4. **Case G.A.S Planos** (`solutions/gasplanos/`): Carrossel de 5 screenshots com autoplay, lightbox acessível, modal de arquitetura AWS em SVG, timeline horizontal e barra de tecnologias
-5. **Case ChrisMedical** (`solutions/chrismedical/`): Header split com logo do cliente, barra de stack técnica e timeline de impacto
-6. **Contato** (`contato/`): Painel Glassmorphism com e-mail clicável (`comercial@b2msolutions.com.br`), horário de atendimento e botões de ação
-7. **Política de Privacidade** (`politica-de-privacidade/`): Termos de coleta, uso, compartilhamento e segurança de dados
-8. **Termos de Uso** (`termos-de-uso/`): Condições de aceitação, propriedade intelectual e limites de responsabilidade
-9. **Erro 404** (`404.html`): Página de erro personalizada com design consistente e botão de retorno
+- Início (`index.html`): apresentação dos serviços, logotipos de clientes, visão geral de soluções e chamada para contato.
+- Sobre (`sobre/`): história da empresa, etapas de trabalho e apresentação dos fundadores.
+- Clientes (`clientes/`): listagem de projetos realizados com atalhos para os estudos de caso.
+- Estudo de caso G.A.S Planos (`solutions/gasplanos/`): galeria com capturas de tela do projeto, modal com diagrama de arquitetura AWS e lista de tecnologias usadas.
+- Estudo de caso ChrisMedical (`solutions/chrismedical/`): visão geral do projeto de marketing digital e etapas de implementação.
+- Contato (`contato/`): canais de atendimento direto (`comercial@b2msolutions.com.br`).
+- Política de Privacidade (`politica-de-privacidade/`): diretrizes de tratamento e proteção de dados.
+- Termos de Uso (`termos-de-uso/`): termos de navegação e direitos autorais.
+- Página 404 (`404.html`): aviso de página não encontrada com link de retorno à página inicial.
 
 ---
 
-## SEO e performance
+## Otimizações de SEO e desempenho
 
-- Schema.org JSON-LD (`Organization`, `ContactPage`) com dados estruturados dos fundadores e horários de atendimento
-- Open Graph completo em todas as páginas para compartilhamento social (WhatsApp, LinkedIn, Twitter/X)
-- Meta tags otimizadas com `title`, `description` e `canonical` únicos por página
-- `robots.txt` e `sitemap.xml` com 8 rotas mapeadas, frequências e prioridades
-- Preload de fontes críticas `.woff2` (Space Grotesk, Inter) para evitar FOUT/FOIT
-- CSS minificado em produção (`styles.min.css`)
-- Scripts com `defer` para carregamento não-bloqueante
-- Imagens com `width`/`height` explícitos, `loading="lazy"`, `fetchpriority="high"` e `decoding="async"` para zero CLS
-- `@media (prefers-reduced-motion: reduce)` para desativar animações contínuas
-- CloudFront Functions na borda para URLs canônicas e redirecionamentos 301
-- Content Security Policy (CSP) via meta tag
-- Links legais no footer com `rel="nofollow"` e página 404 com `meta robots="noindex"`
+- Marcação Schema.org em formato JSON-LD (`Organization` e `ContactPage`) com dados institucionais e canais de contato.
+- Metadados Open Graph em todas as páginas para pré-visualização em redes sociais e mensageiros.
+- Tags `title`, `description` e `canonical` configuradas individualmente por rota.
+- Arquivos `robots.txt` e `sitemap.xml` com as rotas públicas mapeadas.
+- Pré-carregamento (`preload`) dos arquivos de fonte `.woff2` para reduzir atrasos na renderização do texto.
+- Folha de estilo minificada para ambiente de produção (`styles.min.css`).
+- Scripts com atributo `defer` para não bloquear o parsing do HTML.
+- Imagens com atributos de dimensão (`width` e `height`), carregamento preguiçoso (`loading="lazy"`) e decodificação assíncrona.
+- Suporte a `@media (prefers-reduced-motion: reduce)` para respeitar as preferências de acessibilidade do usuário.
+- Redirecionamentos 301 e padronização de URLs executados em borda via CloudFront Functions.
+- Cabeçalhos de segurança configurados via Content Security Policy (CSP).
 
 ---
 
 ## Licença e uso
 
-Este repositório é público exclusivamente para fins de demonstração de portfólio. As marcas, logotipos e conteúdos pertencem aos seus respectivos proprietários, sendo vedada a utilização comercial deste projeto por terceiros sem autorização prévia.
+Este repositório é disponibilizado para visualização de código e portfólio. As marcas, logotipos e conteúdos pertencem aos respectivos proprietários, não sendo autorizada a reprodução comercial sem permissão prévia.
 
 ---
 
