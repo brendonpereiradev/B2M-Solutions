@@ -116,7 +116,7 @@ B2M Solutions/
 
 ---
 
-## Otimizações de SEO e desempenho
+## SEO e desempenho
 
 - Marcação Schema.org em formato JSON-LD (`Organization` e `ContactPage`) com dados institucionais e canais de contato.
 - Metadados Open Graph em todas as páginas para pré-visualização em redes sociais e mensageiros.
