@@ -1,5 +1,5 @@
 /* Case palette: canvas #08090D, text #F5F6FA, secondary #9AA4B8,
-   quiet surface #121520, focus #3B82F6. Geist headings, Inter body.
+   quiet surface #121520, focus #7C3AED. Geist headings, Inter body.
    Intro -> full-width project gallery -> narrative -> technical reference.
    The client's actual screens carry the visual identity; no decorative panels. */
 .project-case { display: grid; gap: clamp(3rem, 6vw, 5rem); }

@@ -18,9 +18,10 @@
     --color-text-faint: #414B60;
 
     /* Acentos e Status (Precisão Técnica) */
-    --color-accent: #3B82F6;
-    --color-accent-hover: #2563EB;
-    --color-accent-glow: rgba(59, 130, 246, 0.18);
+    --color-accent: #7C3AED;
+    --color-accent-hover: #6425B1;
+    --color-accent-light: #A78BFA;
+    --color-accent-glow: rgba(124, 58, 237, 0.22);
     --color-indigo: #6366F1;
     --color-emerald: #10B981;
     --color-emerald-glow: rgba(16, 185, 129, 0.2);
@@ -30,7 +31,7 @@
     /* Bordas e Linhas de Grid Suíço (1px Precision) */
     --border-grid: 1px solid rgba(255, 255, 255, 0.07);
     --border-grid-strong: 1px solid rgba(255, 255, 255, 0.14);
-    --border-grid-accent: 1px solid rgba(59, 130, 246, 0.4);
+    --border-grid-accent: 1px solid rgba(124, 58, 237, 0.4);
     --border-grid-subtle: 1px solid rgba(255, 255, 255, 0.04);
     --border-color: rgba(255, 255, 255, 0.07);
     --border-color-hover: rgba(255, 255, 255, 0.16);

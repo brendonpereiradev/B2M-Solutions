@@ -68,7 +68,7 @@ button {
 
 /* Seleção de Texto */
 ::selection {
-    background-color: rgba(59, 130, 246, 0.3);
+    background-color: rgba(124, 58, 237, 0.35);
     color: var(--color-text-primary);
 }
 
@@ -133,9 +133,9 @@ p {
 }
 
 .mono-tag--accent {
-    background-color: rgba(59, 130, 246, 0.08);
-    border-color: rgba(59, 130, 246, 0.25);
-    color: #93C5FD;
+    background-color: rgba(124, 58, 237, 0.12);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: #C4B5FD;
 }
 
 .mono-tag--success {
@@ -758,7 +758,7 @@ p {
     transform: translateX(-50%);
     width: 600px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(59, 130, 246, 0.12), transparent 70%);
+    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.16), transparent 70%);
     pointer-events: none;
 }
 
@@ -1196,10 +1196,15 @@ p {
 
 .step-card {
     padding: 2.25rem;
-    background-color: var(--color-surface);
+    background-color: var(--color-bg);
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    transition: background-color var(--transition-fast);
+}
+
+.step-card:hover {
+    background-color: var(--color-surface);
 }
 
 .step-number {
@@ -1359,14 +1364,14 @@ p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--color-accent);
+    color: var(--color-text-primary);
     font-size: 0.875rem;
     font-weight: 500;
     transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
 .case-card:hover .case-link-row {
-    color: var(--color-accent-light);
+    color: var(--color-text-primary);
     gap: 0.75rem;
 }
 
