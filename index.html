@@ -1,27 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>B2M Solutions</title>
-    <meta name="description" content="Oferecemos sites com marketing digital e infraestrutura AWS preparada para campanhas e picos de tráfego, com desempenho e confiabilidade.">
+    <title>Sites, campanhas e infraestrutura | B2M Solutions</title>
+    <meta name="description" content="Desenvolvimento web rápido, rastreamento de conversões e infraestrutura AWS para suportar grandes volumes de tráfego.">
     <link rel="canonical" href="https://b2msolutions.com.br/">
-    <meta property="og:title" content="B2M Solutions">
-    <meta property="og:description" content="Oferecemos sites com marketing digital e infraestrutura AWS preparada para campanhas e picos de tráfego, com desempenho e confiabilidade.">
+    <meta property="og:title" content="Sites, campanhas e infraestrutura | B2M Solutions">
+    <meta property="og:description" content="Desenvolvimento web rápido, rastreamento de conversões e infraestrutura AWS para suportar grandes volumes de tráfego.">
     <meta property="og:url" content="https://b2msolutions.com.br/">
+    <meta property="og:type" content="website">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Geist, Geist Mono, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVnskPMA.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS Puro -->
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/components/home-hero.css">
     <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico?v=9">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-tab.png?v=9">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png?v=9">
@@ -31,65 +29,60 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Cabeçalho Principal -->
     <header class="site-header">
-        <div class="header-inner">
-            <div class="header-container">
-                <!-- Brand -->
-            <a href="/" class="header-brand">
-                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" decoding="async" fetchpriority="high">
+        <div class="container header-inner">
+            <a href="/" class="header-brand" aria-label="B2M Solutions Página Inicial">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" fetchpriority="high">
             </a>
 
-            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Navegação Desktop -->
+            <nav class="header-nav" aria-label="Navegação Principal">
+                <a href="/" class="nav-link active">Início</a>
+                <a href="#solucoes" class="nav-link">Soluções</a>
+                <a href="/clientes/" class="nav-link">Clientes</a>
+                <a href="/sobre/" class="nav-link">Sobre nós</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/contato/" class="btn btn-secondary">Contato</a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu de navegação">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line class="line-1" x1="4" x2="20" y1="12" y2="12" />
                     <line class="line-2" x1="4" x2="20" y1="6" y2="6" />
                     <line class="line-3" x1="4" x2="20" y1="18" y2="18" />
                 </svg>
             </button>
-            </div>
-
-            <!-- Desktop Nav & Contact -->
-            <div class="header-nav-wrapper" id="site-navigation">
-                <nav class="header-nav" aria-label="Principal">
-                    <a href="/" class="nav-link">Início</a>
-                    <a href="#problemas" class="nav-link">Soluções</a>
-                    <a href="/clientes/" class="nav-link">Clientes</a>
-                    <a href="/sobre/" class="nav-link">Sobre nós</a>
-                </nav>
-                <div class="nav-divider"></div>
-                <a href="/contato/" class="btn-contato">Contato</a>
-            </div>
         </div>
+
+        <!-- Painel Mobile Offcanvas -->
         <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
             <div class="mobile-menu-content">
                 <div class="mobile-menu-header">
-                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" decoding="async" loading="lazy">
-                    <button type="button" class="mobile-menu-close" aria-label="Fechar menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" loading="lazy">
+                    <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Fechar menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                 </div>
 
-                <nav class="mobile-menu-nav" aria-label="Principal">
+                <nav class="mobile-menu-nav" aria-label="Principal Mobile">
                     <a href="/" class="mobile-nav-link">Início</a>
-                    <a href="/#problemas" class="mobile-nav-link">Soluções</a>
+                    <a href="#solucoes" class="mobile-nav-link">Soluções</a>
                     <a href="/clientes/" class="mobile-nav-link">Clientes</a>
                     <a href="/sobre/" class="mobile-nav-link">Sobre nós</a>
                 </nav>
 
                 <div class="mobile-menu-footer">
-                    <a href="/contato/" class="btn-primary mobile-menu-cta">Fale conosco</a>
-
+                    <a href="/contato/" class="btn btn-primary" style="width: 100%;">Fale Conosco</a>
                     <div class="mobile-contact-info">
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            comercial@b2msolutions.com.br
-                        </p>
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            Seg - Sex, 09h às 18h
-                        </p>
+                        <p>comercial@b2msolutions.com.br</p>
+                        <p>Segunda a Sexta, 09h às 18h</p>
                     </div>
                 </div>
             </div>
@@ -97,451 +90,224 @@
     </header>
 
     <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-glow"></div>
-
-            <div class="hero-container">
-                <!-- Esquerda: Conteúdo (60%) -->
+        <!-- Hero principal -->
+        <section class="hero-section hero-home" aria-labelledby="hero-title">
+            <div class="container hero-grid">
                 <div class="hero-content">
-                    <!-- Headline -->
-                    <h1 class="reveal delay-100 hero-title">
-                        <span class="nowrap-desktop">Toda sua operação</span> <br />
-                        <span class="text-gradient nowrap-desktop">centralizada</span>
-                    </h1>
-
-                    <p class="reveal delay-200 hero-subtitle">
-                        Sua operação cresce. Nós garantimos que a tecnologia acompanha. Do site à nuvem, passando por
-                        marketing e IA, tudo conectado e funcionando no momento que mais importa: quando você está
-                        investindo em campanha e o tráfego dispara.
+                    <h1 class="hero-title" id="hero-title"><span class="hero-title-lead">Sites rápidos,</span> <span class="hero-title-support">com a infraestrutura que seu projeto precisa.</span></h1>
+                    <p class="hero-subtitle">
+                        Desenvolvemos seu site, configuramos o rastreamento de conversões e cuidamos da hospedagem na AWS.
                     </p>
-
-                    <!-- CTAs -->
-                    <div class="reveal delay-300 hero-ctas">
-                        <a href="/contato/" class="btn-primary">Fale conosco</a>
-                        <a href="#problemas" class="btn-secondary">Conheça nossas soluções</a>
-                    </div>
-
-                    <!-- Micro-stats -->
-                    <div class="reveal delay-400 hero-stats">
-                        <div>
-                            <p class="stat-value">Sites</p>
-                            <p class="stat-label">Plataformas sob medida</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div>
-                            <p class="stat-value">Integração</p>
-                            <p class="stat-label">Marketing & Inteligência Artificial</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div>
-                            <p class="stat-value">Infraestrutura</p>
-                            <p class="stat-label">Hospedagem & escala na AWS</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Direita: Glassmorphism Dashboard Animado (40%) -->
-                <div class="hero-dashboard reveal delay-200">
-                    <!-- Glow Background -->
-                    <div class="glow-sphere glow-sphere--primary"></div>
-                    <div class="glow-sphere glow-sphere--secondary"></div>
-
-                    <!-- Card 1: Criação de sites -->
-                    <div class="dashboard-card-main glass-panel float-medium">
-                        <div class="dashboard-card-header">
-                            <div class="dashboard-card-info">
-                                <div class="dashboard-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                        fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="dashboard-title">Criação de sites</p>
-                                    <p class="dashboard-status">
-                                        <span class="dashboard-status-dot"></span> Em produção
-                                    </p>
-                                </div>
-                            </div>
-                            <span class="dashboard-badge">Principal</span>
-                        </div>
-                        <!-- Micro Graph Mockup (evolução / desempenho) -->
-                        <div class="graph-container">
-                            <div class="graph-bar" style="height: 35%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar" style="height: 50%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar" style="height: 28%; background-color: rgba(79, 70, 229, 0.35);"></div>
-                            <div class="graph-bar" style="height: 62%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar" style="height: 48%; background-color: rgba(79, 70, 229, 0.2);"></div>
-                            <div class="graph-bar"
-                                style="height: 88%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
-                            <div class="graph-bar"
-                                style="height: 92%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
-                            <div class="graph-bar"
-                                style="height: 100%; background-color: #22D3A5; box-shadow: 0 0 10px #22D3A5;"></div>
-                        </div>
-                        <div class="dashboard-card-footer">
-                            <p class="dashboard-card-footer-text">Mais visitas. Menos abandono.</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Marketing digital -->
-                    <div class="dashboard-card-chatbot glass-panel float-slow">
-                        <div class="chatbot-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                fill="none" stroke="#22D3A5" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <p class="chatbot-label">Marketing digital</p>
-                        </div>
-                        <p class="chatbot-value">Google Ads · Meta Ads</p>
-                        <p class="chatbot-description">Cada real investido, rastreado.</p>
-                    </div>
-
-                    <!-- Card 3: AWS -->
-                    <div class="dashboard-card-infra glass-panel float-fast">
-                        <div class="infra-ring-container">
-                            <svg class="infra-ring-svg" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="infra-ring-gradient-aws" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#5EEAD4" />
-                                        <stop offset="50%" stop-color="#22D3A5" />
-                                        <stop offset="100%" stop-color="#14B8A6" />
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.12)" stroke-width="4"
-                                    fill="none" />
-                                <circle cx="24" cy="24" r="20"
-                                    stroke="url(#infra-ring-gradient-aws)" stroke-width="4" fill="none"
-                                    stroke-linecap="round" stroke-dasharray="125.6" stroke-dashoffset="0" />
-                            </svg>
-                            <div class="infra-status-badge">
-                                <svg class="infra-status-check" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg>
-                                <span class="infra-status-label">OK</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p class="infra-title">Hospedagem na AWS</p>
-                            <p class="infra-description">No ar quando o tráfego dispara.</p>
-                        </div>
+                    <div class="hero-actions">
+                        <a href="/contato/" class="btn btn-primary btn-lg">Falar com os fundadores</a>
+                        <a href="/clientes/" class="hero-text-link">Ver projetos entregues</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Proof Marquee -->
-        <section class="social-proof">
-            <div class="social-proof-heading reveal">
-                <p>Marcas com as quais trabalhamos</p>
+        <!-- Faixa de Prova Social (Marquee) -->
+        <section class="social-proof-section" aria-label="Empresas atendidas">
+            <div class="container" style="text-align: center; margin-bottom: 1.5rem;">
+                <p class="mono-label">EMPRESAS QUE CONFIAM NA ENGENHARIA DA B2M</p>
             </div>
-            <div class="marquee-wrapper">
-                <!-- Gradientes laterais -->
-                <div class="marquee-fade--left"></div>
-                <div class="marquee-fade--right"></div>
-
-                <!-- Track 1 -->
+            <div class="marquee-container">
+                <div class="marquee-fade-left" aria-hidden="true"></div>
+                <div class="marquee-fade-right" aria-hidden="true"></div>
                 <div class="marquee-track">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                </div>
+                    <!-- Grupo 1 -->
+                    <div class="marquee-group">
+                        <div class="marquee-item">
+                            <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/gas-logo.svg" alt="G.A.S Planos de Saúde" class="marquee-logo" width="2816" height="1536" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/gas-logo.svg" alt="G.A.S Planos de Saúde" class="marquee-logo" width="2816" height="1536" loading="lazy">
+                        </div>
+                    </div>
 
-                <!-- Track 2: cópia para loop infinito -->
-                <div class="marquee-track" aria-hidden="true">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
-                    <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" decoding="async" loading="lazy">
-                    <img src="/assets/logos/gas-logo.svg" alt="GAS" class="marquee-logo" width="2816" height="1536" decoding="async" loading="lazy">
+                    <!-- Grupo 2 (Duplicata para loop contínuo infinito) -->
+                    <div class="marquee-group" aria-hidden="true">
+                        <div class="marquee-item">
+                            <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/gas-logo.svg" alt="G.A.S Planos de Saúde" class="marquee-logo" width="2816" height="1536" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/chrismedical-logo-nobg-280w.png" alt="ChrisMedical" class="marquee-logo" width="280" height="179" loading="lazy">
+                        </div>
+                        <div class="marquee-item">
+                            <img src="/assets/logos/gas-logo.svg" alt="G.A.S Planos de Saúde" class="marquee-logo" width="2816" height="1536" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Section (Pontos de dor) -->
-        <section class="problem-section" id="problemas">
-            <!-- Heading -->
-            <div class="section-heading reveal">
-                <h2 class="section-title">
-                    Sua tecnologia atual é um <span class="text-gradient">gargalo de crescimento?</span>
-                </h2>
-                <p class="section-subtitle">
-                    Quando site, servidor ou rede não acompanham, o prejuízo não aparece só na queda, aparece no lead
-                    que foi embora em silêncio e na equipe que passa o dia apagando incêndio em vez de produzir.
-                </p>
-            </div>
+        <!-- Seção de Gargalos de Produção (Grid Suíço) -->
+        <section class="section-pad" id="diagnostico">
+            <div class="container">
+                <div class="section-header reveal">
 
-            <!-- Problem Grid -->
-            <div class="problem-grid">
-                <!-- Glow decorativo -->
-                <div class="grid-glow"></div>
-
-                <!-- Card 1 (Marketing Digital/Chatbot) -->
-                <div class="reveal delay-100 problem-card card-glow-red">
-                    <div class="problem-icon problem-icon--red">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
-                    </div>
-                    <h3>Baixa captação de clientes</h3>
-                    <p>Enquanto sua presença digital não está estruturada, quem investiu nisso está convertendo os
-                        clientes que deveriam ser seus.</p>
-                </div>
-
-                <!-- Card 2 (AWS Cloud) -->
-                <div class="reveal delay-200 problem-card card-glow-orange">
-                    <div class="problem-icon problem-icon--orange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m2 2 20 20"></path>
-                            <path d="M5.78 5.78a7 7 0 0 0 9.77 9.74"></path>
-                            <path d="M7 21h10a5 5 0 0 0 5-5c0-2.31-1.55-4.27-3.66-4.83"></path>
-                            <path d="M22 16.14V16a5 5 0 0 0-5-5c0-4.42-3.58-8-8-8-.35 0-.7.03-1.04.09"></path>
-                        </svg>
-                    </div>
-                    <h3>Quedas em picos de tráfego</h3>
-                    <p>Justamente quando a campanha está rodando e o tráfego sobe, o site trava, e cada segundo fora do
-                        ar é faturamento que não volta.</p>
-                </div>
-
-                <!-- Card 3 (Criação de Sites) -->
-                <div class="reveal delay-300 problem-card card-glow-yellow">
-                    <div class="problem-icon problem-icon--yellow">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="#EAB308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
-                            <polyline points="17 18 23 18 23 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Presença digital não marcante</h3>
-                    <p>Lento, desatualizado ou com cara de amador: o visitante decide em segundos se confia na sua marca
-                        ou vai embora procurar outro.</p>
-                </div>
-
-                <!-- Card 4 (Chatbot / IA) -->
-                <div class="reveal delay-400 problem-card card-glow-purple">
-                    <div class="problem-icon problem-icon--purple">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            <path d="M8 10h.01"></path>
-                            <path d="M12 10h.01"></path>
-                            <path d="M16 10h.01"></path>
-                        </svg>
-                    </div>
-                    <h3>Visitantes sem resposta fora do horário</h3>
-                    <p>Quem chega à noite ou no fim de semana encontra silêncio. O interesse esfria, a concorrência
-                        responde primeiro e o lead vai embora.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services-section" id="servicos">
-            <!-- Background -->
-            <div class="services-bg"></div>
-
-            <div class="services-container">
-                <!-- Heading -->
-                <div class="section-heading reveal">
                     <h2 class="section-title">
-                        Veja as nossas <span class="text-gradient">soluções</span>
+                        O que sua empresa precisa resolver?
                     </h2>
-                    <p class="section-subtitle">
-                        Da estrutura de rede no escritório até o servidor na nuvem, a B2M cuida de cada camada para que
-                        você escale sem tropeçar no que não estava no radar.
-                    </p>
                 </div>
 
-                <!-- Services Grid -->
+                <div class="swiss-grid-frame swiss-grid-4 reveal delay-100">
+                    <article class="problem-cell">
+
+                        <h3 class="problem-heading">Servidor fora do ar em picos</h3>
+                        <p class="problem-text">
+                            O site precisa continuar disponível quando uma campanha aumenta o volume de acessos.
+                        </p>
+                    </article>
+
+                    <article class="problem-cell">
+
+                        <h3 class="problem-heading">Lentidão que afasta visitantes</h3>
+                        <p class="problem-text">
+                            Quem chega pelo celular precisa encontrar a informação sem esperar por uma página pesada.
+                        </p>
+                    </article>
+
+                    <article class="problem-cell">
+
+                        <h3 class="problem-heading">Anúncios sem métricas claras</h3>
+                        <p class="problem-text">
+                            Sem acompanhar contatos e conversões, fica difícil avaliar o que as campanhas estão trazendo para a empresa.
+                        </p>
+                    </article>
+
+                    <article class="problem-cell">
+
+                        <h3 class="problem-heading">Demora no atendimento inicial</h3>
+                        <p class="problem-text">
+                            Dúvidas recorrentes e contatos fora do horário podem acumular antes de chegar à equipe comercial.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Soluções & Engenharia (Bento Grid) -->
+        <section class="section-pad" id="solucoes">
+            <div class="container">
+                <div class="section-header reveal">
+
+                    <h2 class="section-title">
+                        Como podemos ajudar
+                    </h2>
+                </div>
+
                 <div class="services-grid">
+                    <!-- Card 1: Criação de Sites -->
+                    <article class="service-card reveal delay-100">
+                        <div class="service-card-header">
 
-                    <!-- Service 1: Criação de Sites -->
-                    <div class="reveal delay-100 service-card">
-                        <div class="service-card-accent service-card-accent--secondary"></div>
-                        <div class="service-icon service-icon--secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Criação de sites</h3>
-                        <p>Sites e landings rápidos, com SEO desde o início e experiência pensada para segurar o visitante
-                            nos primeiros segundos.</p>
-                        <div class="service-impact">
-                            Carregamento que o visitante sente antes do primeiro <span
-                                class="highlight--secondary">título</span>.
-                        </div>
-                    </div>
-
-                    <!-- Service 2: Marketing Digital -->
-                    <div class="reveal delay-200 service-card">
-                        <div class="service-card-accent service-card-accent--primary"></div>
-                        <div class="service-icon service-icon--primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                        </div>
-                        <h3>Marketing Digital</h3>
-                        <p>Cuidamos de mídia paga, rastreamento e conversão no mesmo plano, para você saber exatamente
-                            de onde vem cada cliente.</p>
-                        <div class="service-impact">
-                            Parar de investir no <span class="highlight--primary">escuro</span> começa por medir o que
-                            importa.
-                        </div>
-                    </div>
-
-                    <!-- Service 3: ChatBot -->
-                    <div class="reveal delay-300 service-card">
-                        <div class="service-card-accent service-card-accent--success"></div>
-                        <div class="service-icon service-icon--success">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                <path d="M8 10h.01"></path>
-                                <path d="M12 10h.01"></path>
-                                <path d="M16 10h.01"></path>
-                            </svg>
-                        </div>
-                        <h3>Chatbot com IA</h3>
-                        <p>Atende, qualifica e responde a qualquer hora, sem depender de formulário estático ou de alguém
-                            disponível do outro lado.</p>
-                        <div class="service-impact">
-                            O primeiro contato fora do expediente não precisa virar <span
-                                class="highlight--success">silêncio</span>.
-                        </div>
-                    </div>
-
-                    <!-- Service 4: Hospedagem AWS (Card Wide com Terminal) -->
-                    <div class="reveal delay-400 service-card service-card--wide">
-                        <div class="service-card-accent service-card-accent--orange"
-                            style="width: 16rem; height: 16rem;"></div>
-                        <div class="service-card--wide-layout">
-                            <div class="service-card--wide-content">
-                                <div class="service-icon service-icon--orange">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-                                    </svg>
-                                </div>
-                                <h3>Hospedagem na AWS</h3>
-                                <p>Infraestrutura que escala quando o tráfego sobe, com backup e monitoramento contínuo,
-                                    para você passar menos tempo apagando incêndio e mais tempo evoluindo o negócio.</p>
-                                <div class="service-impact">
-                                    O servidor que não te <span class="highlight--orange">acorda</span> às 3h da manhã.
-                                </div>
-                            </div>
-                            <div class="terminal-mockup">
-                                <!-- Terminal Mockup da AWS -->
-                                <div class="terminal-titlebar">
-                                    <div class="terminal-dot terminal-dot--red"></div>
-                                    <div class="terminal-dot terminal-dot--yellow"></div>
-                                    <div class="terminal-dot terminal-dot--green"></div>
-                                    <span class="terminal-filename">aws-deploy.log</span>
-                                </div>
-                                <div class="terminal-body">
-                                    <p>[INFO] Deploying to AWS us-east-1...</p>
-                                    <p class="t-success">[OK] EC2 instance i-0a7b... running</p>
-                                    <p class="t-success">[OK] SSL certificate active</p>
-                                    <p class="t-warning">[WARN] Traffic spike +340% detected</p>
-                                    <p class="t-primary">> Auto-scaling: 2 → 4 instances. 0ms downtime.</p>
-                                </div>
+                            <div class="service-icon-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
                             </div>
                         </div>
-                    </div>
+                        <h3 class="service-title">Criação de sites e plataformas</h3>
+                        <p class="service-text">
+                            Criamos sites e páginas de campanha adaptados ao celular, com atenção ao carregamento, à navegação e à organização do conteúdo.
+                        </p>
+                    <a class="service-case-link" href="/solutions/gasplanos/">Conhecer o projeto da G.A.S Planos</a>
+                    </article>
+
+                    <!-- Card 2: Marketing & Rastreamento -->
+                    <article class="service-card reveal delay-200">
+                        <div class="service-card-header">
+
+                            <div class="service-icon-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="6" r="6"></circle>
+                                    <circle cx="12" cy="2" r="2"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="service-title">Gestão de tráfego e rastreamento</h3>
+                        <p class="service-text">
+                            Gerenciamos campanhas no Google Ads e Meta Ads e configuramos o rastreamento para acompanhar contatos e avaliar o desempenho dos anúncios.
+                        </p>
+                    <a class="service-case-link" href="/solutions/chrismedical/">Conhecer o projeto da ChrisMedical</a>
+                    </article>
+
+                    <!-- Card 3: Chatbots IA -->
+                    <article class="service-card reveal delay-300">
+                        <div class="service-card-header">
+
+                            <div class="service-icon-wrap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="service-title">Assistentes e automações com IA</h3>
+                        <p class="service-text">
+                            Assistentes configurados com as regras da sua empresa para responder dúvidas frequentes, filtrar contatos e repassar dados organizados ao time comercial.
+                        </p>
+                    </article>
+
+                    <!-- Hospedagem AWS -->
+                    <article class="service-card service-card--wide reveal delay-100">
+                        <h3 class="service-title">Hospedagem e escala na AWS</h3>
+                        <p class="service-text">
+                            Estrutura em nuvem com S3, CloudFront e Route 53. Conteúdo distribuído em servidores próximos ao usuário, com HTTPS automático e suporte a picos de tráfego.
+                        </p>
+                    <a class="service-case-link" href="/solutions/gasplanos/">Ver a hospedagem do projeto G.A.S Planos</a>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Section -->
-        <section class="cta-section">
-            <!-- Gradiente -->
-            <div class="cta-gradient-overlay"></div>
-            <!-- Glow points -->
-            <div class="cta-glow--left"></div>
-            <div class="cta-glow--right"></div>
-
-            <div class="cta-container reveal">
-                <h2 class="cta-title">
-                    Quer entender o que está <br />
-                    travando o seu <span class="text-gradient">crescimento</span>?
-                </h2>
-                <p class="cta-text">
-                    A primeira conversa é nossa. Sem compromisso, só um bate-papo honesto sobre onde sua operação está
-                    hoje e o que faz sentido resolver primeiro.
-                </p>
-                <div class="cta-buttons">
-                    <a href="./contato/" class="btn-primary--large">Fale conosco</a>
-                    <a href="/clientes/" class="btn-secondary--large">Conheça nossos clientes</a>
+        <!-- Seção de Chamada Final (CTA) -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <h2 class="cta-title">
+                        Quer avaliar a tecnologia da sua empresa?
+                    </h2>
+                    <p class="cta-text">
+                        Analisamos sua estrutura atual de site, servidores e campanhas para indicar melhorias práticas de desempenho e custo.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="/contato/" class="btn btn-primary btn-lg">Entrar em contato</a>
+                        <a href="/clientes/" class="btn btn-secondary btn-lg">Ver nossos clientes</a>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
+    <!-- Rodapé Principal -->
     <footer class="site-footer">
-        <div class="footer-bg"></div>
-        <div class="footer-container">
-            <!-- Links de navegação em linha -->
-            <nav class="footer-inline-nav">
-                <a href="/" class="footer-inline-link">Início</a>
-                <span class="footer-separator">|</span>
-                <a href="#problemas" class="footer-inline-link">Soluções</a>
-                <span class="footer-separator">|</span>
-                <a href="/clientes/" class="footer-inline-link">Clientes</a>
-                <span class="footer-separator">|</span>
-                <a href="/sobre/" class="footer-inline-link">Sobre nós</a>
-                <span class="footer-separator">|</span>
-                <a href="/contato/" class="footer-inline-link">Contato</a>
-                <span class="footer-separator">|</span>
-                <a href="/termos-de-uso/" class="footer-inline-link" rel="nofollow">Termos de Uso</a>
-                <span class="footer-separator">|</span>
-                <a href="/politica-de-privacidade/" class="footer-inline-link" rel="nofollow">Política de
-                    Privacidade</a>
+        <div class="container footer-inner">
+            <a href="/" class="footer-brand" aria-label="B2M Solutions Página Inicial">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" loading="lazy">
+            </a>
+
+            <nav class="footer-nav" aria-label="Navegação do Rodapé">
+                <a href="/#solucoes" class="footer-link">Soluções</a>
+                <a href="/clientes/" class="footer-link">Clientes</a>
+                <a href="/sobre/" class="footer-link">Sobre nós</a>
+                <a href="/politica-de-privacidade/" class="footer-link">Privacidade</a>
+                <a href="/termos-de-uso/" class="footer-link">Termos</a>
+                <a href="/contato/" class="footer-link">Contato</a>
             </nav>
 
-            <!-- Logo centralizada -->
-            <div class="footer-brand-center">
-                <a href="/" class="footer-brand-link">
-                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" decoding="async" loading="lazy">
-                </a>
-            </div>
-
-            <!-- Copyright e links legais -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
-                </p>
-            </div>
+            <p class="footer-copy">&copy; 2026 B2M Solutions. Todos os direitos reservados.</p>
         </div>
     </footer>
 

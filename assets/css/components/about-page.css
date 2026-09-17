@@ -1,0 +1,8 @@
+.about-page .founder-card { padding: 0; border: 0; background: none; }
+.about-page .founder-header { align-items: flex-start; flex-direction: column; }
+.about-page .founder-avatar { width: 160px; height: 160px; border: 0; }
+.about-page .founder-role { font-family: var(--font-body); font-size: 0.9375rem; color: var(--color-text-secondary); margin-top: 0.5rem; }
+.about-page .founder-bio { max-width: 52ch; font-size: 1rem; }
+.about-page .founders-grid { gap: clamp(3rem, 7vw, 6rem); }
+.about-page .step-card { padding: 1.5rem; }
+.about-page .step-desc { font-size: 0.9375rem; }

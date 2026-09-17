@@ -29,7 +29,9 @@
             e.preventDefault();
         }
 
+        overlay.inert = true;
         function openMenu() {
+            overlay.inert = false;
             htmlEl.classList.add('no-scroll');
             toggle.classList.add('active');
             overlay.classList.add('open');
@@ -38,6 +40,7 @@
             toggle.setAttribute('aria-expanded', 'true');
             toggle.setAttribute('aria-label', 'Fechar menu');
             overlay.setAttribute('aria-hidden', 'false');
+            closeBtn.focus();
         }
 
         function closeMenu() {
@@ -49,6 +52,8 @@
             toggle.setAttribute('aria-expanded', 'false');
             toggle.setAttribute('aria-label', 'Abrir menu');
             overlay.setAttribute('aria-hidden', 'true');
+            overlay.inert = true;
+            toggle.focus();
         }
 
         function isOpen() {
@@ -64,6 +69,9 @@
         });
 
         closeBtn.addEventListener('click', closeMenu);
+        window.addEventListener('resize', function () {
+            if (isOpen() && getComputedStyle(toggle).display === 'none') closeMenu();
+        });
 
         var i;
         for (i = 0; i < navLinks.length; i++) {
@@ -77,6 +85,12 @@
         });
 
         document.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab' && isOpen()) {
+                var items = overlay.querySelectorAll('a[href], button:not([disabled])');
+                var first = items[0], last = items[items.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
             if (e.key === 'Escape' && isOpen()) {
                 closeMenu();
             }

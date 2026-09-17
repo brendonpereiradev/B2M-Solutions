@@ -1,0 +1,63 @@
+/* Case palette: canvas #08090D, text #F5F6FA, secondary #9AA4B8,
+   quiet surface #121520, focus #3B82F6. Geist headings, Inter body.
+   Intro -> full-width project gallery -> narrative -> technical reference.
+   The client's actual screens carry the visual identity; no decorative panels. */
+.project-case { display: grid; gap: clamp(3rem, 6vw, 5rem); }
+.project-case-intro { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+.project-case-intro h1 { font-size: clamp(2.75rem, 6vw, 5rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.045em; margin-bottom: 1.25rem; }
+.project-case-intro p { max-width: 48ch; font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--color-text-secondary); line-height: 1.6; }
+.project-case-intro > a { flex-shrink: 0; }
+.project-case-brand { width: clamp(140px, 18vw, 220px); height: auto; flex-shrink: 0; object-fit: contain; }
+.project-case-gallery { margin: 0; min-width: 0; }
+.project-case-gallery .sol-card-showcase { border: 0; border-radius: 0; }
+.project-case-gallery figcaption { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; color: var(--color-text-secondary); font-size: 0.9375rem; }
+.project-case-gallery .sol-carousel-dot { width: 24px; height: 24px; background: transparent; position: relative; transform: none; }
+.project-case-gallery .sol-carousel-dot::after { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: var(--color-text-muted); }
+.project-case-gallery .sol-carousel-dot--active::after { background: var(--color-text-primary); }
+.project-case-gallery .sol-carousel-nav { width: 44px; height: 44px; }
+.project-case h2 { font-size: clamp(1.375rem, 2.2vw, 1.875rem); font-weight: 500; letter-spacing: -0.025em; margin-bottom: 1rem; }
+.project-case-story {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(2rem, 4vw, 4rem);
+    padding: 2rem;
+    background-color: var(--color-bg-subtle, #0D0F17);
+    border-radius: var(--radius-sm, 6px);
+}
+.project-case-story p { max-width: 65ch; line-height: 1.8; color: var(--color-text-secondary); }
+.project-case-story h2 { font-size: 1rem; letter-spacing: 0; margin-bottom: 1.5rem; color: var(--color-text-secondary); }
+.project-deliverables { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.25rem; }
+.project-deliverables h3 { font-size: 1.0625rem; font-weight: 500; margin-bottom: 0.375rem; }
+.project-deliverables p { font-size: 0.9375rem; line-height: 1.65; }
+.project-case-story .project-outcome-highlight { font-size: clamp(1.75rem, 2.8vw, 2.5rem); line-height: 1.15; letter-spacing: -0.035em; font-weight: 500; color: var(--color-text-primary); margin-bottom: 1.25rem; text-wrap: balance; }
+.project-case-technical { border-top: var(--border-grid); padding-top: 2rem; }
+.project-case-technical h2 { font-size: 1.25rem; }
+.project-case-technical dl { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin: 1.5rem 0; }
+.project-case-technical dt { font-size: 0.9375rem; margin-bottom: 0.5rem; }
+.project-case-technical dd { margin: 0; font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.7; }
+.project-text-link { color: var(--color-text-primary); background: none; padding: 0; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 5px; cursor: pointer; }
+.project-case :is(a, button):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+.project-case-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+}
+.project-case-contact .cta-title { text-wrap: balance; }
+.project-case-contact .cta-actions { justify-content: center; }
+@media (max-width: 767px) {
+    .project-case-intro { flex-direction: column; align-items: flex-start; }
+    .project-case-story, .project-case-technical dl { grid-template-columns: 1fr; }
+    .project-case-story { padding: 1.5rem; }
+    .project-case-gallery .sol-carousel-nav { top: calc(50% - 24px); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project-case-story { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .project-case .sol-carousel-track { transition: none; }
+}

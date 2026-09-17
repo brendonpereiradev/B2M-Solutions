@@ -1,40 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>G.A.S Planos | B2M Solutions</title>
-    <meta name="description" content="G.A.S Planos: landing para captação em planos de saúde, com front na AWS (S3, CloudFront), GA4/GTM e campanhas ativas.">
+    <title>Cliente: G.A.S Planos | B2M Solutions</title>
+    <meta name="description" content="Estruturação da presença digital da G.A.S Planos com landing page na AWS, campanhas de Google Ads e rastreamento no GA4.">
     <link rel="canonical" href="https://b2msolutions.com.br/solutions/gasplanos/">
-    <meta property="og:title" content="G.A.S Planos | B2M Solutions">
+    <meta property="og:title" content="Cliente: G.A.S Planos | B2M Solutions">
+    <meta property="og:description" content="Estruturação da presença digital da G.A.S Planos com landing page na AWS, campanhas de Google Ads e rastreamento no GA4.">
+    <meta property="og:url" content="https://b2msolutions.com.br/solutions/gasplanos/">
+    <meta property="og:type" content="article">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Geist, Geist Mono, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVnskPMA.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS Puro -->
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
-    <style>
-        .solution-back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-text-muted);
-            font-weight: 500;
-            transition: color 0.3s;
-            margin-bottom: 2rem;
-        }
-
-        .solution-back-link:hover {
-            color: #fff;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/components/project-case.css">
     <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico?v=9">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-tab.png?v=9">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png?v=9">
@@ -44,65 +29,60 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Cabeçalho Principal -->
     <header class="site-header">
-        <div class="header-inner">
-            <div class="header-container">
-                <!-- Brand -->
-            <a href="/" class="header-brand">
-                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" decoding="async" fetchpriority="high">
+        <div class="container header-inner">
+            <a href="/" class="header-brand" aria-label="B2M Solutions Página Inicial">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="header-logo" width="400" height="154" fetchpriority="high">
             </a>
 
-            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Navegação Desktop -->
+            <nav class="header-nav" aria-label="Navegação Principal">
+                <a href="/" class="nav-link">Início</a>
+                <a href="/#solucoes" class="nav-link">Soluções</a>
+                <a href="/clientes/" class="nav-link active">Clientes</a>
+                <a href="/sobre/" class="nav-link">Sobre nós</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/contato/" class="btn btn-secondary">Contato</a>
+            </div>
+
+            <!-- Botão Menu Mobile -->
+            <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu de navegação">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line class="line-1" x1="4" x2="20" y1="12" y2="12" />
                     <line class="line-2" x1="4" x2="20" y1="6" y2="6" />
                     <line class="line-3" x1="4" x2="20" y1="18" y2="18" />
                 </svg>
             </button>
-            </div>
-
-            <!-- Desktop Nav & Contact -->
-            <div class="header-nav-wrapper" id="site-navigation">
-                <nav class="header-nav" aria-label="Principal">
-                    <a href="/" class="nav-link">Início</a>
-                    <a href="/#problemas" class="nav-link">Soluções</a>
-                    <a href="/clientes/" class="nav-link">Clientes</a>
-                    <a href="/sobre/" class="nav-link">Sobre nós</a>
-                </nav>
-                <div class="nav-divider"></div>
-                <a href="/contato/" class="btn-contato">Contato</a>
-            </div>
         </div>
+
+        <!-- Painel Mobile Offcanvas -->
         <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
             <div class="mobile-menu-content">
                 <div class="mobile-menu-header">
-                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" decoding="async" loading="lazy">
-                    <button type="button" class="mobile-menu-close" aria-label="Fechar menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="mobile-menu-logo" width="400" height="154" loading="lazy">
+                    <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Fechar menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                     </button>
                 </div>
 
-                <nav class="mobile-menu-nav" aria-label="Principal">
+                <nav class="mobile-menu-nav" aria-label="Principal Mobile">
                     <a href="/" class="mobile-nav-link">Início</a>
-                    <a href="/#problemas" class="mobile-nav-link">Soluções</a>
+                    <a href="/#solucoes" class="mobile-nav-link">Soluções</a>
                     <a href="/clientes/" class="mobile-nav-link">Clientes</a>
                     <a href="/sobre/" class="mobile-nav-link">Sobre nós</a>
                 </nav>
 
                 <div class="mobile-menu-footer">
-                    <a href="/contato/" class="btn-primary mobile-menu-cta">Fale conosco</a>
-
+                    <a href="/contato/" class="btn btn-primary" style="width: 100%;">Fale Conosco</a>
                     <div class="mobile-contact-info">
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            comercial@b2msolutions.com.br
-                        </p>
-                        <p class="mobile-contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            Seg - Sex, 09h às 18h
-                        </p>
+                        <p>comercial@b2msolutions.com.br</p>
+                        <p>Segunda a Sexta, 09h às 18h</p>
                     </div>
                 </div>
             </div>
@@ -110,548 +90,288 @@
     </header>
 
     <main class="main-content">
-        <section class="solutions-panels-section" style="padding-top: 3rem;">
-            <div class="solution-reading-container">
-                <article class="solution-panel solution-panel--active" style="display: block; opacity: 1;">
-                    <div class="sol-card">
+        <section class="section-pad">
+            <div class="container">
+                <a href="/clientes/" class="solution-back-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Todos os clientes
+                </a>
 
-                    <!-- ═══════════ HEADER SPLIT: Info + Carrossel ═══════════ -->
-                    <div class="sol-card-header sol-card-header--centered reveal delay-100">
-                        <a href="/clientes/" class="solution-back-link reveal">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="19" y1="12" x2="5" y2="12"></line>
-                                <polyline points="12 19 5 12 12 5"></polyline>
-                            </svg>
-                            Voltar para Clientes
-                        </a>
-
-                        <!-- Coluna Esquerda: Informações -->
-                        <div class="sol-card-info">
-                            <div class="sol-card-categories-text">
-                                <span>CRIAÇÃO DE SITES</span>
-                                <span class="sol-cat-sep">•</span>
-                                <span>MARKETING DIGITAL</span>
-                                <span class="sol-cat-sep">•</span>
-                                <span>HOSPEDAGEM NA AWS</span>
-                            </div>
-                            <h1 class="sol-card-title">G.A.S Planos</h1>
-                            <p class="sol-card-desc">Como estruturamos a captação online de uma operadora de planos de saúde,
-                                com página rápida, anúncios e rastreamento funcionando como uma coisa só.</p>
+                <article class="project-case">
+                    <header class="project-case-intro">
+                        <div>
+                            <h1>G.A.S Planos</h1>
+                            <p>Uma página para apresentar os planos de saúde e conectar interessados à equipe comercial.</p>
                         </div>
-
-                        <!-- Coluna Direita: Carrossel de Screenshots -->
+                        <a href="https://gasplanos.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visitar site</a>
+                    </header>
+                    <figure class="project-case-gallery" aria-label="Telas do site G.A.S Planos">
                         <div class="sol-card-showcase">
                             <div class="sol-carousel" id="gas-carousel">
                                 <div class="sol-carousel-track">
                                     <div class="sol-carousel-slide sol-carousel-slide--active">
-                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-1.png"
-                                            alt="G.A.S Planos — Hero Section Principal" width="1912" height="956"
-                                            tabindex="0"
-                                            decoding="async" fetchpriority="high" loading="lazy">
+                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-1.png" alt="G.A.S Planos: Hero Principal" width="1912" height="956" fetchpriority="high">
                                     </div>
                                     <div class="sol-carousel-slide">
-                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-2.png"
-                                            alt="G.A.S Planos — Vantagens Exclusivas e Benefícios" width="1912"
-                                            height="956" tabindex="0" decoding="async" loading="lazy">
+                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-2.png" alt="G.A.S Planos: Vantagens e Benefícios" width="1912" height="956" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
-                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-3.png"
-                                            alt="G.A.S Planos — Tabela de Preços e Cobertura" width="1912" height="956"
-                                            tabindex="0" decoding="async" loading="lazy">
+                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-3.png" alt="G.A.S Planos: Tabela de Cobertura" width="1912" height="956" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
-                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-4.png"
-                                            alt="G.A.S Planos — Rede Própria e Grade de Hospitais" width="1912"
-                                            height="956" tabindex="0" decoding="async" loading="lazy">
+                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-4.png" alt="G.A.S Planos: Rede Hospitalar" width="1912" height="956" loading="lazy">
                                     </div>
                                     <div class="sol-carousel-slide">
-                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-5.png"
-                                            alt="G.A.S Planos — Diferenciais Competitivos e Contato" width="1912"
-                                            height="956" tabindex="0" decoding="async" loading="lazy">
+                                        <img src="/assets/img/solutions/gasplanos/gas-showcase-5.png" alt="G.A.S Planos: Canais de Contato" width="1912" height="956" loading="lazy">
                                     </div>
-                                </div>
-                                <!-- Indicadores (dots) -->
-                                <div class="sol-carousel-dots">
-                                    <button class="sol-carousel-dot sol-carousel-dot--active" data-slide="0"></button>
-                                    <button class="sol-carousel-dot" data-slide="1"></button>
-                                    <button class="sol-carousel-dot" data-slide="2"></button>
-                                    <button class="sol-carousel-dot" data-slide="3"></button>
-                                    <button class="sol-carousel-dot" data-slide="4"></button>
                                 </div>
 
-                                <!-- Controles Laterais (Setas) -->
+                                <div class="sol-carousel-dots">
+                                    <button class="sol-carousel-dot sol-carousel-dot--active" data-slide="0" aria-label="Slide 1"></button>
+                                    <button class="sol-carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+                                    <button class="sol-carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                                    <button class="sol-carousel-dot" data-slide="3" aria-label="Slide 4"></button>
+                                    <button class="sol-carousel-dot" data-slide="4" aria-label="Slide 5"></button>
+                                </div>
+
                                 <button class="sol-carousel-nav sol-carousel-nav--prev" aria-label="Slide anterior">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="15 18 9 12 15 6"></polyline>
                                     </svg>
                                 </button>
                                 <button class="sol-carousel-nav sol-carousel-nav--next" aria-label="Próximo slide">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="9 18 15 12 9 6"></polyline>
                                     </svg>
                                 </button>
                             </div>
                         </div>
-
-                        <!-- Metadados -->
-                        <div class="sol-card-meta">
-                            <div class="sol-card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                                <span>G.A.S Planos</span>
-                            </div>
-                            <div class="sol-card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                </svg>
-                                <span>2026</span>
-                            </div>
-                        </div>
-
-                        <div class="sol-hero-actions">
-                            <a href="https://gasplanos.com.br" target="_blank" rel="noopener noreferrer"
-                                class="sol-button-neon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                Visite o site
-                            </a>
-
-                            <!-- Botão para abrir o Modal de Arquitetura AWS -->
-                            <button type="button" id="btn-open-arch-modal" class="sol-button-neon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-                                </svg>
-                                Ver Arquitetura
-                            </button>
-                        </div>
-
-                        <!-- Barra Dedicada de Tecnologia (Opção A reposicionada) -->
-                        <div class="sol-card-tech-bar">
-                            <div class="sol-tech-bar-list">
-                                <span class="sol-tech-bar-item">HTML</span>
-                                <span class="sol-tech-bar-item">CSS</span>
-                                <span class="sol-tech-bar-item">JavaScript</span>
-                                <span class="sol-tech-bar-item">S3</span>
-                                <span class="sol-tech-bar-item">CloudFront</span>
-                                <span class="sol-tech-bar-item">Route 53</span>
-                                <span class="sol-tech-bar-item">Google Analytics</span>
-                                <span class="sol-tech-bar-item">Google Ads</span>
-                                <span class="sol-tech-bar-item">Google Tag Manager</span>
-                                <span class="sol-tech-bar-item">Microsoft Clarity</span>
-                            </div>
-                        </div>
+                        <figcaption>
+                            <span id="gas-gallery-caption" aria-live="polite">Apresentação dos planos</span>
+                            <button type="button" class="project-text-link" id="gas-enlarge">Ampliar imagem</button>
+                        </figcaption>
+                    </figure>
+                    <div class="project-case-story">
+                        <section aria-labelledby="gas-context">
+                            <h2 id="gas-context">O contexto</h2>
+                            <p>A G.A.S Planos dependia de indicações. Precisava apresentar os planos e receber contatos em um canal próprio na internet.</p>
+                        </section>
+                        <section aria-labelledby="gas-work">
+                            <h2 id="gas-work">O que fizemos</h2>
+                            <ul class="project-deliverables">
+                                <li><h3>Landing page</h3><p>Planos de saúde e acesso ao atendimento pelo WhatsApp, no computador e no celular.</p></li>
+                                <li><h3>Hospedagem AWS</h3><p>Site hospedado no S3, com distribuição pelo CloudFront.</p></li>
+                                <li><h3>Rastreamento de conversões</h3><p>Campanhas do Google Ads integradas à medição de cliques e contatos.</p></li>
+                            </ul>
+                        </section>
+                        <section aria-labelledby="gas-outcome">
+                            <h2 id="gas-outcome">O que mudou</h2>
+                            <p class="project-outcome-highlight">Um canal próprio de captação.</p>
+                            <p>Os visitantes das campanhas chegam à página e podem falar com a equipe pelo WhatsApp. A empresa passa a acompanhar esses cliques e contatos.</p>
+                        </section>
                     </div>
-
-                    <!-- ═══════════ TIMELINE HORIZONTAL ═══════════ -->
-                    <div class="sol-card-timeline reveal delay-200">
-                        <div class="sol-timeline-step">
-                            <div class="sol-timeline-icon sol-timeline-icon--problem">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                    </path>
-                                    <line x1="12" y1="9" x2="12" y2="13"></line>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                </svg>
-                            </div>
-                            <h4 class="sol-timeline-label">O PROBLEMA</h4>
-                            <p class="sol-timeline-text">A empresa não existia no digital, e enquanto isso, concorrentes
-                                com landing pages bem posicionadas no Google estavam captando os clientes que deveriam ser
-                                dela.</p>
-                        </div>
-
-                        <!-- Conector -->
-                        <div class="sol-timeline-connector"></div>
-
-                        <div class="sol-timeline-step">
-                            <div class="sol-timeline-icon sol-timeline-icon--execution">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg>
-                            </div>
-                            <h4 class="sol-timeline-label">A SOLUÇÃO</h4>
-                            <p class="sol-timeline-text">Criamos uma landing page rápida e adaptada para qualquer
-                                dispositivo, com mídia paga e rastreamento configurados juntos, para cada clique virar dado
-                                e cada dado virar decisão.</p>
-                        </div>
-
-                        <!-- Conector -->
-                        <div class="sol-timeline-connector"></div>
-
-                        <div class="sol-timeline-step">
-                            <div class="sol-timeline-icon sol-timeline-icon--result">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg>
-                            </div>
-                            <h4 class="sol-timeline-label">O RESULTADO</h4>
-                            <p class="sol-timeline-text">Os leads passaram a chegar pelo WhatsApp com muito mais
-                                frequência, o engajamento superou o padrão do setor e a empresa finalmente ocupou o espaço
-                                digital que estava deixando na mesa.</p>
-                        </div>
-                    </div>
-
-                    <!-- Seção de arquitetura removida — conteúdo agora exibido via Modal -->
-
-                    </div>
+                    <section class="project-case-technical" aria-labelledby="gas-technical">
+                        <h2 id="gas-technical">Detalhes técnicos</h2>
+                        <dl>
+                            <div><dt>Desenvolvimento</dt><dd>HTML, CSS e JavaScript</dd></div>
+                            <div><dt>Hospedagem</dt><dd>AWS S3, CloudFront e Route 53</dd></div>
+                            <div><dt>Campanhas e medição</dt><dd>Google Ads, Google Analytics 4 e Google Tag Manager</dd></div>
+                        </dl>
+                        <button type="button" id="btn-open-arch-modal" class="project-text-link">Ver arquitetura AWS</button>
+                    </section>
                 </article>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cta-gradient-overlay"></div>
-            <div class="cta-glow--left"></div>
-            <div class="cta-glow--right"></div>
-
-            <div class="cta-container reveal">
-                <h2 class="cta-title">
-                    Quer atrair clientes para o seu <span class="text-gradient">plano de saúde</span> pelo digital?
-                </h2>
-                <p class="cta-text">
-                    Marca uma conversa. A gente entende o que você tem hoje, o que está travando e o que faz sentido
-                    atacar primeiro.
-                </p>
-                <div class="cta-center">
-                    <a href="/contato/" class="btn-primary--large">Fale conosco</a>
-                    <a href="/sobre/" class="btn-secondary--large">Sobre nós</a>
+        <!-- CTA Final -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="project-case-contact">
+                    <h2 class="cta-title">
+                        Vamos conversar sobre seu projeto?
+                    </h2>
+                    <p class="cta-text">
+                        Conte o que sua empresa precisa. Você conversa diretamente com os fundadores da B2M.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="/contato/" class="btn btn-primary btn-lg">Entrar em contato</a>
+                        <a href="/clientes/" class="btn btn-secondary btn-lg">Ver outros clientes</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ═══════════ MODAL: ARQUITETURA AWS ═══════════ -->
-    <div class="arch-modal-overlay" id="arch-modal-overlay">
+    <!-- Modal: Arquitetura AWS -->
+    <div class="arch-modal-overlay" id="arch-modal-overlay" role="dialog" aria-modal="true" aria-label="Arquitetura AWS da G.A.S Planos" aria-hidden="true">
         <div class="arch-modal-content">
-            <!-- Botão de fechar -->
             <button type="button" class="arch-modal-close" id="arch-modal-close" aria-label="Fechar modal">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
 
-            <!-- Cabeçalho -->
-            <div class="arch-modal-header">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
-                </svg>
-                <h3 class="arch-modal-title">Infraestrutura em Nuvem</h3>
-            </div>
-
-            <!-- Descrição -->
-            <p class="arch-modal-desc">
-                Hospedagem profissional utilizando a suite de serviços da <strong>Amazon Web
-                Services (AWS)</strong> para garantir alta disponibilidade, segurança via SSL (ACM) e
-                distribuição veloz com cache global (CloudFront).
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Arquitetura AWS: G.A.S Planos</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                Hospedagem estática no S3 com entrega pelo CloudFront, HTTPS automático e reescrita de rotas.
             </p>
 
-            <!-- Diagrama -->
-            <div class="arch-modal-diagram">
-                <img src="/assets/img/solutions/gasplanos/gasplanos-arquitetura.svg"
-                    alt="Diagrama de Arquitetura AWS G.A.S Planos" class="sol-arch-image" width="601" height="401"
-                    tabindex="0" decoding="async" loading="lazy">
-            </div>
+            <img src="/assets/img/solutions/gasplanos/gasplanos-arquitetura.svg" alt="Diagrama de Arquitetura AWS G.A.S Planos" class="sol-arch-image" width="1200" height="600" loading="lazy">
         </div>
     </div>
 
-    <!-- ═══════════ LIGHTBOX: SCREENSHOTS DO CARROSSEL ═══════════ -->
-    <div class="showcase-lightbox-overlay" id="showcase-lightbox-overlay" role="dialog" aria-modal="true"
-        aria-label="Imagem do projeto ampliada" aria-hidden="true" hidden>
-        <div class="showcase-lightbox-inner">
-            <button type="button" class="showcase-lightbox-close" id="showcase-lightbox-close"
-                aria-label="Fechar imagem ampliada">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="showcase-lightbox-scroll">
-                <img id="showcase-lightbox-img" src="/assets/img/solutions/gasplanos/gas-showcase-1.png"
-                    alt="G.A.S Planos — Hero Section Principal" width="1912" height="956" decoding="async">
-            </div>
-        </div>
+    <!-- Lightbox de Imagens -->
+    <div class="showcase-lightbox-overlay" id="showcase-lightbox-overlay" role="dialog" aria-modal="true" aria-label="Imagem ampliada do site" aria-hidden="true">
+        <button type="button" class="showcase-lightbox-close" id="showcase-lightbox-close" aria-label="Fechar zoom">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <img src="" alt="" class="showcase-lightbox-img" id="showcase-lightbox-img">
     </div>
 
-    <!-- Footer -->
+    <!-- Rodapé Principal -->
     <footer class="site-footer">
-        <div class="footer-bg"></div>
-        <div class="footer-container">
-            <nav class="footer-inline-nav">
-                <a href="/" class="footer-inline-link">Início</a>
-                <span class="footer-separator">|</span>
-                <a href="/#problemas" class="footer-inline-link">Soluções</a>
-                <span class="footer-separator">|</span>
-                <a href="/clientes/" class="footer-inline-link">Clientes</a>
-                <span class="footer-separator">|</span>
-                <a href="/sobre/" class="footer-inline-link">Sobre nós</a>
-                <span class="footer-separator">|</span>
-                <a href="/contato/" class="footer-inline-link">Contato</a>
-                <span class="footer-separator">|</span>
-                <a href="/termos-de-uso/" class="footer-inline-link" rel="nofollow">Termos de Uso</a>
-                <span class="footer-separator">|</span>
-                <a href="/politica-de-privacidade/" class="footer-inline-link" rel="nofollow">Política de
-                    Privacidade</a>
+        <div class="container footer-inner">
+            <a href="/" class="footer-brand" aria-label="B2M Solutions Página Inicial">
+                <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" loading="lazy">
+            </a>
+
+            <nav class="footer-nav" aria-label="Navegação do Rodapé">
+                <a href="/#solucoes" class="footer-link">Soluções</a>
+                <a href="/clientes/" class="footer-link">Clientes</a>
+                <a href="/sobre/" class="footer-link">Sobre nós</a>
+                <a href="/politica-de-privacidade/" class="footer-link">Privacidade</a>
+                <a href="/termos-de-uso/" class="footer-link">Termos</a>
+                <a href="/contato/" class="footer-link">Contato</a>
             </nav>
 
-            <div class="footer-brand-center">
-                <a href="/" class="footer-brand-link">
-                    <img src="/assets/logos/b2m-logo-dark-nobg-400w.png" alt="B2M Solutions" class="footer-logo" width="400" height="154" decoding="async" loading="lazy">
-                </a>
-            </div>
-
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2026 B2M Solutions. Todos os direitos reservados.
-                </p>
-            </div>
+            <p class="footer-copy">&copy; 2026 B2M Solutions. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="/assets/js/animations.js" defer></script>
     <script src="/assets/js/mobile-menu.js" defer></script>
+
+    <!-- Script de Interações do Projeto (Carrossel, Lightbox, Modal) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const archOverlay = document.getElementById('arch-modal-overlay');
+            // Modal de Arquitetura AWS
             const btnOpenArch = document.getElementById('btn-open-arch-modal');
             const btnCloseArch = document.getElementById('arch-modal-close');
+            const archOverlay = document.getElementById('arch-modal-overlay');
 
+            // Lightbox
             const lbOverlay = document.getElementById('showcase-lightbox-overlay');
             const lbImg = document.getElementById('showcase-lightbox-img');
             const btnCloseLb = document.getElementById('showcase-lightbox-close');
 
-            let lastFocusBeforeLightbox = null;
-            /** Quando true, o lightbox espelha o slide ativo do carrossel; quando false, mostra só o diagrama AWS. */
-            let lightboxSyncFromCarousel = true;
-
-            const closeShowcaseLightbox = (options = {}) => {
-                const skipFocusRestore = Boolean(options.skipFocusRestore);
-                if (!lbOverlay || !lbOverlay.classList.contains('active')) return;
-                lbOverlay.classList.remove('active');
-                lbOverlay.setAttribute('aria-hidden', 'true');
-                lbOverlay.setAttribute('hidden', '');
-                lightboxSyncFromCarousel = true;
-                const archStillOpen = archOverlay && archOverlay.classList.contains('active');
-                document.body.style.overflow = archStillOpen ? 'hidden' : '';
-                if (!skipFocusRestore) {
-                    const el = lastFocusBeforeLightbox;
-                    if (el && typeof el.focus === 'function') {
-                        el.focus();
-                    }
-                }
-                lastFocusBeforeLightbox = null;
+            let activeDialog = null;
+            let returnFocus = null;
+            const backgroundRegions = document.querySelectorAll('body > header, body > main, body > footer');
+            const openDialog = (overlay, closeButton, trigger) => {
+                returnFocus = trigger;
+                activeDialog = overlay;
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                backgroundRegions.forEach(region => region.inert = true);
+                document.body.style.overflow = 'hidden';
+                closeButton.focus();
             };
-
-            const closeArchModal = () => {
-                if (!archOverlay || !archOverlay.classList.contains('active')) return;
-                if (lbOverlay && lbOverlay.classList.contains('active')) {
-                    closeShowcaseLightbox({ skipFocusRestore: true });
-                }
-                archOverlay.classList.remove('active');
+            const closeDialog = () => {
+                if (!activeDialog) return;
+                activeDialog.classList.remove('active');
+                activeDialog.setAttribute('aria-hidden', 'true');
+                activeDialog = null;
+                backgroundRegions.forEach(region => region.inert = false);
                 document.body.style.overflow = '';
-                if (btnOpenArch && typeof btnOpenArch.focus === 'function') {
-                    btnOpenArch.focus();
-                }
+                returnFocus?.focus();
             };
-
-            const openArchModal = () => {
-                if (lbOverlay && lbOverlay.classList.contains('active')) {
-                    lbOverlay.classList.remove('active');
-                    lbOverlay.setAttribute('aria-hidden', 'true');
-                    lbOverlay.setAttribute('hidden', '');
-                    lightboxSyncFromCarousel = true;
-                    lastFocusBeforeLightbox = null;
-                }
-                if (!archOverlay) return;
-                archOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const syncShowcaseLightboxFromActiveSlide = () => {
-                if (!lightboxSyncFromCarousel || !lbOverlay || !lbImg || !lbOverlay.classList.contains('active')) {
-                    return;
-                }
-                const activeSlideImg = document.querySelector('.sol-carousel-slide--active img');
-                if (!activeSlideImg) return;
-                lbImg.src = activeSlideImg.currentSrc || activeSlideImg.src;
-                lbImg.alt = activeSlideImg.alt || '';
-            };
-
-            const openShowcaseLightbox = (triggerElement) => {
-                lightboxSyncFromCarousel = true;
-                closeArchModal();
-                lastFocusBeforeLightbox = triggerElement && typeof triggerElement.focus === 'function'
-                    ? triggerElement
-                    : document.activeElement;
-                if (!lbOverlay) return;
-                lbOverlay.removeAttribute('hidden');
-                lbOverlay.setAttribute('aria-hidden', 'false');
-                lbOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                syncShowcaseLightboxFromActiveSlide();
-                if (btnCloseLb) btnCloseLb.focus();
-            };
-
-            const openArchDiagramLightbox = (archImg) => {
-                lightboxSyncFromCarousel = false;
-                lastFocusBeforeLightbox = archImg;
-                if (!lbOverlay || !lbImg) return;
-                lbImg.src = archImg.currentSrc || archImg.src;
-                lbImg.alt = archImg.alt || '';
-                lbOverlay.removeAttribute('hidden');
-                lbOverlay.setAttribute('aria-hidden', 'false');
-                lbOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                if (btnCloseLb) btnCloseLb.focus();
-            };
-
-            if (btnOpenArch && archOverlay && btnCloseArch) {
-                btnOpenArch.addEventListener('click', openArchModal);
-                btnCloseArch.addEventListener('click', closeArchModal);
-                archOverlay.addEventListener('click', (e) => {
-                    if (e.target === archOverlay) closeArchModal();
+            btnOpenArch.addEventListener('click', () => openDialog(archOverlay, btnCloseArch, btnOpenArch));
+            [btnCloseArch, btnCloseLb].forEach(button => button.addEventListener('click', closeDialog));
+            [archOverlay, lbOverlay].forEach(overlay => {
+                overlay.addEventListener('click', event => {
+                    if (event.target === overlay) closeDialog();
                 });
-            }
-
-            if (lbOverlay && btnCloseLb) {
-                btnCloseLb.addEventListener('click', () => closeShowcaseLightbox());
-                lbOverlay.addEventListener('click', (e) => {
-                    if (e.target === lbOverlay) closeShowcaseLightbox();
-                });
-            }
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key !== 'Escape') return;
-                if (lbOverlay && lbOverlay.classList.contains('active')) {
-                    e.preventDefault();
-                    closeShowcaseLightbox();
-                    return;
-                }
-                if (archOverlay && archOverlay.classList.contains('active')) {
-                    closeArchModal();
+            });
+            document.addEventListener('keydown', event => {
+                if (!activeDialog) return;
+                if (event.key === 'Escape') closeDialog();
+                if (event.key === 'Tab') {
+                    const focusable = [...activeDialog.querySelectorAll('button, a[href], [tabindex="0"]')];
+                    const first = focusable[0];
+                    const last = focusable[focusable.length - 1];
+                    if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault(); last.focus();
+                    } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault(); first.focus();
+                    }
                 }
             });
 
-            const archDiagramImg = document.querySelector('#arch-modal-overlay .sol-arch-image');
-            if (archDiagramImg) {
-                archDiagramImg.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openArchDiagramLightbox(archDiagramImg);
-                });
-                archDiagramImg.addEventListener('keydown', (ev) => {
-                    if (ev.key === 'Enter' || ev.key === ' ') {
-                        ev.preventDefault();
-                        openArchDiagramLightbox(archDiagramImg);
-                    }
-                });
-            }
-
+            // Carrossel
             const track = document.querySelector('#gas-carousel .sol-carousel-track');
             const slides = track ? Array.from(track.children) : [];
             const dots = document.querySelectorAll('#gas-carousel .sol-carousel-dot');
+            const btnPrev = document.querySelector('#gas-carousel .sol-carousel-nav--prev');
+            const btnNext = document.querySelector('#gas-carousel .sol-carousel-nav--next');
 
             if (track && slides.length > 0) {
                 let currentIndex = 0;
                 const slideCount = slides.length;
-                let autoPlayInterval;
-                let userInteracted = false;
+                const captions = ['Apresentação dos planos', 'Vantagens e benefícios', 'Tabela de cobertura', 'Rede hospitalar', 'Canais de contato'];
+                document.getElementById('gas-enlarge').addEventListener('click', () => {
+                    slides[currentIndex].querySelector('img').click();
+                });
 
                 const updateCarousel = (index) => {
-                    slides.forEach((slide) => slide.classList.remove('sol-carousel-slide--active'));
-                    dots.forEach((dot) => dot.classList.remove('sol-carousel-dot--active'));
+                    slides.forEach(s => s.classList.remove('sol-carousel-slide--active'));
+                    dots.forEach(d => d.classList.remove('sol-carousel-dot--active'));
 
                     track.style.transform = `translateX(-${index * 100}%)`;
-
                     slides[index].classList.add('sol-carousel-slide--active');
                     if (dots[index]) dots[index].classList.add('sol-carousel-dot--active');
-                    syncShowcaseLightboxFromActiveSlide();
+                    dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === index)));
+                    document.getElementById('gas-gallery-caption').textContent = captions[index];
                 };
 
-                const nextSlide = () => {
-                    currentIndex = (currentIndex + 1) % slideCount;
-                    updateCarousel(currentIndex);
-                };
+                updateCarousel(0);
 
-                const startAutoPlay = () => {
-                    if (userInteracted) return;
-                    clearInterval(autoPlayInterval);
-                    autoPlayInterval = setInterval(nextSlide, 8000);
-                };
-
-                const stopAutoPlay = () => {
-                    clearInterval(autoPlayInterval);
-                };
-
-                slides.forEach((slide) => {
+                slides.forEach(slide => {
                     const img = slide.querySelector('img');
                     if (!img) return;
                     img.addEventListener('click', () => {
-                        openShowcaseLightbox(img);
-                    });
-                    img.addEventListener('keydown', (ev) => {
-                        if (ev.key === 'Enter' || ev.key === ' ') {
-                            ev.preventDefault();
-                            openShowcaseLightbox(img);
+                        if (lbImg && lbOverlay) {
+                            lbImg.src = img.currentSrc || img.src;
+                            lbImg.alt = img.alt || '';
+                            openDialog(lbOverlay, btnCloseLb, document.getElementById('gas-enlarge'));
                         }
                     });
                 });
 
                 dots.forEach((dot, index) => {
                     dot.addEventListener('click', () => {
-                        userInteracted = true;
                         currentIndex = index;
                         updateCarousel(currentIndex);
-                        stopAutoPlay();
                     });
                 });
 
-                const btnPrev = document.querySelector('#gas-carousel .sol-carousel-nav--prev');
-                const btnNext = document.querySelector('#gas-carousel .sol-carousel-nav--next');
-
                 if (btnPrev && btnNext) {
                     btnPrev.addEventListener('click', () => {
-                        userInteracted = true;
                         currentIndex = (currentIndex - 1 + slideCount) % slideCount;
                         updateCarousel(currentIndex);
-                        stopAutoPlay();
                     });
-
                     btnNext.addEventListener('click', () => {
-                        userInteracted = true;
-                        nextSlide();
-                        stopAutoPlay();
+                        currentIndex = (currentIndex + 1) % slideCount;
+                        updateCarousel(currentIndex);
                     });
                 }
-
-                const carouselContainer = document.getElementById('gas-carousel');
-                if (carouselContainer) {
-                    carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-                    carouselContainer.addEventListener('mouseleave', startAutoPlay);
-                }
-
-                startAutoPlay();
             }
         });
     </script>

@@ -1,0 +1,22 @@
+/* Direct contact leads; the process stays secondary to the email action. */
+.contact-page .page-hero-title { max-width: 20ch; font-weight: 500; text-wrap: balance; }
+.contact-page .page-hero-desc { max-width: 54ch; }
+.contact-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+.contact-primary { min-width: 0; }
+.contact-primary h2 { font-size: 1.0625rem; font-weight: 400; color: var(--color-text-secondary); margin-bottom: 1.25rem; }
+.contact-email { display: block; width: fit-content; max-width: 100%; font-size: clamp(1.5rem, 2.3vw, 2rem); font-weight: 500; letter-spacing: -0.035em; color: var(--color-text-primary); line-height: 1.4; overflow-wrap: anywhere; }
+.contact-email:hover { text-decoration: underline; text-underline-offset: 6px; }
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
+.contact-copy { font: inherit; font-size: 0.9375rem; background: none; border: 0; padding: 0.75rem 0; color: var(--color-text-secondary); text-decoration: underline; text-underline-offset: 5px; cursor: pointer; }
+.contact-copy:hover { color: var(--color-text-primary); }
+.contact-copy-status { min-height: 1.5em; margin-top: 0.75rem; font-size: 0.875rem; color: var(--color-text-secondary); }
+.contact-hours { margin-top: 1.5rem; font-size: 0.9375rem; line-height: 1.7; color: var(--color-text-secondary); }
+.contact-next h2 { font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem; }
+.contact-next ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+.contact-next h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+.contact-next p { max-width: 42ch; font-size: 0.9375rem; line-height: 1.7; color: var(--color-text-secondary); }
+.contact-page :is(a, button):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+@media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-next { border-top: var(--border-grid); padding-top: 2rem; }
+}

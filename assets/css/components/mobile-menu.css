@@ -1,43 +1,29 @@
-/* ==========================================
-   Estilos do Menu Mobile Offcanvas
-   ========================================== */
+/* ==========================================================================
+   B2M SOLUTIONS — MENU MOBILE EDITORIAL
+   ========================================================================== */
 
-/*
-* Overlay Fullscreen (Glassmorphism de fundo negro)
-*/
 .mobile-menu-overlay {
     position: fixed;
     inset: 0;
     width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
-    height: auto;
-    background-color: rgba(10, 10, 10, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(6, 7, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 9999;
-    
-    /* Configuração inicial oculta */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    
-    /* Facilitar alinhamento no lado direito */
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     justify-content: flex-end;
 }
 
-/* Quando aberto: o overlay exibe e desfaz os translateX do content */
 .mobile-menu-overlay.open {
     opacity: 1;
     visibility: visible;
 }
 
-/*
-* Bloquear scroll da página com o menu aberto. Sem position:fixed nem
-* scrollTo — o viewport permanece na mesma posição ao abrir e ao fechar.
-* touchmove (fora do painel) reforça o bloqueio em iOS/Safari.
-*/
 html.no-scroll,
 body.no-scroll {
     overflow: hidden;
@@ -51,178 +37,96 @@ body.no-scroll {
     overscroll-behavior: none;
 }
 
-/*
-* Conteúdo lateral do Offcanvas (Side-panel)
-*/
 .mobile-menu-content {
-    background-color: var(--color-background, #0f0f12);
+    background-color: var(--color-surface);
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     height: 100%;
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    
-    /* Box Shadow para dimensão visual e borda fraca no lado esquerdo */
-    box-shadow: -4px 0 25px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-
-    /* Animação slide in out no próprio painel */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+    border-left: var(--border-grid);
     transform: translateX(100%);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Estado de inserção suave cubic p/ slide */
 .mobile-menu-overlay.open .mobile-menu-content {
     transform: translateX(0);
     touch-action: manipulation;
 }
 
-/*
-* Cabeçalho Header
-*/
 .mobile-menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1.5rem;
+    border-bottom: var(--border-grid);
+    padding-bottom: 1.25rem;
     margin-bottom: 2rem;
 }
 
 .mobile-menu-logo {
-    height: 35px;
+    height: 28px;
     width: auto;
 }
 
-/*
-* Botão Close (Fechamento Mobile)
-*/
 .mobile-menu-close {
-    display: none; /* Escondido para evitar sobreposição, pois o hambúrguer já vira 'X' */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-xs);
+    border: var(--border-grid);
+    color: var(--color-text-primary);
 }
 
-/*
-* Navegação em Cascata (Links)
-*/
 .mobile-menu-nav {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    flex-grow: 1; /* Preenche espaço vital do meio e empurra footer para o fundo */
+    flex-grow: 1;
 }
 
 .mobile-nav-link {
-    color: var(--color-text-secondary, #A0A0A0);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-family: 'Space Grotesk', sans-serif;
+    color: var(--color-text-secondary);
+    font-size: 1.35rem;
+    font-family: var(--font-sans);
     font-weight: 500;
-    
-    /* Configuração animação staggered na entrada (deslizar p/ cima via transform) */
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease, padding-left 0.3s ease;
+    transform: translateY(14px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link:active {
-    color: var(--color-white, #ffffff);
+    color: var(--color-text-primary);
     padding-left: 0.5rem;
 }
 
-/* Cascade Effect = Quando panel overlay tá open, joga transform pra zero de volta */
 .mobile-menu-overlay.open .mobile-nav-link {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Delays das animações baseadas no N child */
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(2) { transition-delay: 0.2s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu-overlay.open .mobile-nav-link:nth-child(1) { transition-delay: 0.05s; }
+.mobile-menu-overlay.open .mobile-nav-link:nth-child(2) { transition-delay: 0.1s; }
+.mobile-menu-overlay.open .mobile-nav-link:nth-child(3) { transition-delay: 0.15s; }
+.mobile-menu-overlay.open .mobile-nav-link:nth-child(4) { transition-delay: 0.2s; }
 
-/*
-* Footer com Contatos e CTA
-*/
 .mobile-menu-footer {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    /* Animação fade in slide up em CTA & Contato Info */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
-}
-
-.mobile-menu-overlay.open .mobile-menu-footer {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.mobile-menu-cta {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    padding: 1rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
+    border-top: var(--border-grid);
 }
 
 .mobile-contact-info {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-}
-
-.mobile-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--color-text-secondary, #A0A0A0);
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.mobile-contact-item svg {
-    color: var(--color-primary, #1CC5A1);
-    flex-shrink: 0; /* Impede o Icon SVG de espremer se text crescer */
-}
-
-/*
-* Hambúrguer Icon Toggle (Para transformar em "X" quando clicado)
-*/
-.mobile-menu-toggle {
-    transition: color 0.3s ease;
-    z-index: 10000; /* Assegura que ele ficará acima caso cruze posições (depende da estrutura atual) */
-}
-
-/* Transições das linhas isoladas do toggle SVGs da button "mobile-menu-toggle" nas class line-1/2/3 */
-.mobile-menu-toggle .line-1,
-.mobile-menu-toggle .line-2,
-.mobile-menu-toggle .line-3 {
-    transition: transform 0.3s ease, transform-origin 0.3s ease, opacity 0.3s ease;
-    transform-origin: center;
-}
-
-/* .mobile-menu-toggle com a class ".active" */
-.mobile-menu-toggle.active {
-    color: var(--color-primary, #1CC5A1);
-}
-
-/* Cruzamento em X ("active" class) - Valores aproximados de SVG rotation */
-.mobile-menu-toggle.active .line-1 {
-    transform: translateY(6px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active .line-2 {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active .line-3 {
-    transform: translateY(-6px) rotate(-45deg);
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
 }
