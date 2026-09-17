@@ -34,7 +34,7 @@ O site é multipágina e reúne cases de clientes, apresentação da empresa, ca
 
 ---
 
-## Tecnologias utilizadas
+## Stack
 
 O site foi desenvolvido sem frameworks pesados, utilizando recursos nativos modernos da web:
 
@@ -102,9 +102,35 @@ B2M Solutions/
 
 ---
 
-<p align="center">
-  Desenvolvido por <strong>B2M Solutions</strong>
-</p>
+## Páginas do site
+
+- Início (`index.html`): apresentação dos serviços, logotipos de clientes, visão geral de soluções e chamada para contato.
+- Sobre (`sobre/`): história da empresa, etapas de trabalho e apresentação dos fundadores.
+- Clientes (`clientes/`): listagem de projetos realizados com atalhos para os estudos de caso.
+- Estudo de caso G.A.S Planos (`solutions/gasplanos/`): galeria com capturas de tela do projeto, modal com diagrama de arquitetura AWS e lista de tecnologias usadas.
+- Estudo de caso ChrisMedical (`solutions/chrismedical/`): visão geral do projeto de marketing digital e etapas de implementação.
+- Contato (`contato/`): canais de atendimento direto (`comercial@b2msolutions.com.br`).
+- Política de Privacidade (`politica-de-privacidade/`): diretrizes de tratamento e proteção de dados.
+- Termos de Uso (`termos-de-uso/`): termos de navegação e direitos autorais.
+- Página 404 (`404.html`): aviso de página não encontrada com link de retorno à página inicial.
+
+---
+
+## SEO e desempenho
+
+- Marcação Schema.org em formato JSON-LD (`Organization` e `ContactPage`) com dados institucionais e canais de contato.
+- Metadados Open Graph em todas as páginas para pré-visualização em redes sociais e mensageiros.
+- Tags `title`, `description` e `canonical` configuradas individualmente por rota.
+- Arquivos `robots.txt` e `sitemap.xml` com as rotas públicas mapeadas.
+- Pré-carregamento (`preload`) dos arquivos de fonte `.woff2` para reduzir atrasos na renderização do texto.
+- Folha de estilo minificada para ambiente de produção (`styles.min.css`).
+- Scripts com atributo `defer` para não bloquear o parsing do HTML.
+- Imagens com atributos de dimensão (`width` e `height`), carregamento preguiçoso (`loading="lazy"`) e decodificação assíncrona.
+- Suporte a `@media (prefers-reduced-motion: reduce)` para respeitar as preferências de acessibilidade do usuário.
+- Redirecionamentos 301 e padronização de URLs executados em borda via CloudFront Functions.
+- Cabeçalhos de segurança configurados via Content Security Policy (CSP).
+
+---
 
 ## Organização visual atual
 
@@ -114,4 +140,16 @@ Os cases compartilham `assets/css/components/project-case.css`; a G.A.S inclui g
 
 `styles.css` é a folha referenciada pelas páginas. `styles.min.css` é uma cópia de compatibilidade, atualmente sem minificação; manter ambas sincronizadas enquanto essa cópia existir. Não editar a cópia separadamente.
 
-Os efeitos de entrada são progressivos: o conteúdo permanece visível sem JavaScript e com movimento reduzido. A prévia local usa `python -m http.server 8765 --bind 127.0.0.1`. A publicação em produção é uma etapa separada.
+Os efeitos de entrada são progressivos: o conteúdo permanece visível sem JavaScript e com movimento reduzido. A prévia local usa `python -m http.server 5500 --bind 127.0.0.1`. A publicação em produção é uma etapa separada.
+
+---
+
+## Licença e uso
+
+Este repositório é disponibilizado para visualização de código e portfólio. As marcas, logotipos e conteúdos pertencem aos respectivos proprietários, não sendo autorizada a reprodução comercial sem permissão prévia.
+
+---
+
+<p align="center">
+  Desenvolvido por <strong>B2M Solutions</strong>
+</p>
