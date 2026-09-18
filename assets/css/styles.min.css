@@ -765,6 +765,7 @@ p {
 .cta-title {
     font-size: var(--font-size-2xl);
     max-width: 650px;
+    text-wrap: balance;
 }
 
 .cta-text {
@@ -1482,12 +1483,11 @@ p {
    14. ANIMAÇÕES DE REVEAL & ACESSIBILIDADE
    ========================================================================== */
 .reveal {
-    opacity: 1;
-    transform: none;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
-
-.reveal.is-pending { opacity: 0; transform: translateY(14px); }
 
 .reveal.is-revealed,
 .reveal.active {
@@ -1495,10 +1495,10 @@ p {
     transform: translateY(0);
 }
 
-.delay-100 { transition-delay: 80ms; }
-.delay-200 { transition-delay: 160ms; }
-.delay-300 { transition-delay: 240ms; }
-.delay-400 { transition-delay: 320ms; }
+.delay-100 { transition-delay: 120ms; }
+.delay-200 { transition-delay: 240ms; }
+.delay-300 { transition-delay: 360ms; }
+.delay-400 { transition-delay: 480ms; }
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1512,6 +1512,7 @@ p {
     .reveal {
         opacity: 1 !important;
         transform: none !important;
+        transition: none !important;
     }
 }
 /* Links from services to documented projects. */
