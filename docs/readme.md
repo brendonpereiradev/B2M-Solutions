@@ -49,6 +49,16 @@ O site foi desenvolvido sem frameworks pesados, utilizando recursos nativos mode
 
 ---
 
+## Infraestrutura AWS
+
+O site é publicado como aplicação estática na AWS, com o Amazon S3 como origem dos arquivos e o Amazon CloudFront como camada de distribuição.
+
+- **Amazon S3:** armazena os arquivos HTML, CSS, JavaScript, imagens e demais recursos do site.
+- **Amazon CloudFront:** recebe as requisições dos visitantes, entrega o conteúdo via HTTPS e utiliza cache em seus pontos de presença para reduzir a latência.
+- **Fluxo de entrega:** navegador → CloudFront → S3. Quando um arquivo não está no cache do CloudFront, ele é solicitado à origem no S3.
+
+---
+
 ## Estrutura do projeto
 
 ```
